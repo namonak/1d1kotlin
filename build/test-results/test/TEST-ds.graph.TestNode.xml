@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ds.graph.TestNode" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-01T15:21:42" hostname="MacBook-Pro.local" time="0.018">
+  <properties/>
+  <testcase name="test_insert" classname="ds.graph.TestNode" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
