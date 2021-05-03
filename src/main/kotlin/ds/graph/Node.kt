@@ -10,4 +10,10 @@ class Node(val mKey: Int, var mLeft: Node? = null, var mRight: Node? = null) {
             else this.mRight?.insert(key)
         }
     }
+
+    fun search(key: Int): Node? = when {
+        this.mKey > key -> mLeft?.search(key)
+        this.mKey < key -> mRight?.search(key)
+        else -> this
+    }
 }
