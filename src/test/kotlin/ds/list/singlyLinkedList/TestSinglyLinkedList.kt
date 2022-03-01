@@ -65,4 +65,42 @@ class TestSinglyLinkedList {
             singlyLinkedList.clear()
         }
     }
+
+    @Test
+    fun testVariousFunctions() {
+        val singlyLinkedList = SinglyLinkedList()
+        var want = intArrayOf(1, 2, 3, 4, 5)
+
+        singlyLinkedList.add(2)
+        singlyLinkedList.add(3)
+        singlyLinkedList.addAtHead(1)
+        singlyLinkedList.addBack(5)
+        singlyLinkedList.addAfter(singlyLinkedList.findNode(3), 4)
+
+        var current = singlyLinkedList.mHead
+        var i = 0
+        while (current?.next != null) {
+            assertEquals(want[i], current.value)
+            current = current.next
+            i++
+        }
+
+        // findNode는 없는 값을 찾으면 null을 반환하며, addAfter는 null node를 추가하는 경우 아무런 동작을 하지 않는다.
+        singlyLinkedList.addAfter(singlyLinkedList.findNode(6), 7)
+        // findNode에서 없는 값을 찾으면 null을 반환하며, deleteAfter에서 null node를 삭제하는 경우 아무런 동작을 하지 않고 return 한다
+        singlyLinkedList.deleteAfter(singlyLinkedList.findNode(6))
+        singlyLinkedList.deleteAfter(singlyLinkedList.findNode(5))
+        singlyLinkedList.deleteAfter(singlyLinkedList.findNode(3))
+        singlyLinkedList.deleteAfter(singlyLinkedList.mHead)
+
+        want = intArrayOf(1, 3, 5)
+
+        current = singlyLinkedList.mHead
+        i = 0
+        while (current?.next != null) {
+            assertEquals(want[i], current.value)
+            current = current.next
+            i++
+        }
+    }
 }

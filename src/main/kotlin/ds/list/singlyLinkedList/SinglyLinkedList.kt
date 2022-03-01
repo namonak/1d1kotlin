@@ -42,8 +42,8 @@ class SinglyLinkedList() {
     }
 
     // O(1)
-    fun addAfter(node: Node, value: Int) {
-        if (mHead == null) return
+    fun addAfter(node: Node?, value: Int) {
+        if (mHead == null || node == null) return
 
         val newNode = Node(value)
         newNode.next = node.next
@@ -63,8 +63,8 @@ class SinglyLinkedList() {
     }
 
     // O(1)
-    fun deleteAfter(prevNode: Node) {
-        if (mHead == null || prevNode.next == null) return
+    fun deleteAfter(prevNode: Node?) {
+        if (mHead == null || prevNode == null ||prevNode.next == null) return
 
         prevNode.next = prevNode.next?.next
     }
