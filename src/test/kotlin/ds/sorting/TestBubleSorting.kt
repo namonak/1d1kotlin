@@ -3,13 +3,13 @@ package ds.sorting
 import org.junit.Test
 import kotlin.test.assertEquals
 
-data class TestCase(val given: IntArray, val want: IntArray)
+data class BubbleSortingTestCase(val given: IntArray, val want: IntArray)
 
 class TestBubbleSorting {
     private val mTestBubbleSorting = arrayOf(
-        TestCase(
+        BubbleSortingTestCase(
             intArrayOf(9, 3, 5, 7, 1),
-            intArrayOf(1, 3, 5, 7, 9),
+            intArrayOf(1, 3, 5, 7, 9)
         )
     )
 
