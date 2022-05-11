@@ -13,6 +13,18 @@ class 실패율 {
         return remainingPlayers;
     }
 
+    public static int getStagePlayers(int[] stages, int stage) {
+        int stagePlayers = 0;
+
+        for (int i = 0; i < stages.length; i++) {
+            if (stages[i] == stage) {
+                stagePlayers++;
+            }
+        }
+
+        return stagePlayers;
+    }
+
     public int[] solution(int N, int[] stages) {
         int[] answer = {};
         return answer;
