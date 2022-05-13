@@ -39,9 +39,7 @@ class 실패율테스트 {
     @Test
     @DisplayName("실패율 테스트")
     void 실패율_테스트() {
-        실패율 failRate = new 실패율();
-
-        assertThat(failRate.solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3})).isEqualTo(new int[]{3, 4, 2, 1, 5});
-        assertThat(failRate.solution(4, new int[]{4, 4, 4, 4, 4})).isEqualTo(new int[]{4, 1, 2, 3});
+        assertThat(new 실패율().solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3})).isEqualTo(new int[]{3, 4, 2, 1, 5});
+        assertThat(new 실패율().solution(4, new int[]{4, 4, 4, 4, 4})).isEqualTo(new int[]{4, 1, 2, 3});
     }
 }
