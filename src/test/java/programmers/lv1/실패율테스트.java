@@ -25,4 +25,23 @@ class 실패율테스트 {
         assertThat(실패율.getStagePlayers(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 4)).isEqualTo(1);
         assertThat(실패율.getStagePlayers(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 5)).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("실패율 계산")
+    void 실패율_계산() {
+        assertThat(실패율.getFailureRate(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 1)).isEqualTo((float) 1/8);
+        assertThat(실패율.getFailureRate(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 2)).isEqualTo((float) 3/7);
+        assertThat(실패율.getFailureRate(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 3)).isEqualTo((float) 2/4);
+        assertThat(실패율.getFailureRate(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 4)).isEqualTo((float) 1/2);
+        assertThat(실패율.getFailureRate(new int[]{2, 1, 2, 6, 2, 4, 3, 3}, 5)).isEqualTo((float) 0/1);
+    }
+
+    @Test
+    @DisplayName("실패율 테스트")
+    void 실패율_테스트() {
+        실패율 failRate = new 실패율();
+
+        assertThat(failRate.solution(5, new int[]{2, 1, 2, 6, 2, 4, 3, 3})).isEqualTo(new int[]{3, 4, 2, 1, 5});
+        assertThat(failRate.solution(4, new int[]{4, 4, 4, 4, 4})).isEqualTo(new int[]{4, 1, 2, 3});
+    }
 }
