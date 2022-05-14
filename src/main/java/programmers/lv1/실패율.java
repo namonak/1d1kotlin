@@ -1,16 +1,15 @@
 package programmers.lv1;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 class 실패율 {
     ArrayList<FailureRate> failureRateList = new ArrayList<>();
 
     static class FailureRate {
         int stage;
-        float failRate;
+        double failRate;
 
-        FailureRate(int stage, float failRate) {
+        FailureRate(int stage, double failRate) {
             this.stage = stage;
             this.failRate = failRate;
         }
@@ -40,11 +39,15 @@ class 실패율 {
         return stagePlayers;
     }
 
-    static float getFailureRate(int[] stages, int stage) {
+    static double getFailureRate(int[] stages, int stage) {
         int stagePlayers = getStagePlayers(stages, stage);
         int remainingPlayers = getRemainingPlayers(stages, stage);
 
-        return (float) stagePlayers / (float) remainingPlayers;
+        if (remainingPlayers == 0){
+            return (double) 0;
+        }
+
+        return (double) stagePlayers / (double) remainingPlayers;
     }
 
     private void setFailure(int[] stages, int stage) {
@@ -56,7 +59,7 @@ class 실패율 {
     private int[] getFailureList() {
         int[] result = new int[failureRateList.size()];
 
-        Collections.sort(failureRateList, ((o1, o2) -> Float.compare(o2.failRate, o1.failRate)));
+        failureRateList.sort(((o1, o2) -> Double.compare(o2.failRate, o1.failRate)));
 
         for (int i=0; i<failureRateList.size(); i++) {
             result[i] = failureRateList.get(i).stage;
@@ -66,7 +69,7 @@ class 실패율 {
     }
 
     public int[] solution(int N, int[] stages) {
-        int[] answer = {};
+        int[] answer;
 
         setFailure(stages, N);
         answer = getFailureList();
