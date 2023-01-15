@@ -2,7 +2,7 @@ package ds.sorting
 
 class MergeSorting {
     // Time: O(n log n), stable
-    fun sort(array: IntArray) : IntArray {
+    fun sort(array: IntArray): IntArray {
         if (array.size <= 1) return array
 
         val mid = array.size / 2
@@ -12,7 +12,7 @@ class MergeSorting {
         return merge(left, right)
     }
 
-    private fun merge(left: IntArray, right: IntArray) : IntArray {
+    private fun merge(left: IntArray, right: IntArray): IntArray {
         val result = IntArray(left.size + right.size)
         var i = 0
         var j = 0

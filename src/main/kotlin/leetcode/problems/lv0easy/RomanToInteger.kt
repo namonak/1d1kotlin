@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
 class RomanToInteger {
-    fun romanToInt(s: String) : Int {
+    fun romanToInt(s: String): Int {
         var result = 0
         var i = 0
         while (i < s.length) {

@@ -64,7 +64,7 @@ class SinglyLinkedList() {
 
     // O(1)
     fun deleteAfter(prevNode: Node?) {
-        if (mHead == null || prevNode == null ||prevNode.next == null) return
+        if (mHead == null || prevNode == null || prevNode.next == null) return
 
         prevNode.next = prevNode.next?.next
     }

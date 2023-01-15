@@ -3,7 +3,7 @@ package ds.sorting
 class CountingSorting {
     // time complexity: O(n + k)
     // space complexity: O(k)
-    fun sort(array: IntArray) : IntArray {
+    fun sort(array: IntArray): IntArray {
         val n = array.size
         val count = IntArray(n)
         for (i in 0 until n) {

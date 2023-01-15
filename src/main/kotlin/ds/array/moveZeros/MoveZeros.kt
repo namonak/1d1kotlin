@@ -1,7 +1,7 @@
 package ds.array.moveZeros
 
 class MoveZeros {
-    fun MoveZeros(nums: IntArray) : IntArray {
+    fun MoveZeros(nums: IntArray): IntArray {
         var mIdx = 0
 
         for (i in nums.indices) {

@@ -2,7 +2,7 @@ package ds.sorting
 
 class BubbleSorting {
     // O(N^2), stable
-    fun sort(array: IntArray) : IntArray {
+    fun sort(array: IntArray): IntArray {
         for (i in array.indices) {
             for (j in 1 until array.size - i) {
                 if (array[j - 1] > array[j]) {

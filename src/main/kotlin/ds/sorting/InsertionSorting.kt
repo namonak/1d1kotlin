@@ -2,7 +2,7 @@ package ds.sorting
 
 class InsertionSorting {
     // O(N^2), stable
-    fun sort(array: IntArray) : IntArray {
+    fun sort(array: IntArray): IntArray {
         for (j in 1 until array.size) {
             var key = array[j]
             var i = j - 1
