@@ -1,7 +1,6 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.4.32"
+    kotlin("jvm") version "1.6.21"
+    id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
 }
 
 group = "me.jchoi"
@@ -12,18 +11,22 @@ repositories {
 }
 
 dependencies {
-    implementation("org.webjars.npm:lerp:1.0.3")
-    implementation("org.testng:testng:7.5")
-    implementation("org.junit.jupiter:junit-jupiter:5.8.2")
-    testImplementation(kotlin("test-junit"))
-    testImplementation("org.assertj:assertj-core:3.22.0")
-    testImplementation("org.mockito:mockito-core:4.5.1")
+    testImplementation("org.junit.jupiter", "junit-jupiter", "5.8.2")
+    testImplementation("org.assertj", "assertj-core", "3.22.0")
+    testImplementation("io.kotest", "kotest-runner-junit5", "5.2.3")
 }
 
-tasks.test {
-    useJUnit()
-}
-
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+tasks {
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+    test {
+        useJUnitPlatform()
+    }
+    ktlint {
+        verbose.set(true)
+    }
 }
