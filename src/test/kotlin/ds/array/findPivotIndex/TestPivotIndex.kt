@@ -1,7 +1,7 @@
 package ds.array.findPivotIndex
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestCase(val given: IntArray, val want: Int)
 
@@ -23,7 +23,7 @@ class TestPivotIndex {
 
             val got = pivotIndex.pivotIndex(it.given)
 
-            assertEquals(it.want, got)
+            assertThat(it.want).isEqualTo(got)
         }
     }
 }

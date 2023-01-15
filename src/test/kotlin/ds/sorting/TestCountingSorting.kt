@@ -1,7 +1,7 @@
 package ds.sorting
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class CountingSortingTestCase(val given: IntArray, val want: IntArray)
 
@@ -25,7 +25,7 @@ class TestCountingSorting {
             val result = countingSorting.sort(it.given)
 
             for (i in it.want.indices) {
-                assertEquals(it.want[i], result[i])
+                assertThat(it.want[i]).isEqualTo(result[i])
             }
         }
     }

@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
-import junit.framework.TestCase.assertEquals
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class LongestCommonPrefixTestCase(val given: Array<String>, val want: String)
 
@@ -16,7 +16,7 @@ class TestLongestCommonPrefix {
         val longestCommonPrefix = LongestCommonPrefix()
 
         for (testCase in mLongestCommonPrefixTestCase) {
-            assertEquals(testCase.want, longestCommonPrefix.longestCommonPrefix(testCase.given))
+            assertThat(longestCommonPrefix.longestCommonPrefix(testCase.given)).isEqualTo(testCase.want)
         }
     }
 }

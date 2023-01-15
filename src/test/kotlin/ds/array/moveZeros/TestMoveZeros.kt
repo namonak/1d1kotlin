@@ -1,7 +1,7 @@
 package ds.array.moveZeros
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestCase(val given: IntArray, val want: IntArray)
 
@@ -24,7 +24,7 @@ class TestMoveZeros {
         testCase.forEach {
             var result = moveZeros.MoveZeros(it.given)
             for (i in result.indices) {
-                assertEquals(it.want[i], result[i])
+                assertThat(it.want[i]).isEqualTo(result[i])
             }
         }
     }

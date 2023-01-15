@@ -3,7 +3,7 @@ package ds.sorting
 class RadixSorting {
     fun sort(array: IntArray) : IntArray {
         val n = array.size
-        val m = array.max()!!
+        val m = array.maxOrNull() ?: 0
         val exp = 1
         val radix = 10
         val bucket = Array(radix) { IntArray(n) }

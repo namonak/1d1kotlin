@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Assert.assertArrayEquals
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class PlusOneTestCase(val given: IntArray, val want: IntArray)
 
@@ -20,7 +20,7 @@ class TestPlusOne {
 
         for (testCase in mTestCase) {
             val got = plusOne.plusOne(testCase.given)
-            assertArrayEquals(testCase.want, got)
+            assertThat(got).isEqualTo(testCase.want)
         }
     }
 }

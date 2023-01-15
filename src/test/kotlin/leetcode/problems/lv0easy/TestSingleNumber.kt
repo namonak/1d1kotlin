@@ -1,6 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class SingleNumberTestCase(val given: IntArray, val want: Int)
 class TestSingleNumber {
@@ -25,7 +26,7 @@ class TestSingleNumber {
 
         for (testCase in mSingleNumberTestCase) {
             val got = singleNumber.singleNumber(testCase.given)
-            assert(got == testCase.want)
+            assertThat(got).isEqualTo(testCase.want)
         }
     }
 }

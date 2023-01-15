@@ -1,7 +1,7 @@
 package ds.list.singlyLinkedList
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestCase(val given: IntArray, val want: IntArray)
 
@@ -40,7 +40,7 @@ class TestSinglyLinkedList {
             var head = singlyLinkedList.mHead
 
             for (i in it.want.indices) {
-                assertEquals(it.want[i], head?.value)
+                assertThat(it.want[i]).isEqualTo(head?.value)
                 head = head?.next
             }
             singlyLinkedList.clear()
@@ -59,7 +59,7 @@ class TestSinglyLinkedList {
             var head = singlyLinkedList.mHead
 
             for (i in it.want.indices) {
-                assertEquals(it.want[i], head?.value)
+                assertThat(it.want[i]).isEqualTo(head?.value)
                 head = head?.next
             }
             singlyLinkedList.clear()
@@ -80,7 +80,7 @@ class TestSinglyLinkedList {
         var current = singlyLinkedList.mHead
         var i = 0
         while (current?.next != null) {
-            assertEquals(want[i], current.value)
+            assertThat(want[i]).isEqualTo(current.value)
             current = current.next
             i++
         }
@@ -98,7 +98,7 @@ class TestSinglyLinkedList {
         current = singlyLinkedList.mHead
         i = 0
         while (current?.next != null) {
-            assertEquals(want[i], current.value)
+            assertThat(want[i]).isEqualTo(current.value)
             current = current.next
             i++
         }

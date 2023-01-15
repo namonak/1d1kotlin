@@ -1,7 +1,7 @@
 package algorithm.permutation
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestCase(val given: IntArray, val want: Array<IntArray>)
 
@@ -28,7 +28,7 @@ class TestPermutation {
 
             for (i in got.indices) {
                 for (j in got[i].indices) {
-                    assertEquals(it.want[i][j], got[i][j])
+                    assertThat(it.want[i][j]).isEqualTo(got[i][j])
                 }
             }
         }

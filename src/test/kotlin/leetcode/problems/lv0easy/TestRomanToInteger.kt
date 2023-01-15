@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class RomanToIntegerTestCase(val given: String, val want: Int)
 
@@ -33,7 +33,7 @@ class TestRomanToInteger {
         mRomanToIntegerTestCase.forEach {
             val result = romanToInteger.romanToInt(it.given)
 
-            assertEquals(it.want, result)
+            assertThat(result).isEqualTo(it.want)
         }
     }
 }

@@ -1,6 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class PalindromeNumberTestCase(val given: Int, val wanted: Boolean)
 class TestPalindromeNumber {
@@ -17,7 +18,7 @@ class TestPalindromeNumber {
 
         for (testCase in mPalindromeNumberTestCase) {
             val got = palindromeNumber.isPalindrome(testCase.given)
-            assert(got == testCase.wanted)
+            assertThat(got).isEqualTo(testCase.wanted)
         }
     }
 }

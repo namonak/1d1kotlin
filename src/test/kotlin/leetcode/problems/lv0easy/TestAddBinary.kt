@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
-import junit.framework.TestCase.assertEquals
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class AddBinaryTestcase(val given1: String, val given2: String, val wanted: String)
 class TestAddBinary {
@@ -14,7 +14,8 @@ class TestAddBinary {
     fun testAddBinary() {
         for (testcase in mAddBinaryTestcase) {
             val addBinary = AddBinary()
-            assertEquals(addBinary.addBinary(testcase.given1, testcase.given2), testcase.wanted)
+
+            assertThat(addBinary.addBinary(testcase.given1, testcase.given2)).isEqualTo(testcase.wanted)
         }
     }
 }

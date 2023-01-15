@@ -1,7 +1,7 @@
 package ds.sorting
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class QuickSelectTestCase(val given: IntArray, val want: Int)
 
@@ -20,7 +20,7 @@ class TestQuickSelect {
         mQuickSelectTestCase.forEach {
             val result = quickSelect.select(it.given, 6)
 
-            assertEquals(it.want, result)
+            assertThat(it.want).isEqualTo(result)
         }
     }
 }

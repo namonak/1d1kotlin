@@ -1,6 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestData(val given1: IntArray, val given2: Int, val want: IntArray)
 
@@ -45,7 +46,7 @@ class TestTwoSum {
 
         for (testData in mTestData) {
             val got = twoSum.twoSum(testData.given1, testData.given2)
-            assert(got.contentEquals(testData.want))
+            assertThat(got).isEqualTo(testData.want)
         }
     }
 }

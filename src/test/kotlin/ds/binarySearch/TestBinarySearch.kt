@@ -1,7 +1,7 @@
 package ds.binarySearch
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 data class TestCase(val nums: IntArray, val target: Int, val want: Int)
 
@@ -29,7 +29,9 @@ class TestBinarySearch {
         val binarySearch = BinarySearch()
 
         testCase.forEach {
-            assertEquals(it.want, binarySearch.binarySearch(it.nums, it.target))
+            val actual = binarySearch.binarySearch(it.nums, it.target)
+
+            assertThat(actual).isEqualTo(it.want)
         }
     }
 }

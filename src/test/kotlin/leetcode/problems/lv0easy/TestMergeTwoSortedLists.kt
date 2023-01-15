@@ -1,7 +1,7 @@
 package leetcode.problems.lv0easy
 
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 class ListNode(var `val`: Int) {
     var next: ListNode? = null
@@ -64,7 +64,7 @@ class TestMergeTwoSortedLists {
         for (testCase in mTestData) {
             val got = mergeTwoLists.mergeTwoLists(testCase.given0, testCase.given1)
             for (i in 0 until nodeToIntArray(got).size) {
-                assertEquals(nodeToIntArray(got)[i], nodeToIntArray(testCase.want)[i])
+                assertThat(nodeToIntArray(got)[i]).isEqualTo(nodeToIntArray(testCase.want)[i])
             }
         }
     }
