@@ -1,7 +1,7 @@
 package ds.sorting
 
 class HeapSorting {
-    fun sort(array: IntArray): IntArray {
+    fun sort(array: Array<Int>): Array<Int> {
         val heap = Heap(array)
         for (i in array.size - 1 downTo 0) {
             array[i] = heap.extractMax()
@@ -9,7 +9,7 @@ class HeapSorting {
         return array
     }
 
-    class Heap(private val array: IntArray) {
+    class Heap(array: Array<Int>) {
         private val heap = array.copyOf()
         private val size = array.size
         private val maxIndex = size - 1
