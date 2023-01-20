@@ -3,26 +3,16 @@ package ds.sorting
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-data class MergeSortingTestCase(val given: IntArray, val want: IntArray)
-
 class TestMergeSorting {
-    private val mMergeSortingTestCase = arrayOf(
-        MergeSortingTestCase(
-            intArrayOf(9, 3, 5, 7, 1),
-            intArrayOf(1, 3, 5, 7, 9),
-        )
-    )
-
     @Test
     fun testSort() {
-        val mergeSorting = MergeSorting()
+        // given
+        val given = arrayOf(9, 3, 5, 7, 1)
 
-        mMergeSortingTestCase.forEach {
-            val result = mergeSorting.sort(it.given)
+        // when
+        val actual = MergeSorting().sort(given)
 
-            for (i in it.want.indices) {
-                assertThat(it.want[i]).isEqualTo(result[i])
-            }
-        }
+        // then
+        assertThat(actual).isEqualTo(arrayOf(1, 3, 5, 7, 9))
     }
 }
