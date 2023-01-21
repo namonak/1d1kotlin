@@ -3,26 +3,16 @@ package ds.sorting
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-data class QuickSortingTestCase(val given: IntArray, val want: IntArray)
-
 class TestQuickSorting {
-    private val mQuickSortingTestCase = arrayOf(
-        QuickSortingTestCase(
-            intArrayOf(7, 3, 4, 2, 5, 1),
-            intArrayOf(1, 2, 3, 4, 5, 7)
-        )
-    )
-
     @Test
     fun testSort() {
-        val quickSorting = QuickSorting()
+        // given
+        val given = arrayOf(7, 3, 4, 2, 5, 1)
 
-        mQuickSortingTestCase.forEach {
-            val result = quickSorting.sort(it.given)
+        // when
+        val actual = QuickSorting().sort(given)
 
-            for (i in it.want.indices) {
-                assertThat(it.want[i]).isEqualTo(result[i])
-            }
-        }
+        // then
+        assertThat(actual).isEqualTo(arrayOf(1, 2, 3, 4, 5, 7))
     }
 }

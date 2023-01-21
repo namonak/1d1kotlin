@@ -6,13 +6,13 @@ class QuickSorting {
     // - Worst : O(N^2),
     // - Average : O(n log n)
     // Stability : unstable
-    fun sort(array: IntArray) : IntArray {
+    fun sort(array: Array<Int>) : Array<Int> {
         quicksort(array, 0, array.size - 1)
 
         return array
     }
 
-    private fun quicksort(array: IntArray, left: Int, right: Int) {
+    private fun quicksort(array: Array<Int>, left: Int, right: Int) {
         val index = partition (array, left, right)
         if(left < index-1) { // 2) Sorting left half
             quicksort(array, left, index-1)
@@ -22,7 +22,7 @@ class QuickSorting {
         }
     }
 
-    private fun partition(array: IntArray, l: Int, r: Int): Int {
+    private fun partition(array: Array<Int>, l: Int, r: Int): Int {
         var left = l
         var right = r
         val pivot = array[(left + right)/2] // 4) Pivot Point
@@ -41,7 +41,7 @@ class QuickSorting {
         return left
     }
 
-    private fun swapArray(a: IntArray, b: Int, c: Int) {
+    private fun swapArray(a: Array<Int>, b: Int, c: Int) {
         val temp = a[b]
         a[b] = a[c]
         a[c] = temp
