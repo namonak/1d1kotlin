@@ -1,7 +1,7 @@
 package ds.sorting
 
 class RadixSorting {
-    fun sort(array: IntArray): IntArray {
+    fun sort(array: Array<Int>): Array<Int> {
         val n = array.size
         val m = array.maxOrNull() ?: 0
         val exp = 1
