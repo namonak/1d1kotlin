@@ -1,24 +1,22 @@
 package leetcode.problems.lv0easy
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 
-data class PalindromeNumberTestCase(val given: Int, val wanted: Boolean)
 class TestPalindromeNumber {
-    private val mPalindromeNumberTestCase = arrayOf(
-        PalindromeNumberTestCase(121, true),
-        PalindromeNumberTestCase(1221, true),
-        PalindromeNumberTestCase(123, false),
-        PalindromeNumberTestCase(1234, false)
+    @ParameterizedTest
+    @CsvSource(
+        "121, true",
+        "1221, true",
+        "123, false",
+        "1234, false"
     )
+    fun testPalindromeNumber(given: Int, want: Boolean) {
+        // when
+        val actual = PalindromeNumber().isPalindrome(given)
 
-    @Test
-    fun testPalindromeNumber() {
-        val palindromeNumber = PalindromeNumber()
-
-        for (testCase in mPalindromeNumberTestCase) {
-            val got = palindromeNumber.isPalindrome(testCase.given)
-            assertThat(got).isEqualTo(testCase.wanted)
-        }
+        // then
+        assertThat(actual).isEqualTo(want)
     }
 }
