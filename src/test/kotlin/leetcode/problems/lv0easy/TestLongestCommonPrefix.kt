@@ -1,22 +1,21 @@
 package leetcode.problems.lv0easy
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-
-data class LongestCommonPrefixTestCase(val given: Array<String>, val want: String)
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 
 class TestLongestCommonPrefix {
-    private val mLongestCommonPrefixTestCase = arrayOf(
-        LongestCommonPrefixTestCase(arrayOf("flower", "flow", "flight"), "fl"),
-        LongestCommonPrefixTestCase(arrayOf("dog", "racecar", "car"), ""),
-    )
+    @ParameterizedTest
+    @CsvSource(value = ["flower,flow,flight:fl", "dog,racecar,car:''"], delimiter = ':')
 
-    @Test
-    fun testLongestCommonPrefix() {
-        val longestCommonPrefix = LongestCommonPrefix()
+    fun testLongestCommonPrefix(given: String, want: String) {
+        // given
+        val str = given.split(",").toTypedArray()
 
-        for (testCase in mLongestCommonPrefixTestCase) {
-            assertThat(longestCommonPrefix.longestCommonPrefix(testCase.given)).isEqualTo(testCase.want)
-        }
+        // when
+        val actual = LongestCommonPrefix().longestCommonPrefix(str)
+
+        // then
+        assertThat(actual).isEqualTo(want)
     }
 }
