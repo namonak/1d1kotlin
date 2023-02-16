@@ -1,19 +1,20 @@
 package boj.problems.step2
 
-import java.io.*
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.IOException
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 
 object No14681 {
-    @Throws(IOException::class)
     @JvmStatic
+    @Throws(IOException::class)
     fun main(args: Array<String>) {
         val input = BufferedReader(InputStreamReader(System.`in`))
         val output = BufferedWriter(OutputStreamWriter(System.out))
-        output.write(
-            """
-                ${solve(input)}
-                
-                """.trimIndent()
-        )
+
+        output.write(solve(input))
+
         input.close()
         output.flush()
         output.close()
@@ -27,14 +28,11 @@ object No14681 {
     }
 
     private fun getQuadrant(x: Int, y: Int): Int {
-        if (x > 0 && y > 0) {
-            return 1
+        return when {
+            x > 0 && y > 0 -> 1
+            x < 0 && y > 0 -> 2
+            x < 0 && y < 0 -> 3
+            else -> 4
         }
-        if (x < 0 && y > 0) {
-            return 2
-        }
-        return if (x < 0 && y < 0) {
-            3
-        } else 4
     }
 }
