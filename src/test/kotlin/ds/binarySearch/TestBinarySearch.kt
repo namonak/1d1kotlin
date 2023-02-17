@@ -21,8 +21,8 @@ class TestBinarySearch {
             ),
             TestCase(
                 intArrayOf(1, 3, 5, 7, 9, 10, 13, 15, 17),
-            13,
-            6
+                13,
+                6
             )
         )
 
