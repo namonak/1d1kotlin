@@ -13,7 +13,7 @@ object No14681 {
         val input = BufferedReader(InputStreamReader(System.`in`))
         val output = BufferedWriter(OutputStreamWriter(System.out))
 
-        output.write(solve(input))
+        output.write("${solve(input)}\n")
 
         input.close()
         output.flush()
@@ -24,6 +24,7 @@ object No14681 {
     fun solve(input: BufferedReader): Int {
         val x = input.readLine().toInt()
         val y = input.readLine().toInt()
+
         return getQuadrant(x, y)
     }
 
