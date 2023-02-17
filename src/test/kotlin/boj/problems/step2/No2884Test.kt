@@ -1,32 +1,35 @@
 package boj.problems.step2
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.StringReader
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-class No2884Test {
-    @DisplayName("알람 시계 테스트")
-    @ParameterizedTest
-    @CsvSource(value = ["10 10:9 25", "0 30:23 45", "23 40:22 55"], delimiter = ':')
-    @Throws(
-        IOException::class
-    )
-    fun test(given: String?, expected: String?) {
-        println("알람 시계 : https://www.acmicpc.net/problem/2884")
+class No2884Test : StringSpec() {
+    init {
+        "알람 시계 테스트" {
+            // Define the test cases as a Table
+            val testCases = listOf(
+                TestCaseData("10 10", "9 25"),
+                TestCaseData("0 30", "23 45"),
+                TestCaseData("23 40", "22 55")
+            )
 
-        // given
-        val br_given = BufferedReader(StringReader(given))
+            // Run each test case
+            testCases.forEach {
+                val input = it.input
+                val expected = it.expected
 
-        // when
-        val actual = No2884.solve(br_given)
+                // Create a new instance of the class under test for each test case
+                val no2884 = No2884(InputProcessor(), OutputProcessor())
 
-        // then
-        assertEquals(expected, actual)
+                // Run the test
+                val actual = no2884.solve(input)
 
-        br_given.close()
+                // Verify the result
+                actual shouldBe expected
+            }
+        }
     }
+
+    // Define a data class to represent each test case
+    data class TestCaseData(val input: String, val expected: String)
 }
