@@ -1,19 +1,20 @@
 package boj.problems.step2
 
-import java.io.*
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.IOException
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 
 object No9498 {
-    @Throws(IOException::class)
     @JvmStatic
+    @Throws(IOException::class)
     fun main(args: Array<String>) {
         val input = BufferedReader(InputStreamReader(System.`in`))
         val output = BufferedWriter(OutputStreamWriter(System.out))
-        output.write(
-            """
-                ${solve(input)}
-                
-                """.trimIndent()
-        )
+
+        output.write("${solve(input)}\n")
+
         input.close()
         output.flush()
         output.close()
@@ -21,17 +22,12 @@ object No9498 {
 
     @Throws(IOException::class)
     fun solve(input: BufferedReader): String {
-        val score = input.readLine().toInt()
-        return if (score >= 90) {
-            "A"
-        } else if (score >= 80) {
-            "B"
-        } else if (score >= 70) {
-            "C"
-        } else if (score >= 60) {
-            "D"
-        } else {
-            "F"
+        return when (input.readLine().toInt()) {
+            in 90..100 -> "A"
+            in 80..89 -> "B"
+            in 70..79 -> "C"
+            in 60..69 -> "D"
+            else -> "F"
         }
     }
 }

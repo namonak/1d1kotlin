@@ -1,6 +1,6 @@
 package boj.problems.step2
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -15,13 +15,19 @@ class No9498Test {
         value = ["100:A", "90:A", "89:B", "80:B", "79:C", "70:C", "69:D", "60:D", "59:F", "0:F"],
         delimiter = ':'
     )
-    @Throws(
-        IOException::class
-    )
-    fun test(given: String?, expected: String?) {
+    @Throws(IOException::class)
+    fun test(input: String, expected: String) {
         println("시험 성적 : https://www.acmicpc.net/problem/9498")
-        val br_given = BufferedReader(StringReader(given))
-        assertEquals(expected, No9498.solve(br_given))
-        br_given.close()
+
+        // given
+        val given = BufferedReader(StringReader(input))
+
+        // when
+        val actual = No9498.solve(given)
+
+        // then
+        assertThat(actual).isEqualTo(expected)
+
+        given.close()
     }
 }

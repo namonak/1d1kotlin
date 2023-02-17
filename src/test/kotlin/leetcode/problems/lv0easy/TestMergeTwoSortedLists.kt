@@ -22,7 +22,7 @@ fun buildListNode(arr: ArrayList<Int>): ListNode? {
 fun nodeToIntArray(node: ListNode?): MutableList<Int> {
     val res = mutableListOf<Int>()
     var cur = node
-    while(cur != null) {
+    while (cur != null) {
         res.add(cur.`val`)
         cur = cur.next
     }
