@@ -1,6 +1,6 @@
 package boj.problems.step6
 
-import org.junit.jupiter.api.Assertions
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -15,13 +15,19 @@ internal class No11720Test {
         value = ["'1\n1\n':1", "'5\n54321\n':15", "'25\n7000000000000000000000000\n':7", "'11\n10987654321\n':46"],
         delimiter = ':'
     )
-    @Throws(
-        IOException::class
-    )
-    fun test(given: String?, expected: String?) {
+    @Throws(IOException::class)
+    fun test(input: String, expected: String) {
         println("숫자의 합 : https://www.acmicpc.net/problem/11720")
-        val br_given = BufferedReader(StringReader(given))
-        Assertions.assertEquals(expected, java.lang.String.valueOf(No11720.solve(br_given)))
-        br_given.close()
+
+        // given
+        val given = BufferedReader(StringReader(input))
+
+        // when
+        val actual = No11720.solve(given).toString()
+
+        // then
+        assertThat(actual).isEqualTo(expected)
+
+        given.close()
     }
 }
