@@ -23,29 +23,30 @@ object No10828 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val result = StringBuilder()
-        val stack = Stack(n)
+        val stack = Stack()
         for (i in 0 until n) {
-            val st = StringTokenizer(input.readLine(), " ")
-            when (st.nextToken()) {
-                "push" -> stack.push(st.nextToken().toInt())
-                "pop" -> result.append(stack.pop()).append("\n")
-                "size" -> result.append(stack.size()).append("\n")
-                "empty" -> result.append(stack.empty()).append("\n")
-                "top" -> result.append(stack.top()).append("\n")
-            }
+            executeOperation(input.readLine(), stack, result)
         }
         return result.toString()
     }
 
-    internal class Stack(stackSize: Int) {
-        var size = 0
-        private var arr: IntArray
-
-        init {
-            arr = IntArray(stackSize)
+    private fun executeOperation(operation: String, stack: Stack, result: StringBuilder) {
+        val st = StringTokenizer(operation, " ")
+        when (st.nextToken()) {
+            "push" -> stack.push(st.nextToken().toInt())
+            "pop" -> result.append(stack.pop()).append("\n")
+            "size" -> result.append(stack.size()).append("\n")
+            "empty" -> result.append(stack.empty()).append("\n")
+            "top" -> result.append(stack.top()).append("\n")
         }
+    }
+
+    internal class Stack {
+        private var arr = intArrayOf()
+        private var size = 0
 
         fun push(data: Int) {
+            arr = arr.copyOf(size + 1)
             arr[size] = data
             size++
         }
