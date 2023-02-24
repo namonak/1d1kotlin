@@ -1,24 +1,38 @@
 package boj.problems.step6
 
-import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.StringReader
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-internal class No11654Test {
-    @DisplayName("아스키 코드 테스트")
-    @ParameterizedTest
-    @CsvSource(value = ["A:65", "C:67", "0:48", "9:57", "a:97", "z:122"], delimiter = ':')
-    @Throws(
-        IOException::class
-    )
-    fun test(given: String?, expected: String?) {
-        println("아스키 코드 : https://www.acmicpc.net/problem/11654")
-        val br_given = BufferedReader(StringReader(given))
-        Assertions.assertThat(java.lang.String.valueOf(No11654.solve(br_given))).isEqualTo(expected)
-        br_given.close()
+class No11654Test : StringSpec() {
+    init {
+        "아스키 코드 테스트" {
+            // Define the test cases as a Table
+            val testCases = listOf(
+                TestCaseData("A", "65"),
+                TestCaseData("C", "67"),
+                TestCaseData("0", "48"),
+                TestCaseData("9", "57"),
+                TestCaseData("a", "97"),
+                TestCaseData("z", "122")
+            )
+
+            // Run each test case
+            testCases.forEach {
+                val given = it.given
+                val expected = it.expected
+
+                // Create a new instance of the class under test for each test case
+                val no11654 = No11654(InputProcessor(), OutputProcessor())
+
+                // Run the test
+                val actual = no11654.solve(given)
+
+                // Verify the result
+                actual shouldBe expected
+            }
+        }
     }
+
+    // Define a data class to represent each test case
+    data class TestCaseData(val given: String, val expected: String)
 }

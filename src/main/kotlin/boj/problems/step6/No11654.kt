@@ -6,22 +6,42 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-object No11654 {
-    @JvmStatic
+class No11654(private val inputProcessor: InputProcessor, private val outputProcessor: OutputProcessor) {
     @Throws(IOException::class)
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-
-        output.write(solve(input).toString())
-
-        input.close()
-        output.flush()
-        output.close()
+    fun solve(input: String): String {
+        val inputChar = inputProcessor.process(input)
+        val outputInt = inputChar.toInt()
+        return outputProcessor.process(outputInt)
     }
+}
 
-    @Throws(IOException::class)
-    fun solve(input: BufferedReader): Int {
-        return input.readLine()[0].code
+@JvmInline
+value class Character(private val code: Int) {
+    fun toInt(): Int {
+        return code
     }
+}
+
+class InputProcessor {
+    fun process(input: String): Character {
+        return Character(input[0].code)
+    }
+}
+
+class OutputProcessor {
+    fun process(output: Int): String {
+        return output.toString()
+    }
+}
+
+fun main() {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+    val problem = No11654(InputProcessor(), OutputProcessor())
+
+    output.write("${problem.solve(input.readLine())}\n")
+
+    input.close()
+    output.flush()
+    output.close()
 }
