@@ -16,18 +16,18 @@ class No2525Test {
     @Throws(
         IOException::class
     )
-    fun test(given: String?, expected: String?) {
+    fun test(input: String, expected: String?) {
         println("오븐 시계 : https://www.acmicpc.net/problem/2525")
 
         // given
-        val br_given = BufferedReader(StringReader(given))
+        val given = BufferedReader(StringReader(input))
 
         // when
-        val actual = solve(br_given)
+        val actual = solve(given)
 
         // then
         assertEquals(expected, actual)
 
-        br_given.close()
+        given.close()
     }
 }
