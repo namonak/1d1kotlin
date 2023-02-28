@@ -1,7 +1,7 @@
 package boj.problems.step2
 
 import boj.problems.step2.No2525.solve
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -26,7 +26,7 @@ class No2525Test {
         val actual = solve(given)
 
         // then
-        assertEquals(expected, actual)
+        assertThat(actual).isEqualTo(expected)
 
         given.close()
     }
