@@ -1,33 +1,35 @@
 package boj.problems.step6
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 import java.io.BufferedReader
-import java.io.IOException
 import java.io.StringReader
 
-internal class No11720Test {
-    @DisplayName("숫자의 합 테스트")
-    @ParameterizedTest
-    @CsvSource(
-        value = ["'1\n1\n':1", "'5\n54321\n':15", "'25\n7000000000000000000000000\n':7", "'11\n10987654321\n':46"],
-        delimiter = ':'
-    )
-    @Throws(IOException::class)
-    fun test(input: String, expected: String) {
-        println("숫자의 합 : https://www.acmicpc.net/problem/11720")
+class No11720Test : StringSpec() {
+    init {
+        "숫자의 합" {
+            // Define the test cases as a Table
+            val testCases = listOf(
+                TestCaseData("1\n1\n", "1"),
+                TestCaseData("5\n54321\n", "15"),
+                TestCaseData("25\n7000000000000000000000000\n", "7"),
+                TestCaseData("11\n10987654321\n", "46")
+            )
 
-        // given
-        val given = BufferedReader(StringReader(input))
+            // Run each test case
+            testCases.forEach {
+                val input = it.input
+                val expected = it.expected
 
-        // when
-        val actual = No11720.solve(given).toString()
+                // Run the test
+                val actual = No11720.solve(BufferedReader(StringReader(input))).toString()
 
-        // then
-        assertThat(actual).isEqualTo(expected)
-
-        given.close()
+                // Verify the result
+                actual shouldBe expected
+            }
+        }
     }
+
+    // Define a data class to represent each test case
+    data class TestCaseData(val input: String, val expected: String)
 }
