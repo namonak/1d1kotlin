@@ -6,23 +6,25 @@ import io.kotest.matchers.shouldBe
 import java.io.BufferedReader
 import java.io.StringReader
 
-internal class No1152Test : StringSpec({
+class No1152Test : StringSpec({
     "단어의 개수 테스트" {
-        val (input, expected) = row(
-            "The Curious Case of Benjamin Button", "6",
-            "The first character is a blank", "6",
-            "The last character is a blank", "6",
-            "Mazatneunde Wae Teullyeoyo", "3",
-            "Teullinika Teullyeotzi", "2"
+        val testCases = listOf(
+            row("The Curious Case of Benjamin Button", 6),
+            row("The first character is a blank", 6),
+            row("The last character is a blank", 6),
+            row("Mazatneunde Wae Teullyeoyo", 3),
+            row("Teullinika Teullyeotzi", 2)
         )
 
-        // given
-        val given = BufferedReader(StringReader(input))
+        testCases.forEach { (input, expected) ->
+            // given
+            val given = BufferedReader(StringReader(input))
 
-        // when
-        val actual: String = No1152.solve(given).toString()
+            // when
+            val actual = No1152.solve(given)
 
-        // then
-        actual shouldBe expected
+            // then
+            actual shouldBe expected
+        }
     }
 })
