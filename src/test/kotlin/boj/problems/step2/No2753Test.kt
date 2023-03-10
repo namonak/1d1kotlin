@@ -1,32 +1,28 @@
 package boj.problems.step2
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 import java.io.BufferedReader
-import java.io.IOException
 import java.io.StringReader
 
-class No2753Test {
-    @DisplayName("윤년 테스트")
-    @ParameterizedTest
-    @CsvSource(value = ["2000:1", "1999:0", "1900:0"], delimiter = ':')
-    @Throws(
-        IOException::class
-    )
-    fun test(input: String, expected: String) {
-        println("윤년 : https://www.acmicpc.net/problem/2753")
+class No2753Test : StringSpec({
+    "윤년 테스트" {
+        val testCases = listOf(
+            row("2000", 1),
+            row("1999", 0),
+            row("1900", 0)
+        )
 
-        // given
-        val given = BufferedReader(StringReader(input))
+        testCases.forEach { (input, expected) ->
+            // given
+            val given = BufferedReader(StringReader(input))
 
-        // when
-        val actual = No2753.solve(given).toString()
+            // when
+            val actual = No2753.solve(given)
 
-        // then
-        assertThat(actual).isEqualTo(expected)
-
-        given.close()
+            // then
+            actual shouldBe expected
+        }
     }
-}
+})
