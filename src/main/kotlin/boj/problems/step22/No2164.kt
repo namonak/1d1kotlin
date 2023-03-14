@@ -2,17 +2,18 @@ package boj.problems.step22
 
 object No2164 {
     fun solve(input: Int): Int {
-        val queue = mutableListOf<Int>()
+        val queue = ArrayDeque<Int>()
+
         for (i in 1..input) {
             queue.add(i)
         }
 
         while (queue.size > 1) {
-            queue.removeAt(0)
-            queue.add(queue.removeAt(0))
+            queue.removeFirst()
+            queue.add(queue.removeFirst())
         }
 
-        return queue[0]
+        return queue.first()
     }
 }
 
