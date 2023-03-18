@@ -1,30 +1,31 @@
 package boj.problems.step2
 
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 import java.io.BufferedReader
-import java.io.IOException
 import java.io.StringReader
 
-class No1330Test {
-    @DisplayName("두 수 비교하기 테스트")
-    @ParameterizedTest
-    @CsvSource(value = ["1 2:<", "10 2:>", "5 5:=="], delimiter = ':')
-    @Throws(IOException::class)
-    fun test(input: String, expected: String?) {
+class No1330Test : StringSpec({
+    "두 수 비교하기 테스트" {
         println("두 수 비교하기 : https://www.acmicpc.net/problem/1330")
 
-        // given
-        val given = BufferedReader(StringReader(input))
+        // Define the test cases as a Table
+        val testCases = listOf(
+            row("1 2", "<"),
+            row("10 2", ">"),
+            row("5 5", "=="),
+        )
 
-        // when
-        val actual = No1330.solve(given)
+        // Run each test case
+        testCases.forEach { (given, expected) ->
+            // Run the test
+            val input = BufferedReader(StringReader(given))
 
-        // then
-        assertEquals(expected, actual)
+            val actual = No1330.solve(input)
 
-        given.close()
+            // verify the result
+            actual shouldBe expected
+        }
     }
-}
+})
