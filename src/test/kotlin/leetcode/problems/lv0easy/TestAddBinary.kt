@@ -1,21 +1,20 @@
 package leetcode.problems.lv0easy
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 
-data class AddBinaryTestcase(val given1: String, val given2: String, val wanted: String)
-class TestAddBinary {
-    private val mAddBinaryTestcase = arrayOf(
-        AddBinaryTestcase("11", "1", "100"),
-        AddBinaryTestcase("1010", "1011", "10101"),
-    )
+class TestAddBinary : StringSpec({
+    "testAddBinary" {
+        val testCases = arrayOf(
+            row("11", "1", "100"),
+            row("1010", "1011", "10101"),
+        )
 
-    @Test
-    fun testAddBinary() {
-        for (testcase in mAddBinaryTestcase) {
-            val addBinary = AddBinary()
+        testCases.forEach { (given1, given2, expected) ->
+            val actual = AddBinary().addBinary(given1, given2)
 
-            assertThat(addBinary.addBinary(testcase.given1, testcase.given2)).isEqualTo(testcase.wanted)
+            actual shouldBe expected
         }
     }
-}
+})
