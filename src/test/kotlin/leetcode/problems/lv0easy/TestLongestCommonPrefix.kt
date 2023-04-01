@@ -1,21 +1,20 @@
 package leetcode.problems.lv0easy
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.CsvSource
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 
-class TestLongestCommonPrefix {
-    @ParameterizedTest
-    @CsvSource(value = ["flower,flow,flight:fl", "dog,racecar,car:''"], delimiter = ':')
+class TestLongestCommonPrefix : StringSpec({
+    "testLongestCommonPrefix" {
+        val testCases = arrayOf(
+            row(arrayOf("flower", "flow", "flight"), "fl"),
+            row(arrayOf("dog", "racecar", "car"), ""),
+        )
 
-    fun testLongestCommonPrefix(given: String, want: String) {
-        // given
-        val str = given.split(",").toTypedArray()
+        testCases.forEach { (given, expected) ->
+            val actual = LongestCommonPrefix().longestCommonPrefix(given)
 
-        // when
-        val actual = LongestCommonPrefix().longestCommonPrefix(str)
-
-        // then
-        assertThat(actual).isEqualTo(want)
+            actual shouldBe expected
+        }
     }
-}
+})
