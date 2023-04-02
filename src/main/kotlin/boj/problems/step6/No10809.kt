@@ -26,7 +26,6 @@ object No10809 {
             alphabet[index] = i
         }
     }
-
 }
 
 fun main() {
