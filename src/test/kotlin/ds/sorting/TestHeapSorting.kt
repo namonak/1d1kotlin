@@ -1,18 +1,18 @@
 package ds.sorting
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-class TestHeapSorting {
-    @Test
-    fun testSort() {
+class TestHeapSorting : StringSpec({
+    "testHeapSorting" {
         // given
         val given = arrayOf(3, 5, 7, 9, 4, 2)
+        val expected = arrayOf(2, 3, 4, 5, 7, 9)
 
         // when
         val actual = HeapSorting().sort(given)
 
         // then
-        assertThat(actual).isEqualTo(arrayOf(2, 3, 4, 5, 7, 9))
+        actual shouldBe expected
     }
-}
+})
