@@ -1,26 +1,23 @@
 package leetcode.problems.lv0easy
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 
-data class PlusOneTestCase(val given: IntArray, val want: IntArray)
+class TestPlusOne : StringSpec({
+    "testPlusOne" {
+        val testCases = arrayOf(
+            row(intArrayOf(1, 2, 3), intArrayOf(1, 2, 4)),
+            row(intArrayOf(4, 3, 2, 1), intArrayOf(4, 3, 2, 2)),
+            row(intArrayOf(9), intArrayOf(1, 0)),
+            row(intArrayOf(9, 9), intArrayOf(1, 0, 0)),
+            row(intArrayOf(9, 9, 9), intArrayOf(1, 0, 0, 0))
+        )
 
-class TestPlusOne {
-    private val mTestCase = arrayOf(
-        PlusOneTestCase(intArrayOf(1, 2, 3), intArrayOf(1, 2, 4)),
-        PlusOneTestCase(intArrayOf(4, 3, 2, 1), intArrayOf(4, 3, 2, 2)),
-        PlusOneTestCase(intArrayOf(9), intArrayOf(1, 0)),
-        PlusOneTestCase(intArrayOf(9, 9), intArrayOf(1, 0, 0)),
-        PlusOneTestCase(intArrayOf(9, 9, 9), intArrayOf(1, 0, 0, 0))
-    )
+        testCases.forEach { (given, expected) ->
+            val actual = PlusOne().plusOne(given)
 
-    @Test
-    fun testPlusOne() {
-        val plusOne = PlusOne()
-
-        for (testCase in mTestCase) {
-            val got = plusOne.plusOne(testCase.given)
-            assertThat(got).isEqualTo(testCase.want)
+            actual shouldBe expected
         }
     }
-}
+})
