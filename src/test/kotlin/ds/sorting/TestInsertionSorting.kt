@@ -1,28 +1,15 @@
 package ds.sorting
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 
-data class InsertionSortingTestCase(val given: IntArray, val want: IntArray)
+class TestInsertionSorting : StringSpec({
+    "testInsertionSorting" {
+        val given = intArrayOf(9, 3, 5, 7, 1)
+        val expected = intArrayOf(1, 3, 5, 7, 9)
 
-class TestInsertionSorting {
-    private val mTestInsertionSorting = arrayOf(
-        InsertionSortingTestCase(
-            intArrayOf(9, 3, 5, 7, 1),
-            intArrayOf(1, 3, 5, 7, 9),
-        )
-    )
+        val actual = InsertionSorting().sort(given)
 
-    @Test
-    fun testSort() {
-        val insertionSorting = InsertionSorting()
-
-        mTestInsertionSorting.forEach {
-            val result = insertionSorting.sort(it.given)
-
-            for (i in it.want.indices) {
-                assertThat(it.want[i]).isEqualTo(result[i])
-            }
-        }
+        actual shouldBe expected
     }
-}
+})
