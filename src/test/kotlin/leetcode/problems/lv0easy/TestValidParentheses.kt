@@ -1,23 +1,31 @@
 package leetcode.problems.lv0easy
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.data.row
+import io.kotest.matchers.shouldBe
 
-class TestValidParentheses {
-    @Test
-    fun isValid() {
+class TestValidParentheses : StringSpec({
+    "testValidParentheses" {
+        val testCases = arrayOf(
+            row("()", true),
+            row("()[]{}", true),
+            row("[]", true),
+            row("{}", true),
+            row("{()}", true),
+            row("{([])}", true),
+            row("(]", false),
+            row("{{", false),
+            row("{)", false),
+            row(")", false),
+            row(")(", false)
+        )
+
         val validParentheses = ValidParentheses()
 
-        assertThat(validParentheses.isValid("()")).isTrue
-        assertThat(validParentheses.isValid("()[]{}")).isTrue
-        assertThat(validParentheses.isValid("[]")).isTrue
-        assertThat(validParentheses.isValid("{}")).isTrue
-        assertThat(validParentheses.isValid("{()}")).isTrue
-        assertThat(validParentheses.isValid("{([])}")).isTrue
-        assertThat(validParentheses.isValid("(]")).isFalse
-        assertThat(validParentheses.isValid("{{")).isFalse
-        assertThat(validParentheses.isValid("{)")).isFalse
-        assertThat(validParentheses.isValid(")")).isFalse
-        assertThat(validParentheses.isValid(")(")).isFalse
+        testCases.forEach { (given, want) ->
+            val actual = validParentheses.isValid(given)
+
+            actual shouldBe want
+        }
     }
-}
+})
