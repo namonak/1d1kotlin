@@ -31,3 +31,14 @@ object No11720 {
         return result
     }
 }
+
+fun main() {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+
+    output.write(No11720.solve(input).toString())
+
+    input.close()
+    output.flush()
+    output.close()
+}

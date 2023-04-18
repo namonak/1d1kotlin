@@ -8,19 +8,6 @@ import java.io.OutputStreamWriter
 import java.util.StringTokenizer
 
 object No2908 {
-    @JvmStatic
-    @Throws(IOException::class)
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-
-        output.write(solve(input).toString())
-
-        input.close()
-        output.flush()
-        output.close()
-    }
-
     @Throws(IOException::class)
     fun solve(input: BufferedReader): Int {
         val st = StringTokenizer(input.readLine())
@@ -33,4 +20,15 @@ object No2908 {
         val sb = StringBuilder(str)
         return sb.reverse().toString().toInt()
     }
+}
+
+fun main() {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+
+    output.write(No2908.solve(input).toString())
+
+    input.close()
+    output.flush()
+    output.close()
 }
