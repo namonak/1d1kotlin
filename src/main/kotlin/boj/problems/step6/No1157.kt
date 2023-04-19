@@ -9,19 +9,6 @@ import java.io.OutputStreamWriter
 object No1157 {
     private const val NUMBER_OF_LETTERS = 26
 
-    @JvmStatic
-    @Throws(IOException::class)
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-
-        output.write(solve(input).toString())
-
-        input.close()
-        output.flush()
-        output.close()
-    }
-
     @Throws(IOException::class)
     fun solve(input: BufferedReader): Char {
         val str = input.readLine()
@@ -53,4 +40,15 @@ object No1157 {
             alphabet[str[i].code - 'A'.code]++
         }
     }
+}
+
+fun main(args: Array<String>) {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+
+    output.write(No1157.solve(input).toString())
+
+    input.close()
+    output.flush()
+    output.close()
 }
