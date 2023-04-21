@@ -7,19 +7,6 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
 object No9498 {
-    @JvmStatic
-    @Throws(IOException::class)
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-
-        output.write("${solve(input)}\n")
-
-        input.close()
-        output.flush()
-        output.close()
-    }
-
     @Throws(IOException::class)
     fun solve(input: BufferedReader): String {
         return when (input.readLine().toInt()) {
@@ -30,4 +17,15 @@ object No9498 {
             else -> "F"
         }
     }
+}
+
+fun main(args: Array<String>) {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+
+    output.write("${No9498.solve(input)}\n")
+
+    input.close()
+    output.flush()
+    output.close()
 }
