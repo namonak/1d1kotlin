@@ -20,7 +20,7 @@ object No1110 {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val input = BufferedReader(java.io.InputStreamReader(System.`in`))
     val output = BufferedWriter(OutputStreamWriter(System.out))
 
