@@ -1,9 +1,9 @@
 package boj.problems.step14
 
-import java.util.StringTokenizer
+import java.io.BufferedReader
 
 class No7785(private val inputProcessor: InputProcessor, private val outputProcessor: OutputProcessor) {
-    fun solve(input: String): String {
+    fun solve(input: BufferedReader): String {
         val logs = inputProcessor.process(input)
         val output = makeResult(logs)
         return outputProcessor.process(output)
@@ -27,13 +27,12 @@ class No7785(private val inputProcessor: InputProcessor, private val outputProce
 }
 
 class InputProcessor {
-    fun process(input: String): List<Log> {
-        val st = StringTokenizer(input)
-        val n = st.nextToken().toInt()
+    fun process(input: BufferedReader): List<Log> {
+        val number = input.readLine().toInt()
         val logs = mutableListOf<Log>()
-        repeat(n) {
-            val name = st.nextToken()
-            val action = st.nextToken()
+        repeat(number) {
+            val line = input.readLine()
+            val (name, action) = line.split(" ")
             logs.add(Log(name, action))
         }
         return logs
@@ -53,7 +52,9 @@ fun main() {
     val output = System.out.bufferedWriter()
     val problem = No7785(InputProcessor(), OutputProcessor())
 
-    output.write("${problem.solve(input.readLine())}\n")
+    output.write(problem.solve(input))
 
     input.close()
+    output.flush()
+    output.close()
 }
