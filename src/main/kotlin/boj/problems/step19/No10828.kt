@@ -9,17 +9,6 @@ import java.util.StringTokenizer
 
 object No10828 {
     @Throws(IOException::class)
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-        output.write(solve(input))
-        input.close()
-        output.flush()
-        output.close()
-    }
-
-    @Throws(IOException::class)
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val result = StringBuilder()
@@ -79,4 +68,13 @@ object No10828 {
             return arr[size - 1]
         }
     }
+}
+
+fun main() {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+    output.write(No10828.solve(input))
+    input.close()
+    output.flush()
+    output.close()
 }
