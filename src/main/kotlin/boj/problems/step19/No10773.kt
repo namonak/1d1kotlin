@@ -9,17 +9,6 @@ import java.util.Stack
 
 object No10773 {
     @Throws(IOException::class)
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
-        output.write(solve(input).toString())
-        input.close()
-        output.flush()
-        output.close()
-    }
-
-    @Throws(IOException::class)
     fun solve(input: BufferedReader): Int {
         val number = input.readLine().toInt()
         val stack = Stack<Int>()
@@ -50,4 +39,13 @@ object No10773 {
         }
         stack.push(value)
     }
+}
+
+fun main() {
+    val input = BufferedReader(InputStreamReader(System.`in`))
+    val output = BufferedWriter(OutputStreamWriter(System.out))
+    output.write(No10773.solve(input).toString())
+    input.close()
+    output.flush()
+    output.close()
 }
