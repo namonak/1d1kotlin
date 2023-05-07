@@ -16,7 +16,7 @@ object No2753 {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val input = BufferedReader(InputStreamReader(System.`in`))
     val output = BufferedWriter(OutputStreamWriter(System.out))
 
