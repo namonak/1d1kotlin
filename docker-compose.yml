@@ -1,9 +1,0 @@
-version: '3.2'
-
-services:
-  openjdk:
-    restart: always
-    container_name: 1d1kotlin
-    build:
-      context: ./docker
-      dockerfile: Dockerfile
