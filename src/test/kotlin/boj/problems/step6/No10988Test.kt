@@ -1,0 +1,20 @@
+package boj.problems.step6
+
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
+
+class No10988Test : StringSpec({
+    "팰린드롬인지 확인하기 : https://www.acmicpc.net/problem/10988" {
+        // given
+        val testCases = listOf(
+            "level" to 1,
+            "baekjoon" to 0
+        )
+
+        // when, then
+        testCases.forEach { (given, expected) ->
+            val actual = No10988.solve(given)
+            actual shouldBe expected
+        }
+    }
+})
