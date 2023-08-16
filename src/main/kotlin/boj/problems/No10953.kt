@@ -16,13 +16,13 @@ fun main() {
 object No10953 {
     fun solve(bufferedReader: BufferedReader): String {
         val numberOfTestCases = bufferedReader.readLine().toInt()
-        val stringBuilder = StringBuilder()
+        val result = StringBuilder()
 
         for (i in 1..numberOfTestCases) {
             val numbers = bufferedReader.readLine().split(",").map { it.toInt() }
-            stringBuilder.append(numbers.sum()).append("\n")
+            result.append(numbers.sum()).append("\n")
         }
 
-        return stringBuilder.toString()
+        return result.toString().trimEnd()
     }
 }
