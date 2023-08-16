@@ -18,24 +18,24 @@ fun main() {
 object No4134 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
-        val sb = StringBuilder()
+        val result = StringBuilder()
 
         repeat(n) {
-            val input: String = input.readLine()
-            val prime = BigInteger(input)
-            val number = input.toLong()
+            val inputNumber = input.readLine()
+            val prime = BigInteger(inputNumber)
+            val number = inputNumber.toLong()
             val sqrt = sqrt(number.toDouble()).toLong()
             var s = false
             for (i in 2..sqrt) {
                 if (number % i == 0L) s = true
             }
-            if (s) sb.append(prime.nextProbablePrime()) else if (number == 0L || number == 1L) {
-                sb.append(prime.nextProbablePrime())
-            } else sb.append(number)
+            if (s) result.append(prime.nextProbablePrime()) else if (number == 0L || number == 1L) {
+                result.append(prime.nextProbablePrime())
+            } else result.append(number)
 
-            sb.append("\n")
+            result.append("\n")
         }
 
-        return sb.toString()
+        return result.toString().trimEnd()
     }
 }
