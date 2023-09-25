@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.8.21"
     id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
+    id("org.sonarqube") version "4.3.1.3277"
 }
 
 group = "me.jchoi"
@@ -18,15 +19,23 @@ dependencies {
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "11"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "11"
     }
     test {
         useJUnitPlatform()
     }
     ktlint {
         verbose.set(true)
+    }
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "namonak_1d1kotlin")
+        property("sonar.organization", "namonak")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
