@@ -27,9 +27,15 @@ object No2775 {
         return sb.toString().trimEnd()
     }
 
+    private val memo = Array(15) { IntArray(15) { -1 } }
+
     private fun getPeople(k: Int, n: Int): Int {
         if (k == 0) return n
         if (n == 1) return 1
-        return getPeople(k - 1, n) + getPeople(k, n - 1)
+
+        if (memo[k][n] != -1) return memo[k][n]
+
+        memo[k][n] = getPeople(k - 1, n) + getPeople(k, n - 1)
+        return memo[k][n]
     }
 }
