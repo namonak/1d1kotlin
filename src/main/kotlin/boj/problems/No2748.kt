@@ -10,10 +10,10 @@ fun main() {
     output.close()
 }
 
-const val MAX = 90
-val memo = LongArray(MAX + 1) { - 1 }
-
 object No2748 {
+    private const val MAX = 90
+    private val memo = LongArray(MAX + 1) { - 1 }
+
     fun solve(input: Int): Long {
         memo[0] = 0
         memo[1] = 1
