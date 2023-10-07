@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.8.21"
     id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
     id("org.sonarqube") version "4.3.1.3277"
+    id("jacoco")
 }
 
 group = "me.jchoi"
@@ -26,9 +27,16 @@ tasks {
     }
     test {
         useJUnitPlatform()
+        finalizedBy(jacocoTestReport) // report is always generated after tests run
     }
     ktlint {
         verbose.set(true)
+    }
+    jacocoTestReport {
+        dependsOn(test) // tests are required to run before generating the report
+        reports {
+            xml.required.set(true)
+        }
     }
 }
 
