@@ -1,33 +1,12 @@
 package boj.problems.step2
 
 import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.IOException
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
-import java.util.StringTokenizer
 
 object No2480 {
-    @Throws(IOException::class)
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val input = BufferedReader(InputStreamReader(System.`in`))
-        val output = BufferedWriter(OutputStreamWriter(System.out))
+    fun solve(input: BufferedReader): String {
+        val (a, b, c) = input.readLine().split(" ").map { it.toInt() }
 
-        output.write("${solve(input)}\n")
-
-        input.close()
-        output.flush()
-        output.close()
-    }
-
-    @Throws(IOException::class)
-    fun solve(input: BufferedReader): Int {
-        val st = StringTokenizer(input.readLine())
-        val a = st.nextToken().toInt()
-        val b = st.nextToken().toInt()
-        val c = st.nextToken().toInt()
-        return getPrizeMoney(a, b, c)
+        return getPrizeMoney(a, b, c).toString()
     }
 
     private fun getPrizeMoney(a: Int, b: Int, c: Int): Int {
