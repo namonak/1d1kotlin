@@ -1,18 +1,7 @@
 package boj.problems.step5
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No5622.solve(input.readLine()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
 object No5622 {
-    fun solve(input: String): Int {
+    fun solve(input: String): String {
         var sum = 0
 
         input.forEach {
@@ -29,6 +18,6 @@ object No5622 {
             }
         }
 
-        return sum
+        return sum.toString()
     }
 }

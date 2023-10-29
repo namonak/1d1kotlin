@@ -8,15 +8,22 @@ import java.io.InputStreamReader
 class No9086Test : StringSpec({
     "문자열 : https://www.acmicpc.net/problem/9086" {
         // given
-        val given = "3\n" +
-            "ACDKJFOWIEGHE\n" +
-            "O\n" +
-            "AB"
+        val given = """
+            3
+            ACDKJFOWIEGHE
+            O
+            AB
+        """.trimIndent()
+        val expected = """
+            AE
+            OO
+            AB
+        """.trimIndent()
 
         // when
         val actual = No9086.solve(BufferedReader(InputStreamReader(given.byteInputStream())))
 
         // then
-        actual shouldBe "AE\nOO\nAB"
+        actual shouldBe expected
     }
 })
