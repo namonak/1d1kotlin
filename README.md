@@ -10,7 +10,7 @@
 ## Requirement
 
 * [Kotlin](https://kotlinlang.org) (v1.8.21)
-* [JVM](https://www.java.com) (v11)
+* [JVM](https://www.java.com) (v17)
 * [Gradle](https://gradle.org) (v8.1.1)
 
 ## Initialize
