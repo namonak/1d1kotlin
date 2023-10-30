@@ -2,10 +2,6 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    println(No2490.solve(System.`in`.bufferedReader()))
-}
-
 object No2490 {
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()

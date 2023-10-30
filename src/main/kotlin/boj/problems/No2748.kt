@@ -1,24 +1,16 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2748.solve(input.readLine().toInt()).toString())
-
-    input.close()
-    output.close()
-}
+import java.io.BufferedReader
 
 object No2748 {
     private const val MAX = 90
     private val memo = LongArray(MAX + 1) { - 1 }
 
-    fun solve(input: Int): Long {
+    fun solve(input: BufferedReader): String {
         memo[0] = 0
         memo[1] = 1
 
-        return fibonacci(input)
+        return fibonacci(input.readLine().toInt()).toString()
     }
 
     private fun fibonacci(n: Int): Long {

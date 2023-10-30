@@ -1,19 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1094.solve(input.readLine().toInt()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
+import java.io.BufferedReader
 
 object No1094 {
-    fun solve(input: Int): Int {
-        var n = input
+    fun solve(input: BufferedReader): String {
+        var n = input.readLine().toInt()
         var count = 0
         while (n > 0) {
             if (n % 2 == 1) {
@@ -21,6 +12,6 @@ object No1094 {
             }
             n /= 2
         }
-        return count
+        return count.toString()
     }
 }

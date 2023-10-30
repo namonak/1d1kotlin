@@ -2,16 +2,6 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1158.solve(input))
-
-    input.close()
-    output.close()
-}
-
 object No1158 {
     fun solve(input: BufferedReader): String {
         val (n, k) = input.readLine().split(" ").map { it.toInt() }
