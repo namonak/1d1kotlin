@@ -1,22 +1,16 @@
 package boj.problems.step6
 
 import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.IOException
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 
 object No1157 {
     private const val NUMBER_OF_LETTERS = 26
-
-    @Throws(IOException::class)
-    fun solve(input: BufferedReader): Char {
+    fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val alphabet = IntArray(NUMBER_OF_LETTERS)
         for (i in str.indices) {
             getAlphabetCount(str, alphabet, i)
         }
-        return getResult(alphabet)
+        return getResult(alphabet).toString()
     }
 
     private fun getResult(alphabet: IntArray): Char {
@@ -40,15 +34,4 @@ object No1157 {
             alphabet[str[i].code - 'A'.code]++
         }
     }
-}
-
-fun main() {
-    val input = BufferedReader(InputStreamReader(System.`in`))
-    val output = BufferedWriter(OutputStreamWriter(System.out))
-
-    output.write(No1157.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
 }

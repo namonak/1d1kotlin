@@ -5,8 +5,7 @@ import io.kotest.matchers.shouldBe
 
 class No2444Test : StringSpec({
     "별 찍기 - 7 : https://www.acmicpc.net/problem/2444" {
-        // given
-        val n = 5
+        val given = "5"
         val expected = """
             |    *
             |   ***
@@ -19,10 +18,6 @@ class No2444Test : StringSpec({
             |    *
         """.trimMargin()
 
-        // when
-        val actual = No2444.solve(n)
-
-        // then
-        actual shouldBe expected
+        val actual = No2444.solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })

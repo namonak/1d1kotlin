@@ -2,16 +2,6 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2530.solve(input))
-
-    input.close()
-    output.close()
-}
-
 object No2530 {
     fun solve(input: BufferedReader): String {
         val (hour, minute, second) = input.readLine().split(" ").map { it.toInt() }

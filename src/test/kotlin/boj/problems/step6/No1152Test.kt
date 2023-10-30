@@ -1,30 +1,20 @@
 package boj.problems.step6
 
 import io.kotest.core.spec.style.StringSpec
-import io.kotest.data.row
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
-import java.io.StringReader
 
 class No1152Test : StringSpec({
-    "단어의 개수 테스트" {
+    "단어의 개수 : https://www.acmicpc.net/problem/1152" {
         val testCases = listOf(
-            row("The Curious Case of Benjamin Button", 6),
-            row("The first character is a blank", 6),
-            row("The last character is a blank", 6),
-            row("Mazatneunde Wae Teullyeoyo", 3),
-            row("Teullinika Teullyeotzi", 2)
+            "The Curious Case of Benjamin Button" to "6",
+            "The first character is a blank" to "6",
+            "The last character is a blank " to "6",
+            "Mazatneunde Wae Teullyeoyo" to "3",
+            "Teullinika Teullyeotzi" to "2"
         )
 
-        testCases.forEach { (input, expected) ->
-            // given
-            val given = BufferedReader(StringReader(input))
-
-            // when
-            val actual = No1152.solve(given)
-
-            // then
-            actual shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1152.solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

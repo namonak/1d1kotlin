@@ -6,12 +6,12 @@ import io.kotest.matchers.shouldBe
 class No15873Test : StringSpec({
     "공백 없는 A+B : https://www.acmicpc.net/problem/15873" {
         val testCases = listOf(
-            37 to 10,
-            102 to 12
+            "37" to "10",
+            "102" to "12"
         )
 
-        testCases.forEach { (input, output) ->
-            No15873.solve(input) shouldBe output
+        testCases.forEach { (given, output) ->
+            No15873.solve(given.byteInputStream().bufferedReader()) shouldBe output
         }
     }
 })

@@ -2,17 +2,6 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No25206.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
 object No25206 {
     private val gradeToScore = mapOf(
         "A+" to 4.5,

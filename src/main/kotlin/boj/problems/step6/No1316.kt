@@ -2,21 +2,10 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1316.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
 private const val ALPHABET_COUNT = 26
 
 object No1316 {
-    fun solve(input: BufferedReader): Int {
+    fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         var result = 0
 
@@ -28,7 +17,7 @@ object No1316 {
             }
         }
 
-        return result
+        return result.toString()
     }
 
     private fun isGroupWord(word: String): Boolean {

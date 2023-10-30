@@ -1,18 +1,10 @@
 package boj.problems.step6
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2444.solve(input.readLine().toInt()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
+import java.io.BufferedReader
 
 object No2444 {
-    fun solve(n: Int): String {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toInt()
         val sb = StringBuilder()
 
         for (i in 1..n) {
