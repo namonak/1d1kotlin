@@ -7,7 +7,7 @@ class No17618Test : StringSpec({
     "신기한 수 : https://www.acmicpc.net/problem/17618" {
         val testCases = listOf(
             "9" to "9",
-            "21" to 14
+            "21" to "14"
         )
 
         testCases.forEach { (given, expected) ->
