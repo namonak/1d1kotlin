@@ -36,5 +36,4 @@ class No10938 {
 
         return output.toString()
     }
-
 }
