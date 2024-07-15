@@ -1,6 +1,7 @@
 package boj.problems
 
 import java.io.BufferedReader
+import kotlin.math.sqrt
 
 class No2153 {
     fun solve(input: BufferedReader): String {
@@ -13,7 +14,7 @@ class No2153 {
         if (number <= 1) return true // 1도 소수로 간주함
         if (number == 2) return true
         if (number % 2 == 0) return false
-        for (i in 3..Math.sqrt(number.toDouble()).toInt() step 2) {
+        for (i in 3..sqrt(number.toDouble()).toInt() step 2) {
             if (number % i == 0) return false
         }
         return true
