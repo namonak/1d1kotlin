@@ -6,7 +6,6 @@ class No2037 {
     fun solve(input: BufferedReader): String {
         val (p, w) = input.readLine().split(" ").map { it.toInt() }
         val message = input.readLine()
-
         val buttonMap = mapOf(
             'A' to Pair(2, 1), 'B' to Pair(2, 2), 'C' to Pair(2, 3),
             'D' to Pair(3, 1), 'E' to Pair(3, 2), 'F' to Pair(3, 3),
@@ -23,14 +22,13 @@ class No2037 {
         var prevButton: Int? = null
 
         for (char in message) {
-            val (button, presses) = buttonMap[char]!!
+            val (button, presses) = buttonMap[char] ?: continue
             if (prevButton != null && prevButton == button && button != 1) {
                 totalTime += w
             }
             totalTime += presses * p
             prevButton = button
         }
-
         return totalTime.toString()
     }
 }
