@@ -45,5 +45,6 @@ sonar {
         property("sonar.projectKey", "namonak_1d1kotlin")
         property("sonar.organization", "namonak")
         property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.coverage.exclusions", "src/main/kotlin/boj/problems/Main.kt")
     }
 }
