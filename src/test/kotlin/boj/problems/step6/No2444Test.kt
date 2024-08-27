@@ -18,6 +18,6 @@ class No2444Test : StringSpec({
             |    *
         """.trimMargin()
 
-        val actual = No2444.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No2444.solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })
