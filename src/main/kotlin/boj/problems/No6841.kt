@@ -7,28 +7,23 @@ class No6841 {
         val sb = StringBuilder()
         while (true) {
             val line = input.readLine() ?: break
-            val words = line.split(" ")
-            for (word in words) {
-                sb.append(
-                    when (word) {
-                        "CU" -> "see you"
-                        ":-)" -> "I’m happy"
-                        ":-(" -> "I’m unhappy"
-                        ";-)" -> "wink"
-                        ":-P" -> "stick out my tongue"
-                        "(~.~)" -> "sleepy"
-                        "TA" -> "totally awesome"
-                        "CCC" -> "Canadian Computing Competition"
-                        "CUZ" -> "because"
-                        "TY" -> "thank-you"
-                        "YW" -> "you’re welcome"
-                        "TTYL" -> "talk to you later"
-                        else -> word
-                    }
-                )
-                sb.append(" ")
-            }
-            sb.append("\n")
+            sb.appendLine(
+                when (line) {
+                    "CU" -> "see you"
+                    ":-)" -> "I’m happy"
+                    ":-(" -> "I’m unhappy"
+                    ";-)" -> "wink"
+                    ":-P" -> "stick out my tongue"
+                    "(~.~)" -> "sleepy"
+                    "TA" -> "totally awesome"
+                    "CCC" -> "Canadian Computing Competition"
+                    "CUZ" -> "because"
+                    "TY" -> "thank-you"
+                    "YW" -> "you’re welcome"
+                    "TTYL" -> "talk to you later"
+                    else -> line
+                }
+            )
         }
         return sb.toString().trim()
     }
