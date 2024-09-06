@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No11050.solve(input).toString())
-
-    input.close()
-    output.close()
-}
-
-object No11050 {
-    private const val MAX = 10
+class No11050 {
     private val memo = IntArray(MAX + 1) { -1 }
 
     fun solve(input: BufferedReader): Int {
@@ -33,5 +22,9 @@ object No11050 {
 
         memo[number] = number * factorial(number - 1)
         return memo[number]
+    }
+
+    companion object {
+        private const val MAX = 10
     }
 }
