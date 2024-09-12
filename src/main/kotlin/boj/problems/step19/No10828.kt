@@ -1,13 +1,10 @@
 package boj.problems.step19
 
 import java.io.BufferedReader
-import java.io.BufferedWriter
 import java.io.IOException
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
 import java.util.StringTokenizer
 
-object No10828 {
+class No10828 {
     @Throws(IOException::class)
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
@@ -16,7 +13,7 @@ object No10828 {
         for (i in 0 until n) {
             executeOperation(input.readLine(), stack, result)
         }
-        return result.toString()
+        return result.toString().trimEnd()
     }
 
     private fun executeOperation(operation: String, stack: Stack, result: StringBuilder) {
@@ -68,13 +65,4 @@ object No10828 {
             return arr[size - 1]
         }
     }
-}
-
-fun main() {
-    val input = BufferedReader(InputStreamReader(System.`in`))
-    val output = BufferedWriter(OutputStreamWriter(System.out))
-    output.write(No10828.solve(input))
-    input.close()
-    output.flush()
-    output.close()
 }
