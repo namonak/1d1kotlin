@@ -2,20 +2,30 @@ package boj.problems.step19
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.File
+import java.io.BufferedReader
 
 class No4949Test : StringSpec({
-    "균형잡힌 세상 테스트" {
-        println("균형잡힌 세상 : https://www.acmicpc.net/problem/4949")
+    "균형잡힌 세상 테스트 : https://www.acmicpc.net/problem/4949" {
+        val given = """
+            So when I die (the [first] I will see in (heaven) is a score list).
+            [ first in ] ( first out ).
+            Half Moon tonight (At least it is better than no Moon at all].
+            A rope may form )( a trail in a maze.
+            Help( I[m being held prisoner in a fortune cookie factory)].
+            ([ (([( [ ] ) ( ) (( ))] )) ]).
+             .
+            .
+        """.trimIndent()
+        val expected = """
+            yes
+            yes
+            no
+            no
+            no
+            yes
+            yes
+        """.trimIndent()
 
-        // given
-        val given = File("src/test/kotlin/boj/problems/step19/No4949_input.txt").bufferedReader()
-        val expected = File("src/test/kotlin/boj/problems/step19/No4949_output.txt").readText()
-
-        // when
-        val actual = No4949.solve(given)
-
-        // then
-        actual shouldBe expected
+        No4949().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })
