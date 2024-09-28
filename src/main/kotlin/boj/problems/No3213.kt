@@ -39,7 +39,6 @@ class No3213 {
             quarter -= minOf(2, quarter)
         }
 
-
         pizzas += quarter / 4
         if (quarter % 4 > 0) {
             pizzas += 1
