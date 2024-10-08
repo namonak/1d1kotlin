@@ -17,7 +17,13 @@ class No30804 {
 
             while (fruitsCount.size > 2) {
                 val leftFruit = fruits[left]
-                fruitsCount[leftFruit] = fruitsCount[leftFruit]!! - 1
+                fruitsCount[leftFruit].let {
+                    if (it == 1) {
+                        fruitsCount.remove(leftFruit)
+                    } else {
+                        fruitsCount[leftFruit] = it!! - 1
+                    }
+                }
                 if (fruitsCount[leftFruit] == 0) {
                     fruitsCount.remove(leftFruit)
                 }
