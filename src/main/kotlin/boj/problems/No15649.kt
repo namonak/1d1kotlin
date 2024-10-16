@@ -3,35 +3,34 @@ package boj.problems
 import java.io.BufferedReader
 
 class No15649 {
+    private lateinit var arr: Array<Int>
+    private lateinit var visited: BooleanArray
+    private val result = StringBuilder()
+
     fun solve(input: BufferedReader): String {
         val (n, m) = input.readLine().split(" ").map { it.toInt() }
-        val output = generatePermutations(n, m)
-        return output.joinToString("\n") { it.joinToString(" ") }
+
+        arr = Array(m) { 0 }
+        visited = BooleanArray(n) { false }
+
+        dfs(n, m, 0)
+
+        return result.toString().trimEnd()
     }
 
-    private fun generatePermutations(n: Int, m: Int): List<List<Int>> {
-        val permutations = mutableListOf<List<Int>>()
-        val numbers = (1..n).toList()
-        val visited = BooleanArray(n) { false }
-        val permutation = mutableListOf<Int>()
-
-        fun dfs(depth: Int) {
-            if (depth == m) {
-                permutations.add(permutation.toList())
-                return
-            }
-
-            for (i in numbers.indices) {
-                if (visited[i]) continue
-                visited[i] = true
-                permutation.add(numbers[i])
-                dfs(depth + 1)
-                visited[i] = false
-                permutation.removeAt(permutation.lastIndex)
-            }
+    private fun dfs(n: Int, m: Int, depth: Int) {
+        if (depth == m) {
+            result.append(arr.joinToString(" ") + "\n")
+            return
         }
 
-        dfs(0)
-        return permutations
+        for (i in 0 until n) {
+            if (!visited[i]) {
+                visited[i] = true
+                arr[depth] = i + 1
+                dfs(n, m, depth + 1)
+                visited[i] = false
+            }
+        }
     }
 }
