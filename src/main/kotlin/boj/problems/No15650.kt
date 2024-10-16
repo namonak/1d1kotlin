@@ -1,43 +1,35 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No15650.solve(input.readLine()))
+class No15650 {
+    private lateinit var arr: Array<Int>
+    private lateinit var visited: BooleanArray
+    private val result = StringBuilder()
 
-    input.close()
-    output.flush()
-    output.close()
-}
+    fun solve(input: BufferedReader): String {
+        val (n, m) = input.readLine().split(" ").map { it.toInt() }
 
-object No15650 {
-    fun solve(input: String): String {
-        val (n, m) = input.split(" ").map { it.toInt() }
-        val visited = BooleanArray(n + 1) { false }
-        val result = StringBuilder()
-        dfs(0, 1, n, m, visited, result)
+        arr = Array(m) { 0 }
+        visited = BooleanArray(n) { false }
+
+        dfs(n, m, 0)
+
         return result.toString().trimEnd()
     }
 
-    private fun dfs(depth: Int, start: Int, n: Int, m: Int, visited: BooleanArray, result: StringBuilder) {
+    private fun dfs(n: Int, m: Int, depth: Int) {
         if (depth == m) {
-            var count = 0
-            for (i in 1..n) {
-                if (visited[i]) {
-                    result.append(i)
-                    count++
-                    if (count < m) result.append(" ") // 마지막 원소가 아닌 경우에만 공백 추가
-                }
-            }
-            result.append("\n")
+            if (arr.sorted() != arr.toList()) return
+            result.append(arr.joinToString(" ") + "\n")
             return
         }
 
-        for (i in start..n) {
+        for (i in 0 until n) {
             if (!visited[i]) {
                 visited[i] = true
-                dfs(depth + 1, i + 1, n, m, visited, result)
+                arr[depth] = i + 1
+                dfs(n, m, depth + 1)
                 visited[i] = false
             }
         }
