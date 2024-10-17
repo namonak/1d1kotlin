@@ -21,6 +21,7 @@ class No10974 {
     private fun permutation(n: Int, depth: Int) {
         if (n == depth) {
             result.append(arr.joinToString(" ") + "\n")
+            return
         }
 
         for (i in 0 until n) {
