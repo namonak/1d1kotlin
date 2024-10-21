@@ -1,37 +1,35 @@
 package boj.problems
 
 import java.io.BufferedReader
+import java.util.Scanner
 
 class No15650 {
-    private lateinit var arr: Array<Int>
-    private lateinit var visited: BooleanArray
+    private var n: Int = 0
+    private var m: Int = 0
+    private lateinit var arr: IntArray
     private val result = StringBuilder()
 
     fun solve(input: BufferedReader): String {
-        val (n, m) = input.readLine().split(" ").map { it.toInt() }
+        val scanner = Scanner(input.readLine())
 
-        arr = Array(m) { 0 }
-        visited = BooleanArray(n) { false }
+        n = scanner.nextInt()
+        m = scanner.nextInt()
+        arr = IntArray(m) { 0 }
 
-        dfs(n, m, 0)
+        dfs(1, 0)
 
         return result.toString().trimEnd()
     }
 
-    private fun dfs(n: Int, m: Int, depth: Int) {
+    private fun dfs(start: Int, depth: Int) {
         if (depth == m) {
-            if (arr.sorted() != arr.toList()) return
             result.append(arr.joinToString(" ") + "\n")
             return
         }
 
-        for (i in 0 until n) {
-            if (!visited[i]) {
-                visited[i] = true
-                arr[depth] = i + 1
-                dfs(n, m, depth + 1)
-                visited[i] = false
-            }
+        for (i in start..n) {
+            arr[depth] = i
+            dfs(i + 1, depth + 1)
         }
     }
 }
