@@ -4,11 +4,12 @@ import java.io.BufferedReader
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
+import java.util.Locale
 
 class No1340 {
     fun solve(input: BufferedReader): String {
         val inputLine = input.readLine()
-        val formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm")
+        val formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy HH:mm", Locale.ENGLISH)
         val dateTime = LocalDateTime.parse(inputLine, formatter)
         val year = dateTime.year
         val daysInYear = if (isLeapYear(year)) 366 else 365
