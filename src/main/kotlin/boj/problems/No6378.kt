@@ -15,6 +15,6 @@ class No6378 {
             val digitalRoot = if (sumOfDigits % 9 == 0) 9 else sumOfDigits % 9
             sb.append(digitalRoot).append("\n")
         }
-        return sb.toString()
+        return sb.toString().trimEnd()
     }
 }
