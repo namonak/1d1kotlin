@@ -22,7 +22,7 @@ class No4884 {
             val knockoutMatches = finalN - 1
             val totalMatches = groupMatches + knockoutMatches
 
-            sb.append("$g*$a/$t+$d$totalMatches+$additionalTeams\n")
+            sb.append("$g*$a/$t+$d=$totalMatches+$additionalTeams\n")
         }
 
         return sb.toString().trimEnd()
