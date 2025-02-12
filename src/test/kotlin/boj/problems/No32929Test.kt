@@ -7,7 +7,7 @@ import java.io.BufferedReader
 class No32929Test : StringSpec({
     "UOS 문자열 : https://www.acmicpc.net/problem/32929" {
         val testCases = listOf(
-            "5" to "0",
+            "5" to "O",
             "1000000000" to "U"
         )
 
