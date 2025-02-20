@@ -21,7 +21,7 @@ class No26502 {
             val decodedLine = line.map { ch ->
                 when {
                     ch.lowercaseChar() in decodeMap.keys -> {
-                        val decodedChar = decodeMap[ch.lowercaseChar()]!!
+                        val decodedChar = decodeMap.getValue(ch.lowercaseChar())
                         if (ch.isUpperCase()) decodedChar.uppercaseChar() else decodedChar
                     }
                     else -> ch
