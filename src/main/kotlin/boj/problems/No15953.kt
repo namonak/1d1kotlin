@@ -15,7 +15,7 @@ class No15953 {
             result.append(totalPrize).append("\n")
         }
 
-        return result.toString()
+        return result.toString().trimEnd()
     }
 
     private fun getPrize2017(rank: Int): Int {
