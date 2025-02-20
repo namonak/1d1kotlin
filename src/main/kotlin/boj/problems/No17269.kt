@@ -22,7 +22,7 @@ class No17269 {
             if (i < m) merged.append(nameB[i])
         }
 
-        val numbers = merged.map { strokes[it]!! }.toMutableList()
+        val numbers = merged.map { strokes.getValue(it) }.toMutableList()
 
         while (numbers.size > 2) {
             val temp = mutableListOf<Int>()
