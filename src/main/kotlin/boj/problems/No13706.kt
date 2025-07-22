@@ -17,9 +17,9 @@ class No13706 {
             when {
                 square == n ->
                     return mid.toString()
-                square < n  ->
+                square < n ->
                     low = mid + BigInteger.ONE
-                else        ->
+                else ->
                     high = mid - BigInteger.ONE
             }
         }
