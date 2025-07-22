@@ -28,5 +28,4 @@ class No29835Test : StringSpec({
             result shouldBe expected
         }
     }
-
 })
