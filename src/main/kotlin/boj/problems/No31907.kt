@@ -25,6 +25,6 @@ class No31907 {
             }
         }
 
-        return result.toString()
+        return result.toString().trim()
     }
 }
