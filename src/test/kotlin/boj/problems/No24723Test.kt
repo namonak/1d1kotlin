@@ -7,7 +7,7 @@ import java.io.BufferedReader
 class No24723Test : StringSpec({
     "녹색거탑 : https://www.acmicpc.net/problem/24723" {
         val testCases = listOf(
-            "1" to "1",
+            "1" to "2",
             "2" to "4",
         )
 
