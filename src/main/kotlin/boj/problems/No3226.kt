@@ -2,8 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-private const val DAY_START = 7 * 60      // 07:00 → 분 단위
-private const val DAY_END = 19 * 60       // 19:00 → 분 단위
+private const val DAY_START = 7 * 60
+private const val DAY_END = 19 * 60
 
 class No3226 {
     fun solve(input: BufferedReader): String {
