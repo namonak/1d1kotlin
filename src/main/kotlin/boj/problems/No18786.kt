@@ -38,7 +38,7 @@ class No18786 {
             val ySpan = ySpanByX[x]!!
 
             // 같은 y에 있는 점들과의 최대 가로 거리(밑변), 같은 x에 있는 점들과의 최대 세로 거리(높이)
-            val width  = max(abs(x - xSpan.min), abs(xSpan.max - x))
+            val width = max(abs(x - xSpan.min), abs(xSpan.max - x))
             val height = max(abs(y - ySpan.min), abs(ySpan.max - y))
 
             // 유효 삼각형은 width>0 && height>0일 때만 의미가 있지만,
