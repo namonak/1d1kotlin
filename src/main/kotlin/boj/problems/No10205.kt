@@ -25,6 +25,6 @@ class No10205 {
             if (caseIdx != t - 1) out.append('\n') // 데이터셋 사이에 빈 줄
         }
 
-        return out.toString()
+        return out.toString().trimEnd()
     }
 }
