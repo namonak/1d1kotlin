@@ -1,3 +1,3 @@
 package boj.problems
 
-fun main() = println(No20310().solve(System.`in`.bufferedReader()))
+fun main() = println(No12787().solve(System.`in`.bufferedReader()))
