@@ -1,18 +1,9 @@
 package boj.problems.step11
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No24262.solve(input.readLine().toInt()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No24262 {
-    fun solve(input: Int): String {
+class No24262 {
+    fun solve(input: BufferedReader): String {
         return """
             1
             0

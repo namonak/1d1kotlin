@@ -5,13 +5,13 @@ import io.kotest.matchers.shouldBe
 
 class No24262Test : StringSpec({
     "알고리즘 수업 - 알고리즘의 수행 시간 1 : https://www.acmicpc.net/problem/24262" {
-        val given = 1
+        val given = "1"
         val expected = """
             1
             0
         """.trimIndent()
 
-        val actual = No24262.solve(given)
+        val actual = No24262().solve(given.reader().buffered())
 
         actual shouldBe expected
     }
