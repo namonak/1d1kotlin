@@ -1,20 +1,11 @@
 package boj.problems.step11
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No24263.solve(input.readLine().toInt()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No24263 {
-    fun solve(input: Int): String {
+class No24263 {
+    fun solve(input: BufferedReader): String {
         return """
-            $input
+            ${input.readLine()}
             1
         """.trimIndent()
     }
