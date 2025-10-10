@@ -8,13 +8,13 @@ fun main() {
 
 object No9063 {
     fun solve(input: BufferedReader): Int {
-        val N = input.readLine().toInt()
+        val n = input.readLine().toInt()
         var minX = Int.MAX_VALUE
         var minY = Int.MAX_VALUE
         var maxX = Int.MIN_VALUE
         var maxY = Int.MIN_VALUE
 
-        for (i in 0 until N) {
+        for (i in 0 until n) {
             val (x, y) = input.readLine().split(" ").map { it.toInt() }
             minX = minOf(minX, x)
             minY = minOf(minY, y)

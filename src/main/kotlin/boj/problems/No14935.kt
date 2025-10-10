@@ -10,13 +10,13 @@ class No14935 {
 
         while (current !in seen) {
             seen += current
-            current = F(current)
+            current = faStep(current)
         }
 
         return "FA"
     }
 
-    private fun F(x: String): String {
+    private fun faStep(x: String): String {
         val firstDigit = x[0].digitToInt()
         val length = x.length
         return (firstDigit * length).toString()

@@ -4,14 +4,14 @@ import java.io.BufferedReader
 
 class No21967 {
     fun solve(input: BufferedReader): String {
-        val N = input.readLine().toInt()
-        val A = input.readLine().split(" ").map { it.toInt() }
+        val n = input.readLine().toInt()
+        val a = input.readLine().split(" ").map { it.toInt() }
         val freq = IntArray(11) { 0 }
-        var L = 0
+        var l = 0
         var ans = 0
 
-        for (R in 0 until N) {
-            freq[A[R]]++
+        for (R in 0 until n) {
+            freq[a[R]]++
 
             while (true) {
                 // 현재 윈도우 [L..R]의 최소값 찾기
@@ -28,11 +28,11 @@ class No21967 {
                 if (mx - mn <= 2) {
                     break
                 }
-                freq[A[L]]--
-                L++
+                freq[a[l]]--
+                l++
             }
 
-            ans = maxOf(ans, R - L + 1)
+            ans = maxOf(ans, R - l + 1)
         }
 
         return ans.toString()

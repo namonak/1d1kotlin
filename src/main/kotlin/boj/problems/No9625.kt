@@ -4,17 +4,17 @@ import java.io.BufferedReader
 
 class No9625 {
     fun solve(input: BufferedReader): String {
-        val K = input.readLine().toInt()
-        var A = 1
-        var B = 0
+        val k = input.readLine().toInt()
+        var a = 1
+        var b = 0
 
-        repeat(K) {
-            val newA = B
-            val newB = A + B
-            A = newA
-            B = newB
+        repeat(k) {
+            val newA = b
+            val newB = a + b
+            a = newA
+            b = newB
         }
 
-        return "$A $B"
+        return "$a $b"
     }
 }

@@ -2,6 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
+private const val LIMIT = 100_000L
+private const val BASE = 2024L
+
 class No32651 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().trim().toLong()
@@ -9,8 +12,6 @@ class No32651 {
     }
 
     private fun isRemembered(n: Long): Boolean {
-        val LIMIT = 100_000L
-        val BASE = 2024L
         return n <= LIMIT && n % BASE == 0L
     }
 }

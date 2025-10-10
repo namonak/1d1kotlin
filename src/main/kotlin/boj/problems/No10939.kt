@@ -4,9 +4,9 @@ import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
 import java.nio.charset.StandardCharsets
 
-class No10939 {
-    private val BASE32_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+private const val BASE32_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
 
+class No10939 {
     fun solve(input: BufferedReader): String {
         return decodeToBase32(input.readLine())
     }

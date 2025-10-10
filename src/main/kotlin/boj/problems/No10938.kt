@@ -2,9 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-class No10938 {
-    private val BASE32_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+private const val BASE32_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
 
+class No10938 {
     fun solve(input: BufferedReader): String {
         return encodeToBase32(input.readLine())
     }

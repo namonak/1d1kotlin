@@ -14,7 +14,7 @@ class TestMoveZeros : StringSpec({
         testCase.forEach { (given, expected) ->
             val moveZeros = MoveZeros()
 
-            val actual = moveZeros.MoveZeros(given)
+            val actual = moveZeros.moveZeros(given)
 
             actual shouldBe expected
         }

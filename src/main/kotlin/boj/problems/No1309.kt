@@ -2,6 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
+private const val MOD = 9901
+
 class No1309 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
@@ -10,7 +12,6 @@ class No1309 {
         var prevNo = 1 // dp[i-1][0]
         var prevTop = 1 // dp[i-1][1]
         var prevBottom = 1 // dp[i-1][2]
-        val MOD = 9901
 
         for (i in 2..n) {
             val currNo = ((prevNo + prevTop) % MOD + prevBottom) % MOD
