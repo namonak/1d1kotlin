@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.8.21"
-    id("org.jlleitschuh.gradle.ktlint") version "10.3.0"
+    kotlin("jvm") version "1.9.24"
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
     id("org.sonarqube") version "4.3.1.3277"
     id("jacoco")
 }
@@ -21,10 +21,10 @@ dependencies {
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget = "21"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "17"
+        kotlinOptions.jvmTarget = "21"
     }
     test {
         useJUnitPlatform()
@@ -32,6 +32,11 @@ tasks {
     }
     ktlint {
         verbose.set(true)
+        version.set("1.2.1")
+        filter {
+            exclude("**/build/**", "**/generated/**", "**/out/**")
+            include("**/src/**/*.kt", "**/src/**/*.kts")
+        }
     }
     jacocoTestReport {
         dependsOn(test) // tests are required to run before generating the report
