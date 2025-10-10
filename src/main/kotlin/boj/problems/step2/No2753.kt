@@ -7,6 +7,8 @@ object No2753 {
         val year = input.readLine().toInt()
         return if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
             "1"
-        } else "0"
+        } else {
+            "0"
+        }
     }
 }

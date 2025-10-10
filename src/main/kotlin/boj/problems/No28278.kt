@@ -25,7 +25,11 @@ object No28278 {
         return result.toString().trimEnd()
     }
 
-    private fun executeOperation(readLine: String?, stack: Stack<Int>, result: StringBuilder) {
+    private fun executeOperation(
+        readLine: String?,
+        stack: Stack<Int>,
+        result: StringBuilder
+    ) {
         val st = readLine!!.split(" ")
         when (st[0]) {
             "1" -> stack.push(st[1].toInt())

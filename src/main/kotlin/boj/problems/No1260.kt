@@ -15,7 +15,10 @@ object No1260 {
         return dfs(graph, v) + "\n" + bfs(graph, v)
     }
 
-    private fun dfs(graph: Array<MutableList<Int>>, v: Int): String {
+    private fun dfs(
+        graph: Array<MutableList<Int>>,
+        v: Int
+    ): String {
         val visited = BooleanArray(graph.size)
         val stack = mutableListOf<Int>()
         val result = mutableListOf<Int>()
@@ -31,7 +34,10 @@ object No1260 {
         return result.joinToString(" ")
     }
 
-    private fun bfs(graph: Array<MutableList<Int>>, v: Int): String {
+    private fun bfs(
+        graph: Array<MutableList<Int>>,
+        v: Int
+    ): String {
         val visited = BooleanArray(graph.size)
         val queue = mutableListOf<Int>()
         val result = mutableListOf<Int>()

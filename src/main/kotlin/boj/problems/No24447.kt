@@ -32,7 +32,13 @@ class No24447 {
         return resultSum.toString()
     }
 
-    private fun bfs(graph: Array<MutableList<Int>>, visited: Array<Boolean>, start: Int, order: IntArray, depth: IntArray) {
+    private fun bfs(
+        graph: Array<MutableList<Int>>,
+        visited: Array<Boolean>,
+        start: Int,
+        order: IntArray,
+        depth: IntArray
+    ) {
         val queue = ArrayDeque<Int>()
 
         visited[start] = true

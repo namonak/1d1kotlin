@@ -9,8 +9,11 @@ object No1977 {
         val n = input.readLine().toInt()
         val perfectSquares = (m..n).filter { isPerfectSquare(it) }
 
-        return if (perfectSquares.isEmpty()) "-1"
-        else "${perfectSquares.sum()}\n${perfectSquares.first()}"
+        return if (perfectSquares.isEmpty()) {
+            "-1"
+        } else {
+            "${perfectSquares.sum()}\n${perfectSquares.first()}"
+        }
     }
 
     private fun isPerfectSquare(number: Int): Boolean {

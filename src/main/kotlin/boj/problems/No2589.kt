@@ -22,7 +22,11 @@ class No2589 {
         return maxDistance.toString()
     }
 
-    private fun bfs(map: Array<CharArray>, x: Int, y: Int): Int {
+    private fun bfs(
+        map: Array<CharArray>,
+        x: Int,
+        y: Int
+    ): Int {
         val visited = Array(map.size) { BooleanArray(map[0].size) }
         val queue = ArrayDeque<Pair<Int, Int>>()
         var distance = 0

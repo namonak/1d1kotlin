@@ -11,7 +11,11 @@ class No24484 {
         return calculateResult(dfsResult.depth, dfsResult.order)
     }
 
-    private fun initializeGraph(n: Int, m: Int, input: BufferedReader): Array<MutableList<Int>> {
+    private fun initializeGraph(
+        n: Int,
+        m: Int,
+        input: BufferedReader
+    ): Array<MutableList<Int>> {
         val graph = Array(n + 1) { mutableListOf<Int>() }
 
         repeat(m) {
@@ -23,7 +27,10 @@ class No24484 {
         return graph
     }
 
-    private fun performDFS(graph: Array<MutableList<Int>>, start: Int): DFSResult {
+    private fun performDFS(
+        graph: Array<MutableList<Int>>,
+        start: Int
+    ): DFSResult {
         val visited = BooleanArray(graph.size) { false }
         val depth = IntArray(graph.size) { -1 }
         val order = IntArray(graph.size) { 0 }
@@ -46,7 +53,10 @@ class No24484 {
         return DFSResult(depth, order)
     }
 
-    private fun calculateResult(depth: IntArray, order: IntArray): String {
+    private fun calculateResult(
+        depth: IntArray,
+        order: IntArray
+    ): String {
         return (1 until depth.size).sumOf { depth[it].toLong() * order[it] }.toString()
     }
 

@@ -25,7 +25,10 @@ class No6980 {
         if (a.isEmpty()) return 0
         val tmp = IntArray(a.size)
 
-        fun sort(lo: Int, hi: Int): Long {
+        fun sort(
+            lo: Int,
+            hi: Int
+        ): Long {
             if (hi - lo <= 1) return 0
             val mid = (lo + hi) / 2
             var inv = sort(lo, mid) + sort(mid, hi)
@@ -51,6 +54,7 @@ class No6980 {
     /** 간단 토크나이저 */
     private class FastScanner(private val br: BufferedReader) {
         private var st: StringTokenizer? = null
+
         fun next(): String {
             while (st == null || !st!!.hasMoreTokens()) {
                 val line = br.readLine() ?: return ""
@@ -58,6 +62,7 @@ class No6980 {
             }
             return st!!.nextToken()
         }
+
         fun nextInt(): Int = next().toInt()
     }
 }

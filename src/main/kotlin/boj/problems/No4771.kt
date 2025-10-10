@@ -12,7 +12,8 @@ class No4771 {
 
     data class Point(val x: Double, val y: Double) {
         fun distance(o: Point): Double {
-            val dx = x - o.x; val dy = y - o.y
+            val dx = x - o.x
+            val dy = y - o.y
             return dx * dx + dy * dy
         }
     }
@@ -76,8 +77,11 @@ class No4771 {
                 Point(v[4].toDouble(), v[5].toDouble())
             )
 
-            if (!tri.isValid) out.append("Not a Triangle\n")
-            else out.append(tri.typeBySides).append(' ').append(tri.typeByAngles).append('\n')
+            if (!tri.isValid) {
+                out.append("Not a Triangle\n")
+            } else {
+                out.append(tri.typeBySides).append(' ').append(tri.typeByAngles).append('\n')
+            }
         }
         return out.toString().trimEnd()
     }

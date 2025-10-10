@@ -16,7 +16,11 @@ class No1780 {
         return "$minusOneCount\n$zeroCount\n$oneCount"
     }
 
-    private fun checkAndSplitPaper(x: Int, y: Int, size: Int) {
+    private fun checkAndSplitPaper(
+        x: Int,
+        y: Int,
+        size: Int
+    ) {
         if (isAllSameColor(x, y, size)) {
             when (paper[x][y]) {
                 -1 -> minusOneCount++
@@ -37,7 +41,11 @@ class No1780 {
         checkAndSplitPaper(x + newSize * 2, y + newSize * 2, newSize)
     }
 
-    private fun isAllSameColor(x: Int, y: Int, size: Int): Boolean {
+    private fun isAllSameColor(
+        x: Int,
+        y: Int,
+        size: Int
+    ): Boolean {
         val color = paper[x][y]
         for (i in x until x + size) {
             for (j in y until y + size) {

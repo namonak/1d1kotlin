@@ -15,8 +15,11 @@ class No26566 {
             val wholeValue = (Math.PI * r1 * r1) / p2
 
             results.add(
-                if (sliceValue > wholeValue) "Slice of pizza"
-                else "Whole pizza"
+                if (sliceValue > wholeValue) {
+                    "Slice of pizza"
+                } else {
+                    "Whole pizza"
+                }
             )
         }
 

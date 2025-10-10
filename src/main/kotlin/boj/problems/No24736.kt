@@ -4,7 +4,13 @@ import java.io.BufferedReader
 
 class No24736 {
     fun solve(input: BufferedReader): String {
-        fun calculateScore(t: Int, f: Int, s: Int, p: Int, c: Int): Int {
+        fun calculateScore(
+            t: Int,
+            f: Int,
+            s: Int,
+            p: Int,
+            c: Int
+        ): Int {
             return t * 6 + f * 3 + s * 2 + p * 1 + c * 2
         }
 

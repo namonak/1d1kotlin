@@ -20,7 +20,12 @@ class No24446 {
         return depth.slice(1..n).joinToString("\n")
     }
 
-    private fun bfs(graph: Array<MutableList<Int>>, visited: BooleanArray, start: Int, depth: IntArray) {
+    private fun bfs(
+        graph: Array<MutableList<Int>>,
+        visited: BooleanArray,
+        start: Int,
+        depth: IntArray
+    ) {
         val queue = ArrayDeque<Int>()
 
         visited[start] = true

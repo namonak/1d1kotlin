@@ -37,6 +37,6 @@ object No2108 {
             $median
             ${mode[if (mode.size == 1) 0 else 1].first}
             $range
-        """.trimIndent()
+            """.trimIndent()
     }
 }

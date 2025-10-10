@@ -21,7 +21,10 @@ class No15650 {
         return result.toString().trimEnd()
     }
 
-    private fun dfs(start: Int, depth: Int) {
+    private fun dfs(
+        start: Int,
+        depth: Int
+    ) {
         if (depth == m) {
             result.append(arr.joinToString(" ") + "\n")
             return

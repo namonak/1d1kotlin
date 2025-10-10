@@ -15,7 +15,11 @@ class No2447 {
         return stars.joinToString("\n") { it.joinToString("") }
     }
 
-    private fun drawStars(x: Int, y: Int, size: Int) {
+    private fun drawStars(
+        x: Int,
+        y: Int,
+        size: Int
+    ) {
         if (size == 1) {
             stars[x][y] = '*'
             return

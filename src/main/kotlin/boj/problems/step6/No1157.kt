@@ -4,6 +4,7 @@ import java.io.BufferedReader
 
 object No1157 {
     private const val NUMBER_OF_LETTERS = 26
+
     fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val alphabet = IntArray(NUMBER_OF_LETTERS)
@@ -27,7 +28,11 @@ object No1157 {
         return result
     }
 
-    private fun getAlphabetCount(str: String, alphabet: IntArray, i: Int) {
+    private fun getAlphabetCount(
+        str: String,
+        alphabet: IntArray,
+        i: Int
+    ) {
         if (str[i] in 'a'..'z') {
             alphabet[str[i].code - 'a'.code]++
         } else {

@@ -21,7 +21,11 @@ class No9184 {
         return result.toString().trimEnd()
     }
 
-    private fun w(a: Int, b: Int, c: Int): Int {
+    private fun w(
+        a: Int,
+        b: Int,
+        c: Int
+    ): Int {
         if (a <= 0 || b <= 0 || c <= 0) {
             return 1
         }

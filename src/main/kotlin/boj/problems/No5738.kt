@@ -23,8 +23,10 @@ class No5738 {
         return out.toString().trimEnd()
     }
 
-    private fun isOffside(closestAttacker: Int, secondClosestDefender: Int): Boolean =
-        closestAttacker < secondClosestDefender
+    private fun isOffside(
+        closestAttacker: Int,
+        secondClosestDefender: Int
+    ): Boolean = closestAttacker < secondClosestDefender
 
     /**
      * 공백이 여러 개여도 안전하게 파싱. 라인이 비면 null 반환.

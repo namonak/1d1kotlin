@@ -14,7 +14,10 @@ class No26537 {
         }
     }
 
-    private fun squaredDistance(p1: Point, p2: Point): Long {
+    private fun squaredDistance(
+        p1: Point,
+        p2: Point
+    ): Long {
         val dx = (p1.x - p2.x).toLong()
         val dy = (p1.y - p2.y).toLong()
         return dx * dx + dy * dy

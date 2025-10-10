@@ -17,11 +17,11 @@ class No3063 {
             val overlapW = (
                 min(this.topRight.x, other.topRight.x) -
                     max(this.bottomLeft.x, other.bottomLeft.x)
-                ).coerceAtLeast(0)
+            ).coerceAtLeast(0)
             val overlapH = (
                 min(this.topRight.y, other.topRight.y) -
                     max(this.bottomLeft.y, other.bottomLeft.y)
-                ).coerceAtLeast(0)
+            ).coerceAtLeast(0)
             return overlapW.toLong() * overlapH.toLong()
         }
     }

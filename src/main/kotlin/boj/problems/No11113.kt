@@ -28,7 +28,10 @@ class No11113 {
     }
 
     /** 루트에 주어진 인덱스 순서대로 두 점 사이의 유클리드 거리를 합산 */
-    private fun totalRouteLength(points: Array<Point>, route: IntArray): Double {
+    private fun totalRouteLength(
+        points: Array<Point>,
+        route: IntArray
+    ): Double {
         var sum = 0.0
         for (i in 0 until route.lastIndex) {
             val a = points[route[i]]
@@ -39,8 +42,10 @@ class No11113 {
     }
 
     // 두 점 사이 직선 거리
-    private fun straightDistance(a: Point, b: Point): Double =
-        hypot(b.x - a.x, b.y - a.y)
+    private fun straightDistance(
+        a: Point,
+        b: Point
+    ): Double = hypot(b.x - a.x, b.y - a.y)
 
     private class FastScanner(private val br: BufferedReader) {
         private var st: StringTokenizer? = null
@@ -53,6 +58,7 @@ class No11113 {
         }
 
         fun nextInt(): Int = next().toInt()
+
         fun nextDouble(): Double = next().toDouble()
     }
 }

@@ -28,7 +28,11 @@ object No1018 {
         return result.min()
     }
 
-    private fun getPaintingCount(board: Array<String>, i: Int, j: Int): Int {
+    private fun getPaintingCount(
+        board: Array<String>,
+        i: Int,
+        j: Int
+    ): Int {
         var start = board[i][j]
         var count = 0
 

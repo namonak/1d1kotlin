@@ -1,7 +1,10 @@
 package ds.binarySearch
 
 class BinarySearch {
-    fun binarySearch(nums: IntArray, target: Int): Int {
+    fun binarySearch(
+        nums: IntArray,
+        target: Int
+    ): Int {
         var left = 0
         var right = nums.size - 1
 

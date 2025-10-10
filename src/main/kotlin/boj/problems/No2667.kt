@@ -10,7 +10,10 @@ class No2667 {
         val visited = Array(n) { BooleanArray(n) }
         val houseCounts = mutableListOf<Int>()
 
-        fun dfs(x: Int, y: Int): Int {
+        fun dfs(
+            x: Int,
+            y: Int
+        ): Int {
             visited[x][y] = true
             var count = 1
 

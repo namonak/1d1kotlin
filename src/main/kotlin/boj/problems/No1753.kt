@@ -18,7 +18,11 @@ class No1753 {
             .joinToString("\n") { if (it == Int.MAX_VALUE) "INF" else it.toString() }
     }
 
-    private fun initializeGraph(input: BufferedReader, vertexCount: Int, edgeCount: Int): Array<MutableList<Vertex>> {
+    private fun initializeGraph(
+        input: BufferedReader,
+        vertexCount: Int,
+        edgeCount: Int
+    ): Array<MutableList<Vertex>> {
         val graph = Array(vertexCount + 1) { mutableListOf<Vertex>() }
         repeat(edgeCount) {
             val (from, to, weight) = input.readLine().split(" ").map { it.toInt() }
@@ -27,7 +31,10 @@ class No1753 {
         return graph
     }
 
-    private fun dijkstra(graph: Array<MutableList<Vertex>>, start: Int): IntArray {
+    private fun dijkstra(
+        graph: Array<MutableList<Vertex>>,
+        start: Int
+    ): IntArray {
         val distances = IntArray(graph.size) { Int.MAX_VALUE }
         val priorityQueue = PriorityQueue<Vertex>()
 

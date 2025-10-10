@@ -8,6 +8,6 @@ object No3053 {
         return """
             ${String.format("%.6f", r * r * Math.PI)}
             ${String.format("%.6f", r * r * 2.0)}
-        """.trimIndent()
+            """.trimIndent()
     }
 }

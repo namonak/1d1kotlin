@@ -10,7 +10,11 @@ class No14500 {
         return getMaxTetrominoSum(board, n, m).toString()
     }
 
-    private fun getMaxTetrominoSum(board: Array<IntArray>, n: Int, m: Int): Int {
+    private fun getMaxTetrominoSum(
+        board: Array<IntArray>,
+        n: Int,
+        m: Int
+    ): Int {
         var maxSum = 0
 
         for (i in 0 until n) {

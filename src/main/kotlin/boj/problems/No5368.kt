@@ -33,7 +33,10 @@ class No5368 {
         return sb.toString()
     }
 
-    private fun findClosestPlanet(ship: Position, planets: List<Position>): Position {
+    private fun findClosestPlanet(
+        ship: Position,
+        planets: List<Position>
+    ): Position {
         var best = planets.first()
         var bestDist2 = squaredDistance(ship, best)
 
@@ -47,13 +50,19 @@ class No5368 {
         return best
     }
 
-    private fun squaredDistance(a: Position, b: Position): Long {
+    private fun squaredDistance(
+        a: Position,
+        b: Position
+    ): Long {
         val dr = a.row - b.row
         val dc = a.col - b.col
         return dr.toLong() * dr + dc.toLong() * dc
     }
 
-    private fun formatResult(ship: Position, planet: Position): String {
+    private fun formatResult(
+        ship: Position,
+        planet: Position
+    ): String {
         val dist = sqrt(squaredDistance(ship, planet).toDouble())
         return "(${ship.row},${ship.col}):(${planet.row},${planet.col}):${"%.2f".format(dist)}"
     }

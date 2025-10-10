@@ -10,12 +10,15 @@ class No9019 {
         val result = StringBuilder()
         repeat(t) {
             val (a, b) = input.readLine().split(" ").map { it.toInt() }
-            result.append(DSLR(a, b)).append("\n")
+            result.append(dslr(a, b)).append("\n")
         }
         return result.toString().trimEnd()
     }
 
-    private fun DSLR(a: Int, b: Int): String {
+    private fun dslr(
+        a: Int,
+        b: Int
+    ): String {
         val visited = BooleanArray(10000) { false }
         val queue = ArrayDeque<Node>()
 

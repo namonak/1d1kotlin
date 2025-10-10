@@ -16,7 +16,10 @@ object No15624 {
         return fibDynamic(n, dp).toString()
     }
 
-    private fun fibDynamic(n: Int, dp: LongArray): Long {
+    private fun fibDynamic(
+        n: Int,
+        dp: LongArray
+    ): Long {
         if (dp[n] != -1L) {
             return dp[n]
         }

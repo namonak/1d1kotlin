@@ -2,9 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-class No10844 {
-    private val MOD = 1_000_000_000
+private val MOD = 1_000_000_000
 
+class No10844 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val dp = Array(n + 1) { LongArray(10) { 0 } }

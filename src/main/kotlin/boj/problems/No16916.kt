@@ -10,7 +10,10 @@ object No16916 {
         return if (kmpSearch(s, p)) "1" else "0"
     }
 
-    private fun kmpSearch(text: String, pattern: String): Boolean {
+    private fun kmpSearch(
+        text: String,
+        pattern: String
+    ): Boolean {
         val pi = computePI(pattern)
         var j = 0 // 패턴 문자열을 탐색하는 인덱스
 

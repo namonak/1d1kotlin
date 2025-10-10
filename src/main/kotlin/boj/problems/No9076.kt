@@ -24,8 +24,11 @@ object No9076 {
             val min = trimmedScored.first()
             val max = trimmedScored.last()
 
-            if (max - min >= 4) result.add("KIN")
-            else result.add(trimmedScored.sum().toString())
+            if (max - min >= 4) {
+                result.add("KIN")
+            } else {
+                result.add(trimmedScored.sum().toString())
+            }
         }
 
         return result.joinToString("\n")

@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 object No2748 {
     private const val MAX = 90
-    private val memo = LongArray(MAX + 1) { - 1 }
+    private val memo = LongArray(MAX + 1) { -1 }
 
     fun solve(input: BufferedReader): String {
         memo[0] = 0

@@ -21,8 +21,11 @@ object No7662 {
                     "D" -> {
                         if (treeMap.isEmpty()) continue
                         val key = if (value == 1) treeMap.lastKey() else treeMap.firstKey()
-                        if (treeMap[key] == 1) treeMap.remove(key)
-                        else treeMap[key] = treeMap[key]!! - 1
+                        if (treeMap[key] == 1) {
+                            treeMap.remove(key)
+                        } else {
+                            treeMap[key] = treeMap[key]!! - 1
+                        }
                     }
                 }
             }

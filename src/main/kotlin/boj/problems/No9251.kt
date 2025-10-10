@@ -9,7 +9,10 @@ class No9251 {
         return lcsLenSpaceOptimized(strA, strB).toString()
     }
 
-    private fun lcsLenSpaceOptimized(a: String, b: String): Int {
+    private fun lcsLenSpaceOptimized(
+        a: String,
+        b: String
+    ): Int {
         val (s, t) = if (a.length <= b.length) a to b else b to a
         val m = t.length
         var prev = IntArray(m + 1)
@@ -19,7 +22,9 @@ class No9251 {
                 curr[j] = if (ch == t[j - 1]) prev[j - 1] + 1 else maxOf(prev[j], curr[j - 1])
             }
             // swap
-            val tmp = prev; prev = curr; curr = tmp
+            val tmp = prev
+            prev = curr
+            curr = tmp
         }
         return prev[m]
     }

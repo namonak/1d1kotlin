@@ -45,6 +45,7 @@ class No11665 {
 
     private class FastScanner(private val br: BufferedReader) {
         private var st: StringTokenizer? = null
+
         fun nextInt(): Int {
             while (st == null || !st!!.hasMoreTokens()) {
                 st = StringTokenizer(br.readLine())

@@ -25,7 +25,10 @@ class No5959 {
         return overlapsCount.joinToString("\n")
     }
 
-    private fun overlaps(a: Circle, b: Circle): Boolean {
+    private fun overlaps(
+        a: Circle,
+        b: Circle
+    ): Boolean {
         // 제곱 거리 비교로 sqrt 회피 (정확/성능)
         val dx = (a.x - b.x).toLong()
         val dy = (a.y - b.y).toLong()

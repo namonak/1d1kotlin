@@ -22,7 +22,10 @@ class No18766 {
     }
 
     /** 플레이어 A가 플레이어 B에게 카드 바꿔치기를 했는지 여부 */
-    private fun isCheater(playerA: Array<String>, playerB: Array<String>): Boolean {
+    private fun isCheater(
+        playerA: Array<String>,
+        playerB: Array<String>
+    ): Boolean {
         // 1. playerA의 카드 빈도수를 Map으로 계산 (O(N))
         val countsA = playerA.groupingBy { it }.eachCount()
 

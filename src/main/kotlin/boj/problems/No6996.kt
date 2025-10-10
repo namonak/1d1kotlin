@@ -13,7 +13,10 @@ object No6996 {
         return result.toString().trimEnd()
     }
 
-    private fun isAnagram(a: String, b: String): Boolean {
+    private fun isAnagram(
+        a: String,
+        b: String
+    ): Boolean {
         if (a.length != b.length) return false
         val aMap = mutableMapOf<Char, Int>()
         val bMap = mutableMapOf<Char, Int>()

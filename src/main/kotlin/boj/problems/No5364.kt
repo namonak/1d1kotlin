@@ -30,7 +30,10 @@ class No5364 {
         }
     }
 
-    private fun distance(p1: Pair<Int, Int>, p2: Pair<Int, Int>): Double {
+    private fun distance(
+        p1: Pair<Int, Int>,
+        p2: Pair<Int, Int>
+    ): Double {
         val dx = (p1.first - p2.first).toDouble()
         val dy = (p1.second - p2.second).toDouble()
         return sqrt(dx * dx + dy * dy)

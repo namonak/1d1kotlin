@@ -11,7 +11,10 @@ class No13549 {
         return findShortestTime(n, k).toString()
     }
 
-    private fun findShortestTime(n: Int, k: Int): Int {
+    private fun findShortestTime(
+        n: Int,
+        k: Int
+    ): Int {
         if (n >= k) {
             return n - k
         }

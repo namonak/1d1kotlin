@@ -6,6 +6,7 @@ import kotlin.math.sqrt
 class No1064 {
     data class Point(val x: Int, val y: Int) {
         operator fun plus(other: Point) = Point(x + other.x, y + other.y)
+
         operator fun minus(other: Point) = Point(x - other.x, y - other.y)
     }
 
@@ -38,7 +39,11 @@ class No1064 {
         return result.toString()
     }
 
-    private fun computeDs(a: Point, b: Point, c: Point): List<Point> {
+    private fun computeDs(
+        a: Point,
+        b: Point,
+        c: Point
+    ): List<Point> {
         // 각 경우에 대한 D의 좌표:
         // D1 = B + C - A
         // D2 = A + C - B
@@ -49,13 +54,20 @@ class No1064 {
         return listOf(d1, d2, d3)
     }
 
-    private fun isCollinear(a: Point, b: Point, c: Point): Boolean {
+    private fun isCollinear(
+        a: Point,
+        b: Point,
+        c: Point
+    ): Boolean {
         // 세 점의 외적이 0이면 일직선상에 있다고 판단할 수 있습니다.
         val cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
         return cross == 0
     }
 
-    private fun distance(p1: Point, p2: Point): Double {
+    private fun distance(
+        p1: Point,
+        p2: Point
+    ): Double {
         val dx = (p1.x - p2.x).toDouble()
         val dy = (p1.y - p2.y).toDouble()
         return sqrt(dx * dx + dy * dy)

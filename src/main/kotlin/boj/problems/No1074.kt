@@ -15,7 +15,11 @@ class No1074 {
         return count.toString()
     }
 
-    private fun findCount(size: Int, r: Int, c: Int) {
+    private fun findCount(
+        size: Int,
+        r: Int,
+        c: Int
+    ) {
         if (size == 1) return
 
         val half = size / 2

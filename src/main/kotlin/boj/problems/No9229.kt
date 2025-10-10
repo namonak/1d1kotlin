@@ -34,7 +34,10 @@ class No9229 {
         return true
     }
 
-    private fun isSingleChange(word1: String, word2: String): Boolean {
+    private fun isSingleChange(
+        word1: String,
+        word2: String
+    ): Boolean {
         if (word1.length != word2.length) return false
 
         var diffCount = 0

@@ -15,7 +15,10 @@ class No11403 {
         return formatMatrix(reachabilityMatrix)
     }
 
-    private fun readGraph(input: BufferedReader, n: Int): Array<IntArray> {
+    private fun readGraph(
+        input: BufferedReader,
+        n: Int
+    ): Array<IntArray> {
         return Array(n) {
             input.readLine().split(" ").map { if (it == "0") UNREACHABLE else it.toInt() }.toIntArray()
         }

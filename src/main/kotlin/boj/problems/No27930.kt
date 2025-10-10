@@ -17,7 +17,10 @@ class No27930 {
         }
     }
 
-    private fun findLastIndex(str: String, university: String): Int {
+    private fun findLastIndex(
+        str: String,
+        university: String
+    ): Int {
         var lastIndex = -1
         var progress = 0
 

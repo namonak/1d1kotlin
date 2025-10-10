@@ -18,11 +18,17 @@ class No4158 {
         return results.joinToString("\n")
     }
 
-    private fun readCDs(input: BufferedReader, count: Int): List<Long> {
+    private fun readCDs(
+        input: BufferedReader,
+        count: Int
+    ): List<Long> {
         return List(count) { input.readLine().toLong() }
     }
 
-    private fun countCommonCDs(list1: List<Long>, list2: List<Long>): Int {
+    private fun countCommonCDs(
+        list1: List<Long>,
+        list2: List<Long>
+    ): Int {
         var count = 0
         var i = 0
         var j = 0

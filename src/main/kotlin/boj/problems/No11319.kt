@@ -15,8 +15,11 @@ class No11319 {
 
             for (char in line) {
                 if (!char.isLetter()) continue
-                if (char in vowelSet) vowelCount++
-                else consonantCount++
+                if (char in vowelSet) {
+                    vowelCount++
+                } else {
+                    consonantCount++
+                }
             }
 
             result.append("$consonantCount $vowelCount\n")

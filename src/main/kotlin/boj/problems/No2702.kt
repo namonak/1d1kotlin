@@ -15,7 +15,10 @@ object No2702 {
         return sb.toString().trimEnd()
     }
 
-    private fun gcd(a: Int, b: Int): Int {
+    private fun gcd(
+        a: Int,
+        b: Int
+    ): Int {
         return if (b == 0) a else gcd(b, a % b)
     }
 }

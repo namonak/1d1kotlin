@@ -17,7 +17,10 @@ class No7785(private val inputProcessor: InputProcessor, private val outputProce
         return employees.toList().sortedDescending()
     }
 
-    private fun generateLog(log: Log, employees: MutableSet<String>) {
+    private fun generateLog(
+        log: Log,
+        employees: MutableSet<String>
+    ) {
         if (log.action == "enter") {
             employees.add(log.name)
             return

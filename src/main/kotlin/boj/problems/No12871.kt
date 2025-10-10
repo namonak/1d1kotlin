@@ -13,7 +13,13 @@ class No12871 {
         return if (sRepeated == tRepeated) "1" else "0"
     }
 
-    private fun lcm(a: Int, b: Int): Int = a * b / gcd(a, b)
+    private fun lcm(
+        a: Int,
+        b: Int
+    ): Int = a * b / gcd(a, b)
 
-    private fun gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+    private fun gcd(
+        a: Int,
+        b: Int
+    ): Int = if (b == 0) a else gcd(b, a % b)
 }

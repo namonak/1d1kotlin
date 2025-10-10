@@ -16,7 +16,11 @@ class No10828 {
         return result.toString().trimEnd()
     }
 
-    private fun executeOperation(operation: String, stack: Stack, result: StringBuilder) {
+    private fun executeOperation(
+        operation: String,
+        stack: Stack,
+        result: StringBuilder
+    ) {
         val st = StringTokenizer(operation, " ")
         when (st.nextToken()) {
             "push" -> stack.push(st.nextToken().toInt())

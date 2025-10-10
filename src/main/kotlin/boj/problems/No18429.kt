@@ -8,7 +8,10 @@ class No18429 {
         val exercises = input.readLine().split(" ").map { it.toInt() }
         val visited = BooleanArray(n) { false }
 
-        fun dfs(day: Int, weight: Int): Int {
+        fun dfs(
+            day: Int,
+            weight: Int
+        ): Int {
             if (weight < INITIAL_WEIGHT) return 0
             if (day == n) return 1
 

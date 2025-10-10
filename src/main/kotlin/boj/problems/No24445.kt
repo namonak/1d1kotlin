@@ -26,7 +26,12 @@ class No24445 {
         return order.slice(1..n).joinToString("\n")
     }
 
-    private fun bfs(graph: Array<MutableList<Int>>, visited: BooleanArray, start: Int, order: IntArray) {
+    private fun bfs(
+        graph: Array<MutableList<Int>>,
+        visited: BooleanArray,
+        start: Int,
+        order: IntArray
+    ) {
         val queue = ArrayDeque<Int>()
 
         visited[start] = true

@@ -25,14 +25,21 @@ object No10773 {
     }
 
     @Throws(IOException::class)
-    private fun makeStack(input: BufferedReader, number: Int, stack: Stack<Int>) {
+    private fun makeStack(
+        input: BufferedReader,
+        number: Int,
+        stack: Stack<Int>
+    ) {
         for (i in 0 until number) {
             val value = input.readLine().toInt()
             addValue(stack, value)
         }
     }
 
-    private fun addValue(stack: Stack<Int>, value: Int) {
+    private fun addValue(
+        stack: Stack<Int>,
+        value: Int
+    ) {
         if (value == 0) {
             stack.pop()
             return

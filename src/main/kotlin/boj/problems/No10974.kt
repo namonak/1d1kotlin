@@ -18,7 +18,10 @@ class No10974 {
         return result.toString().trimEnd()
     }
 
-    private fun permutation(n: Int, depth: Int) {
+    private fun permutation(
+        n: Int,
+        depth: Int
+    ) {
         if (n == depth) {
             result.append(arr.joinToString(" ") + "\n")
             return

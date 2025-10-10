@@ -28,7 +28,10 @@ class No1068() {
         return remainingCount.toString()
     }
 
-    private fun countRemainingNodes(node: Node?, deleteNode: Int): Int {
+    private fun countRemainingNodes(
+        node: Node?,
+        deleteNode: Int
+    ): Int {
         if (node == null || node.id == deleteNode) return 0
         if (node.children.isEmpty()) return 1
 

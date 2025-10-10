@@ -17,8 +17,10 @@ class No1925 {
         if (cross == 0) return "X"
 
         // 세 변의 길이 제곱
-        fun dist2(p1: Point, p2: Point): Int =
-            (p1.x - p2.x).let { dx -> dx * dx } + (p1.y - p2.y).let { dy -> dy * dy }
+        fun dist2(
+            p1: Point,
+            p2: Point
+        ): Int = (p1.x - p2.x).let { dx -> dx * dx } + (p1.y - p2.y).let { dy -> dy * dy }
 
         val d1 = dist2(a, b)
         val d2 = dist2(b, c)

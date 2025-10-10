@@ -9,7 +9,11 @@ object No2480 {
         return getPrizeMoney(a, b, c).toString()
     }
 
-    private fun getPrizeMoney(a: Int, b: Int, c: Int): Int {
+    private fun getPrizeMoney(
+        a: Int,
+        b: Int,
+        c: Int
+    ): Int {
         if (a == b && b == c) {
             return 10000 + a * 1000
         }
@@ -18,10 +22,16 @@ object No2480 {
         }
         return if (b == c) {
             1000 + b * 100
-        } else getMaximum(a, b, c) * 100
+        } else {
+            getMaximum(a, b, c) * 100
+        }
     }
 
-    private fun getMaximum(a: Int, b: Int, c: Int): Int {
+    private fun getMaximum(
+        a: Int,
+        b: Int,
+        c: Int
+    ): Int {
         var max = a
         if (b > max) {
             max = b

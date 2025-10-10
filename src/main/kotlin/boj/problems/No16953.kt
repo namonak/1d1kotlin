@@ -8,7 +8,10 @@ class No16953 {
         return minOperations(a.toInt(), b.toInt()).toString()
     }
 
-    private fun minOperations(a: Int, b: Int): Int {
+    private fun minOperations(
+        a: Int,
+        b: Int
+    ): Int {
         val queue = ArrayDeque<Pair<Long, Int>>()
         queue.add(a.toLong() to 1) // 초기값을 큐에 넣고 연산 횟수를 1로 시작
 

@@ -32,7 +32,11 @@ class No1012 {
         return result.toString().trim()
     }
 
-    private fun dfs(field: Array<BooleanArray>, x: Int, y: Int) {
+    private fun dfs(
+        field: Array<BooleanArray>,
+        x: Int,
+        y: Int
+    ) {
         if (x < 0 || x >= field.size || y < 0 || y >= field[0].size || !field[x][y]) {
             return
         }

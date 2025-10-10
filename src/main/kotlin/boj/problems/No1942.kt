@@ -49,7 +49,11 @@ data class ClockTime(val h: Int, val m: Int, val s: Int) {
  * 규칙 전담: 시계 정수의 3의 배수 여부
  */
 object ClockInteger {
-    fun isMultipleOf3(h: Int, m: Int, s: Int): Boolean = ((h + m + s) % 3) == 0
+    fun isMultipleOf3(
+        h: Int,
+        m: Int,
+        s: Int
+    ): Boolean = ((h + m + s) % 3) == 0
 }
 
 /**
@@ -72,7 +76,10 @@ class ClockIntegerCounter {
         }
     }
 
-    fun countInclusive(startSec: Int, endSec: Int): Int {
+    fun countInclusive(
+        startSec: Int,
+        endSec: Int
+    ): Int {
         return if (startSec <= endSec) {
             rangeCount(startSec, endSec)
         } else {
@@ -80,8 +87,10 @@ class ClockIntegerCounter {
         }
     }
 
-    private fun rangeCount(l: Int, r: Int): Int =
-        prefix[r + 1] - prefix[l]
+    private fun rangeCount(
+        l: Int,
+        r: Int
+    ): Int = prefix[r + 1] - prefix[l]
 
     companion object {
         private const val SECONDS_PER_DAY = 24 * 60 * 60 // 86400

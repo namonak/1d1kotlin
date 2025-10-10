@@ -10,8 +10,11 @@ class No13222 {
         repeat(n) {
             val length = input.readLine().toInt()
             result.append(
-                if (length * length <= w * w + h * h) "YES\n"
-                else "NO\n"
+                if (length * length <= w * w + h * h) {
+                    "YES\n"
+                } else {
+                    "NO\n"
+                }
             )
         }
 

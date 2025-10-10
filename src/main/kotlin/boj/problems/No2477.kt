@@ -4,7 +4,10 @@ import java.io.BufferedReader
 
 class No2477 {
     enum class Direction(val code: Int) {
-        EAST(1), WEST(2), SOUTH(3), NORTH(4);
+        EAST(1),
+        WEST(2),
+        SOUTH(3),
+        NORTH(4);
 
         companion object {
             fun from(code: Int): Direction =
@@ -18,16 +21,16 @@ class No2477 {
 
     @JvmInline
     value class Length private constructor(val value: Int) : Comparable<Length> {
-
         init {
             require(value in 1..500) { "Length must be between 1 and 500 (got $value)" }
         }
 
-        override operator fun compareTo(other: Length): Int =
-            this.value.compareTo(other.value)
+        override operator fun compareTo(other: Length): Int = this.value.compareTo(other.value)
 
         operator fun times(k: Int): Int = this.value * k
+
         operator fun plus(other: Length): Length = of(this.value + other.value)
+
         operator fun minus(other: Length): Length = of(this.value - other.value)
 
         companion object {

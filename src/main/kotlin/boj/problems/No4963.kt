@@ -29,7 +29,12 @@ class No4963 {
         return result.toString().trim()
     }
 
-    private fun dfsRecursive(x: Int, y: Int, map: Array<IntArray>, visited: Array<BooleanArray>) {
+    private fun dfsRecursive(
+        x: Int,
+        y: Int,
+        map: Array<IntArray>,
+        visited: Array<BooleanArray>
+    ) {
         if (x < 0 || y < 0 || x >= map.size || y >= map[0].size) {
             return
         }
@@ -41,8 +46,14 @@ class No4963 {
         visited[x][y] = true
 
         val direction = arrayOf(
-            -1 to 0, 1 to 0, 0 to -1, 0 to 1,
-            -1 to -1, -1 to 1, 1 to -1, 1 to 1
+            -1 to 0,
+            1 to 0,
+            0 to -1,
+            0 to 1,
+            -1 to -1,
+            -1 to 1,
+            1 to -1,
+            1 to 1
         )
 
         for ((dx, dy) in direction) {

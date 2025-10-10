@@ -29,9 +29,13 @@ object No4134 {
             for (i in 2..sqrt) {
                 if (number % i == 0L) s = true
             }
-            if (s) result.append(prime.nextProbablePrime()) else if (number == 0L || number == 1L) {
+            if (s) {
                 result.append(prime.nextProbablePrime())
-            } else result.append(number)
+            } else if (number == 0L || number == 1L) {
+                result.append(prime.nextProbablePrime())
+            } else {
+                result.append(number)
+            }
 
             result.append("\n")
         }

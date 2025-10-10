@@ -9,6 +9,12 @@ class No28113 {
 
         val subwayTime = max(n, b)
 
-        return if (a < subwayTime) "Bus" else if (a > subwayTime) "Subway" else "Anything"
+        return if (a < subwayTime) {
+            "Bus"
+        } else if (a > subwayTime) {
+            "Subway"
+        } else {
+            "Anything"
+        }
     }
 }

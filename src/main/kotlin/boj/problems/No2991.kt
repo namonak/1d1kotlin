@@ -32,7 +32,11 @@ class No2991 {
         }.trimEnd()
     }
 
-    private fun isAttackedByDog(t: Int, aggressive: Int, period: Int): Boolean {
+    private fun isAttackedByDog(
+        t: Int,
+        aggressive: Int,
+        period: Int
+    ): Boolean {
         val modVal = (t - 1) % period + 1
         return modVal in 1..aggressive
     }

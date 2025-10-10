@@ -13,7 +13,10 @@ class No1010 {
         return result.toString().trim()
     }
 
-    private fun combination(m: Int, n: Int): Int {
+    private fun combination(
+        m: Int,
+        n: Int
+    ): Int {
         var result = 1
         for (i in 1..n) {
             result = result * (m - n + i) / i

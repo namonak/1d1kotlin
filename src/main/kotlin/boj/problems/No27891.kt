@@ -26,7 +26,10 @@ class No27891 {
         return encryptedToAbbrev[encryptedInput] ?: "UNKNOWN"
     }
 
-    private fun shiftForward(s: String, n: Int): String {
+    private fun shiftForward(
+        s: String,
+        n: Int
+    ): String {
         return s.map {
             val shifted = ((it - 'a') + n) % 26
             'a' + shifted

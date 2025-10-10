@@ -12,7 +12,9 @@ class No5430 {
             val n = input.readLine().toInt()
             val arrInput = input.readLine()
 
-            val arr = if (n == 0) ArrayDeque() else {
+            val arr = if (n == 0) {
+                ArrayDeque()
+            } else {
                 arrInput.drop(1).dropLast(1).split(",").map { it.toInt() }.toCollection(ArrayDeque())
             }
 

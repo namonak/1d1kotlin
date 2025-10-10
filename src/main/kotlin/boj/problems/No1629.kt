@@ -6,7 +6,10 @@ class No1629 {
     fun solve(input: BufferedReader): String {
         val (a, b, c) = input.readLine().split(" ").map { it.toLong() }
 
-        fun modPow(base: Long, exp: Long): Long {
+        fun modPow(
+            base: Long,
+            exp: Long
+        ): Long {
             if (exp == 0L) return 1L
             if (exp == 1L) return base % c
 

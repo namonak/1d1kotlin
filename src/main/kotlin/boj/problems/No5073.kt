@@ -15,7 +15,11 @@ object No5073 {
         return result.toString().trim()
     }
 
-    private fun classifyTriangle(a: Int, b: Int, c: Int): String {
+    private fun classifyTriangle(
+        a: Int,
+        b: Int,
+        c: Int
+    ): String {
         return when {
             // 어떤 두 변의 합도 세 번째 변보다 커야 한다는 조건을 만족하지 못하는 경우
             a + b <= c || a + c <= b || b + c <= a -> "Invalid"

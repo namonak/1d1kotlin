@@ -33,17 +33,34 @@ class No1504 {
         val distanceFromV1 = dijkstra(graph, v1)
         val distanceFromV2 = dijkstra(graph, v2)
 
-        val route1 = if (distanceFromStart[v1] == Int.MAX_VALUE || distanceFromV1[v2] == Int.MAX_VALUE || distanceFromV2[numVertices] == Int.MAX_VALUE) Int.MAX_VALUE
-        else distanceFromStart[v1] + distanceFromV1[v2] + distanceFromV2[numVertices]
-        val route2 = if (distanceFromStart[v2] == Int.MAX_VALUE || distanceFromV2[v1] == Int.MAX_VALUE || distanceFromV1[numVertices] == Int.MAX_VALUE) Int.MAX_VALUE
-        else distanceFromStart[v2] + distanceFromV2[v1] + distanceFromV1[numVertices]
+        val route1 = if (
+            distanceFromStart[v1] == Int.MAX_VALUE ||
+            distanceFromV1[v2] == Int.MAX_VALUE ||
+            distanceFromV2[numVertices] == Int.MAX_VALUE
+        ) {
+            Int.MAX_VALUE
+        } else {
+            distanceFromStart[v1] + distanceFromV1[v2] + distanceFromV2[numVertices]
+        }
+        val route2 = if (
+            distanceFromStart[v2] == Int.MAX_VALUE ||
+            distanceFromV2[v1] == Int.MAX_VALUE ||
+            distanceFromV1[numVertices] == Int.MAX_VALUE
+        ) {
+            Int.MAX_VALUE
+        } else {
+            distanceFromStart[v2] + distanceFromV2[v1] + distanceFromV1[numVertices]
+        }
 
         val shortestPath = if (route1 == Int.MAX_VALUE && route2 == Int.MAX_VALUE) -1 else minOf(route1, route2)
 
         return shortestPath.toString()
     }
 
-    private fun dijkstra(graph: Array<MutableList<Vertex>>, start: Int): IntArray {
+    private fun dijkstra(
+        graph: Array<MutableList<Vertex>>,
+        start: Int
+    ): IntArray {
         val distances = IntArray(graph.size) { Int.MAX_VALUE }
         val priorityQueue = PriorityQueue<Vertex>()
 

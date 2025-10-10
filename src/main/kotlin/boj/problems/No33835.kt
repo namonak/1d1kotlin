@@ -5,8 +5,7 @@ import kotlin.math.hypot
 
 class No33835 {
     private data class Point(val x: Long, val y: Long) {
-        fun distanceTo(other: Point): Double =
-            hypot((x - other.x).toDouble(), (y - other.y).toDouble())
+        fun distanceTo(other: Point): Double = hypot((x - other.x).toDouble(), (y - other.y).toDouble())
     }
 
     fun solve(input: BufferedReader): String {

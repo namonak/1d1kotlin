@@ -7,6 +7,6 @@ class No24262 {
         return """
             1
             0
-        """.trimIndent()
+            """.trimIndent()
     }
 }

@@ -20,7 +20,12 @@ class No11725 {
         return parent.slice(2..n).joinToString("\n")
     }
 
-    private fun dfsRecursive(graph: Array<MutableList<Int>>, visited: BooleanArray, node: Int, parent: IntArray) {
+    private fun dfsRecursive(
+        graph: Array<MutableList<Int>>,
+        visited: BooleanArray,
+        node: Int,
+        parent: IntArray
+    ) {
         visited[node] = true
 
         for (neighbor in graph[node]) {

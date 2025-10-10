@@ -17,7 +17,10 @@ object No2606 {
         return (dfs(graph, 1).size - 1).toString()
     }
 
-    private fun dfs(graph: Array<MutableList<Int>>, v: Int): List<Int> {
+    private fun dfs(
+        graph: Array<MutableList<Int>>,
+        v: Int
+    ): List<Int> {
         val visited = BooleanArray(graph.size)
         val stack = mutableListOf<Int>()
         val result = mutableListOf<Int>()

@@ -26,7 +26,12 @@ class No24480 {
         return order.slice(1..n).joinToString("\n")
     }
 
-    private fun dfsRecursive(graph: Array<MutableList<Int>>, visited: BooleanArray, node: Int, order: IntArray) {
+    private fun dfsRecursive(
+        graph: Array<MutableList<Int>>,
+        visited: BooleanArray,
+        node: Int,
+        order: IntArray
+    ) {
         visited[node] = true
         order[node] = orderCounter++
 

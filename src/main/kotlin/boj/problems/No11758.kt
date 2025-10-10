@@ -3,7 +3,6 @@ package boj.problems
 import java.io.BufferedReader
 
 class No11758 {
-
     data class Point(val x: Long, val y: Long)
 
     /**
@@ -11,7 +10,11 @@ class No11758 {
      *  (b - a) x (c - a)의 z성분 부호를 이용한다.
      *  > 0 : 반시계(1), = 0 : 일직선(0), < 0 : 시계(-1)
      */
-    private fun ccwSign(a: Point, b: Point, c: Point): Int {
+    private fun ccwSign(
+        a: Point,
+        b: Point,
+        c: Point
+    ): Int {
         val cross = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)
         return when {
             cross > 0 -> 1

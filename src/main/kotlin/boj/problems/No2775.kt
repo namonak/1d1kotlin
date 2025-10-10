@@ -29,7 +29,10 @@ object No2775 {
 
     private val memo = Array(15) { IntArray(15) { -1 } }
 
-    private fun getPeople(k: Int, n: Int): Int {
+    private fun getPeople(
+        k: Int,
+        n: Int
+    ): Int {
         if (k == 0) return n
         if (n == 1) return 1
 

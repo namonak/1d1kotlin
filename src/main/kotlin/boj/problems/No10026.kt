@@ -12,7 +12,12 @@ class No10026 {
         val visitedColorBlind = Array(n) { BooleanArray(n) }
         val direction = arrayOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
-        fun bfs(x: Int, y: Int, visited: Array<BooleanArray>, isColorBlind: Boolean) {
+        fun bfs(
+            x: Int,
+            y: Int,
+            visited: Array<BooleanArray>,
+            isColorBlind: Boolean
+        ) {
             val queue: Queue<Pair<Int, Int>> = LinkedList()
             queue.add(Pair(x, y))
             visited[x][y] = true

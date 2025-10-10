@@ -15,7 +15,12 @@ class No31945 {
         return results.joinToString("\n")
     }
 
-    private fun isSameFace(a: Int, b: Int, c: Int, d: Int): Boolean {
+    private fun isSameFace(
+        a: Int,
+        b: Int,
+        c: Int,
+        d: Int
+    ): Boolean {
         val point1 = CUBE_VERTICES[a]
         val point2 = CUBE_VERTICES[b]
         val point3 = CUBE_VERTICES[c]
@@ -26,7 +31,12 @@ class No31945 {
             isSameAxis(point1.third, point2.third, point3.third, point4.third)
     }
 
-    private fun isSameAxis(coord1: Int, coord2: Int, coord3: Int, coord4: Int): Boolean {
+    private fun isSameAxis(
+        coord1: Int,
+        coord2: Int,
+        coord3: Int,
+        coord4: Int
+    ): Boolean {
         return coord1 == coord2 && coord2 == coord3 && coord3 == coord4
     }
 

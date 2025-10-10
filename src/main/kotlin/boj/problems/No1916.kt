@@ -25,7 +25,10 @@ class No1916 {
         return dijkstra(graph, start)[end].toString()
     }
 
-    private fun dijkstra(graph: Array<MutableList<Vertex>>, start: Int): IntArray {
+    private fun dijkstra(
+        graph: Array<MutableList<Vertex>>,
+        start: Int
+    ): IntArray {
         val dist = IntArray(n + 1) { Int.MAX_VALUE } // 최단 거리를 저장할 배열 (초기 값은 무한대)
         val pq = PriorityQueue(compareBy<Vertex> { it.weight }) // 우선순위 큐 (최단 거리를 기준으로 우선순위 설정)
 

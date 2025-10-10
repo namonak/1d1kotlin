@@ -16,7 +16,10 @@ class No15923 {
         return perimeter(points).toString()
     }
 
-    private fun distance(p1: Point, p2: Point): Double {
+    private fun distance(
+        p1: Point,
+        p2: Point
+    ): Double {
         return if (p1.x == p2.x) {
             abs(p1.y - p2.y).toDouble()
         } else {

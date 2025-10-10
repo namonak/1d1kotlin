@@ -14,10 +14,17 @@ class No2630 {
         return "$whiteCount\n$blueCount"
     }
 
-    private fun checkAndSplitPaper(x: Int, y: Int, size: Int) {
+    private fun checkAndSplitPaper(
+        x: Int,
+        y: Int,
+        size: Int
+    ) {
         if (isAllSameColor(x, y, size)) {
-            if (paper[x][y] == 0) whiteCount++
-            else blueCount++
+            if (paper[x][y] == 0) {
+                whiteCount++
+            } else {
+                blueCount++
+            }
             return
         }
         val newSize = size / 2
@@ -27,7 +34,11 @@ class No2630 {
         checkAndSplitPaper(x + newSize, y + newSize, newSize)
     }
 
-    private fun isAllSameColor(x: Int, y: Int, size: Int): Boolean {
+    private fun isAllSameColor(
+        x: Int,
+        y: Int,
+        size: Int
+    ): Boolean {
         val color = paper[x][y]
         for (i in x until x + size) {
             for (j in y until y + size) {

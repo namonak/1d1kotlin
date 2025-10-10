@@ -9,6 +9,6 @@ object No14581 {
             :fan::fan::fan:
             :fan::$id::fan:
             :fan::fan::fan:
-        """.trimIndent()
+            """.trimIndent()
     }
 }

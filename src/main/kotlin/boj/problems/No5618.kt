@@ -18,7 +18,10 @@ class No5618 {
         return numbers.reduce { acc, num -> gcd(acc, num) }
     }
 
-    private fun gcd(a: Int, b: Int): Int {
+    private fun gcd(
+        a: Int,
+        b: Int
+    ): Int {
         return if (b == 0) a else gcd(b, a % b)
     }
 

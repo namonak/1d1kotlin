@@ -12,7 +12,10 @@ class MergeSorting {
         return merge(left, right)
     }
 
-    private fun merge(left: Array<Int>, right: Array<Int>): Array<Int> {
+    private fun merge(
+        left: Array<Int>,
+        right: Array<Int>
+    ): Array<Int> {
         val result = Array(left.size + right.size) { 0 }
         var i = 0
         var j = 0

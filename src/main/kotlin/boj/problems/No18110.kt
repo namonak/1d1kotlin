@@ -23,7 +23,9 @@ object No18110 {
             numbers[i] = input.readLine().toInt()
         }
 
-        return if (count == 0) 0 else {
+        return if (count == 0) {
+            0
+        } else {
             val removeCount = (count * 0.15).roundToInt()
             val removeNumbers = numbers.sorted().subList(removeCount, count - removeCount)
             removeNumbers.average().roundToInt()

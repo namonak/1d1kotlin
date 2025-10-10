@@ -4,10 +4,14 @@ import java.io.BufferedReader
 
 class No4583 {
     private val mirrorMap = mapOf(
-        'b' to 'd', 'd' to 'b',
-        'p' to 'q', 'q' to 'p',
-        'i' to 'i', 'o' to 'o',
-        'v' to 'v', 'w' to 'w',
+        'b' to 'd',
+        'd' to 'b',
+        'p' to 'q',
+        'q' to 'p',
+        'i' to 'i',
+        'o' to 'o',
+        'v' to 'v',
+        'w' to 'w',
         'x' to 'x'
     )
 

@@ -25,7 +25,11 @@ class No11724 {
         return count.toString()
     }
 
-    private fun dfs(v: Int, graph: Array<MutableList<Int>>, visited: BooleanArray) {
+    private fun dfs(
+        v: Int,
+        graph: Array<MutableList<Int>>,
+        visited: BooleanArray
+    ) {
         visited[v] = true
         for (i in graph[v]) {
             if (!visited[i]) {

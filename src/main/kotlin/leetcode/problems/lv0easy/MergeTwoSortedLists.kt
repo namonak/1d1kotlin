@@ -5,7 +5,10 @@ class ListNode(var `val`: Int) {
 }
 
 class MergeTwoSortedLists {
-    fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
+    fun mergeTwoLists(
+        list1: ListNode?,
+        list2: ListNode?
+    ): ListNode? {
         var l1 = list1
         var l2 = list2
         val head = ListNode(0)

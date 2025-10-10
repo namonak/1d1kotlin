@@ -12,7 +12,11 @@ class QuickSorting {
         return array
     }
 
-    private fun quicksort(array: Array<Int>, left: Int, right: Int) {
+    private fun quicksort(
+        array: Array<Int>,
+        left: Int,
+        right: Int
+    ) {
         val index = partition(array, left, right)
         if (left < index - 1) { // 2) Sorting left half
             quicksort(array, left, index - 1)
@@ -22,7 +26,11 @@ class QuickSorting {
         }
     }
 
-    private fun partition(array: Array<Int>, l: Int, r: Int): Int {
+    private fun partition(
+        array: Array<Int>,
+        l: Int,
+        r: Int
+    ): Int {
         var left = l
         var right = r
         val pivot = array[(left + right) / 2] // 4) Pivot Point
@@ -41,7 +49,11 @@ class QuickSorting {
         return left
     }
 
-    private fun swapArray(a: Array<Int>, b: Int, c: Int) {
+    private fun swapArray(
+        a: Array<Int>,
+        b: Int,
+        c: Int
+    ) {
         val temp = a[b]
         a[b] = a[c]
         a[c] = temp

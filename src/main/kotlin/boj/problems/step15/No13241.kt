@@ -20,7 +20,10 @@ object No13241 {
         return a * b / gcd(a, b)
     }
 
-    private fun gcd(a: Long, b: Long): Long {
+    private fun gcd(
+        a: Long,
+        b: Long
+    ): Long {
         return if (b == 0L) a else gcd(b, a % b)
     }
 }

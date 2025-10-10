@@ -21,11 +21,18 @@ object No2609 {
         return "$gcd\n$lcm"
     }
 
-    private fun gcd(a: Int, b: Int): Int {
+    private fun gcd(
+        a: Int,
+        b: Int
+    ): Int {
         return if (b == 0) a else gcd(b, a % b)
     }
 
-    private fun lcm(a: Int, b: Int, gcd: Int): Int {
+    private fun lcm(
+        a: Int,
+        b: Int,
+        gcd: Int
+    ): Int {
         return a * b / gcd
     }
 }

@@ -28,7 +28,10 @@ object No1934 {
         return results.joinToString("\n")
     }
 
-    private fun gcd(a: Int, b: Int): Int {
+    private fun gcd(
+        a: Int,
+        b: Int
+    ): Int {
         return if (b == 0) a else gcd(b, a % b)
     }
 }

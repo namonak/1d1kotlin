@@ -15,7 +15,10 @@ class No1920(private val inputProcessor: InputProcessor, private val outputProce
         return outputProcessor.process(result)
     }
 
-    private fun getResult(a: IntArray, b: IntArray): IntArray {
+    private fun getResult(
+        a: IntArray,
+        b: IntArray
+    ): IntArray {
         val result = IntArray(b.size)
 
         a.sort()

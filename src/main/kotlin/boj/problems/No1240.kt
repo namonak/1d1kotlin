@@ -24,7 +24,13 @@ class No1240 {
         return results.toString().trim()
     }
 
-    private fun dfs(graph: Array<MutableList<Node>>, current: Int, target: Int, visited: BooleanArray, distance: Int): Int {
+    private fun dfs(
+        graph: Array<MutableList<Node>>,
+        current: Int,
+        target: Int,
+        visited: BooleanArray,
+        distance: Int
+    ): Int {
         if (current == target) return distance
         visited[current] = true
 

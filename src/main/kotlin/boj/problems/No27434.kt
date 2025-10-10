@@ -14,7 +14,10 @@ class No27434 {
         }
     }
 
-    private fun factorial(l: Int, r: Int): BigInteger =
+    private fun factorial(
+        l: Int,
+        r: Int
+    ): BigInteger =
         when {
             l > r -> BigInteger.ONE
             l == r -> BigInteger.valueOf(l.toLong())

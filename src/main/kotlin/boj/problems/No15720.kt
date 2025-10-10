@@ -15,7 +15,12 @@ class No15720 {
         return "$totalPrice\n$discountPrice"
     }
 
-    private fun calculateDiscountPrice(burgers: List<Int>, sides: List<Int>, drinks: List<Int>, setCount: Int): Int {
+    private fun calculateDiscountPrice(
+        burgers: List<Int>,
+        sides: List<Int>,
+        drinks: List<Int>,
+        setCount: Int
+    ): Int {
         val discount = (0 until setCount).sumOf { index ->
             (burgers[index] + sides[index] + drinks[index]) * 0.9
         }.toInt()

@@ -4,6 +4,7 @@ import java.io.BufferedReader
 
 class No30891 {
     data class Point(val x: Int, val y: Int)
+
     data class SearchRange(val minX: Int, val maxX: Int, val minY: Int, val maxY: Int)
 
     fun solve(input: BufferedReader): String {
@@ -19,7 +20,10 @@ class No30891 {
         return "$bestX $bestY"
     }
 
-    private fun computeSearchRange(points: List<Point>, r: Int): SearchRange {
+    private fun computeSearchRange(
+        points: List<Point>,
+        r: Int
+    ): SearchRange {
         val xs = points.map { it.x }
         val ys = points.map { it.y }
         val minX = (xs.minOrNull() ?: 0) - r
@@ -57,9 +61,10 @@ class No30891 {
         centerX: Int,
         centerY: Int,
         rSquared: Int
-    ): Int = points.count { (x, y) ->
-        val dx = centerX - x
-        val dy = centerY - y
-        dx * dx + dy * dy <= rSquared
-    }
+    ): Int =
+        points.count { (x, y) ->
+            val dx = centerX - x
+            val dy = centerY - y
+            dx * dx + dy * dy <= rSquared
+        }
 }

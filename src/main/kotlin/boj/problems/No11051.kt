@@ -8,7 +8,10 @@ class No11051 {
         return "${combination(n, k)}"
     }
 
-    private fun combination(n: Int, k: Int): Int {
+    private fun combination(
+        n: Int,
+        k: Int
+    ): Int {
         val dp = Array(n + 1) { IntArray(k + 1) }
         for (i in 0..n) {
             for (j in 0..minOf(i, k)) {

@@ -23,12 +23,18 @@ class No6322 {
         fun solve(): String {
             return when {
                 a == -1.0 -> {
-                    if (c <= b) "Impossible."
-                    else "a = ${String.format("%.3f", sqrt(c * c - b * b))}"
+                    if (c <= b) {
+                        "Impossible."
+                    } else {
+                        "a = ${String.format("%.3f", sqrt(c * c - b * b))}"
+                    }
                 }
                 b == -1.0 -> {
-                    if (c <= a) "Impossible."
-                    else "b = ${String.format("%.3f", sqrt(c * c - a * a))}"
+                    if (c <= a) {
+                        "Impossible."
+                    } else {
+                        "b = ${String.format("%.3f", sqrt(c * c - a * a))}"
+                    }
                 }
                 c == -1.0 -> {
                     "c = ${String.format("%.3f", sqrt(a * a + b * b))}"

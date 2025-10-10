@@ -13,7 +13,11 @@ class No1992 {
         return compressionResult.toString()
     }
 
-    private fun checkAndSplitImage(x: Int, y: Int, size: Int) {
+    private fun checkAndSplitImage(
+        x: Int,
+        y: Int,
+        size: Int
+    ) {
         if (isAllSameBit(x, y, size)) {
             compressionResult.append(image[x][y])
             return
@@ -27,7 +31,11 @@ class No1992 {
         compressionResult.append(")")
     }
 
-    private fun isAllSameBit(x: Int, y: Int, size: Int): Boolean {
+    private fun isAllSameBit(
+        x: Int,
+        y: Int,
+        size: Int
+    ): Boolean {
         val bit = image[x][y]
         for (i in x until x + size) {
             for (j in y until y + size) {

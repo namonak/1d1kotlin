@@ -11,13 +11,20 @@ object No10809 {
         return alphabet.joinToString(separator = " ")
     }
 
-    private fun updateAlphabetArray(input: String, alphabet: IntArray) {
+    private fun updateAlphabetArray(
+        input: String,
+        alphabet: IntArray
+    ) {
         for (i in input.indices) {
             checkWordIndex(input, alphabet, i)
         }
     }
 
-    private fun checkWordIndex(input: String, alphabet: IntArray, i: Int) {
+    private fun checkWordIndex(
+        input: String,
+        alphabet: IntArray,
+        i: Int
+    ) {
         val index = input[i].code - 'a'.code
         if (alphabet[index] == -1) {
             alphabet[index] = i

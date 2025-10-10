@@ -1,7 +1,10 @@
 package leetcode.problems.lv0easy
 
 class AddBinary {
-    fun addBinary(a: String, b: String): String {
+    fun addBinary(
+        a: String,
+        b: String
+    ): String {
         val aLen = a.length
         val bLen = b.length
         val maxLen = maxOf(aLen, bLen)

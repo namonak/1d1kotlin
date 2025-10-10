@@ -28,6 +28,6 @@ class No9610 {
             Q3: $q3
             Q4: $q4
             AXIS: $axis
-        """.trimIndent()
+            """.trimIndent()
     }
 }

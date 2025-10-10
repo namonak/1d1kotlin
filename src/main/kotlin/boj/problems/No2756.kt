@@ -53,7 +53,10 @@ class No2756 {
 
 class DartScore {
     companion object {
-        fun calculate(x: Double, y: Double): Int {
+        fun calculate(
+            x: Double,
+            y: Double
+        ): Int {
             val dist = distance(x, y)
             return when {
                 dist <= 3 -> 100
@@ -65,7 +68,10 @@ class DartScore {
             }
         }
 
-        private fun distance(x: Double, y: Double): Double {
+        private fun distance(
+            x: Double,
+            y: Double
+        ): Double {
             return sqrt(x.pow(2.0) + y.pow(2.0))
         }
     }

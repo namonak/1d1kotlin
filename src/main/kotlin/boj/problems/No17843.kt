@@ -19,7 +19,10 @@ class No17843 {
             val thetaHour = (h % 12) * 30.0 + m * 0.5 + s * (0.5 / 60.0)
 
             // 두 각도 사이의 최소 차이 (0° ~ 180°)
-            fun angleDiff(a: Double, b: Double): Double {
+            fun angleDiff(
+                a: Double,
+                b: Double
+            ): Double {
                 val d = abs(a - b)
                 return min(d, 360.0 - d)
             }

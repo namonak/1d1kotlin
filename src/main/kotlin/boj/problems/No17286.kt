@@ -29,7 +29,13 @@ class No17286 {
         return result.minOrNull()?.toInt().toString()
     }
 
-    private fun generatePermutations(n: Int, visited: BooleanArray, arr: IntArray, permutations: MutableList<IntArray>, depth: Int = 0) {
+    private fun generatePermutations(
+        n: Int,
+        visited: BooleanArray,
+        arr: IntArray,
+        permutations: MutableList<IntArray>,
+        depth: Int = 0
+    ) {
         if (depth == n) {
             permutations.add(arr.copyOf())
             return
@@ -45,7 +51,10 @@ class No17286 {
         }
     }
 
-    private fun calculateDistance(p1: Point, p2: Point): Double {
+    private fun calculateDistance(
+        p1: Point,
+        p2: Point
+    ): Double {
         return sqrt((p1.x - p2.x).toDouble().pow(2.0) + (p1.y - p2.y).toDouble().pow(2.0))
     }
 }

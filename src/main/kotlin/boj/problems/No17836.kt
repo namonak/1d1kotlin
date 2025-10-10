@@ -15,7 +15,11 @@ class No17836 {
         return if (time == -1 || time > t) "Fail" else time.toString()
     }
 
-    private fun findPrincess(map: Array<IntArray>, n: Int, m: Int): Int {
+    private fun findPrincess(
+        map: Array<IntArray>,
+        n: Int,
+        m: Int
+    ): Int {
         val queue = ArrayDeque<Position>()
         val visited = Array(n) { BooleanArray(m) { false } }
         val visitedWithGram = Array(n) { BooleanArray(m) { false } }

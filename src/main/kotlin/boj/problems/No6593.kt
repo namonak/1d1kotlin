@@ -33,7 +33,14 @@ class No6593 {
         return result.toString().trimEnd()
     }
 
-    private fun bfs(building: Array<Array<CharArray>>, start: Triple<Int, Int, Int>, end: Triple<Int, Int, Int>, l: Int, r: Int, c: Int): String {
+    private fun bfs(
+        building: Array<Array<CharArray>>,
+        start: Triple<Int, Int, Int>,
+        end: Triple<Int, Int, Int>,
+        l: Int,
+        r: Int,
+        c: Int
+    ): String {
         val directions = arrayOf(
             Triple(-1, 0, 0),
             Triple(1, 0, 0),

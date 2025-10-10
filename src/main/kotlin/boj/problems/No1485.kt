@@ -22,8 +22,15 @@ class No1485 {
             distances.sort()
 
             result.append(
-                if (distances[0] == distances[1] && distances[1] == distances[2] && distances[2] == distances[3] && distances[4] == distances[5]) "1\n"
-                else "0\n"
+                if (distances[0] == distances[1] &&
+                    distances[1] == distances[2] &&
+                    distances[2] == distances[3] &&
+                    distances[4] == distances[5]
+                ) {
+                    "1\n"
+                } else {
+                    "0\n"
+                }
             )
         }
 

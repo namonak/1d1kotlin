@@ -17,7 +17,14 @@ class No5575 {
         return sb.toString().trim()
     }
 
-    private fun timeCard(h1: Int, m1: Int, s1: Int, h2: Int, m2: Int, s2: Int): Triple<Int, Int, Int> {
+    private fun timeCard(
+        h1: Int,
+        m1: Int,
+        s1: Int,
+        h2: Int,
+        m2: Int,
+        s2: Int
+    ): Triple<Int, Int, Int> {
         var s = s2 - s1
         var m = m2 - m1
         var h = h2 - h1

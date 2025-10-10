@@ -27,7 +27,10 @@ class No10655 {
         return (totalDistance - maxSaved).toString()
     }
 
-    private fun dist(p1: Pair<Int, Int>, p2: Pair<Int, Int>): Int {
+    private fun dist(
+        p1: Pair<Int, Int>,
+        p2: Pair<Int, Int>
+    ): Int {
         return abs(p1.first - p2.first) + abs(p1.second - p2.second)
     }
 }

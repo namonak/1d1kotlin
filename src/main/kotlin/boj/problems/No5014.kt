@@ -8,7 +8,13 @@ class No5014 {
         return bfs(f, s, g, u, d)
     }
 
-    private fun bfs(f: Int, s: Int, g: Int, u: Int, d: Int): String {
+    private fun bfs(
+        f: Int,
+        s: Int,
+        g: Int,
+        u: Int,
+        d: Int
+    ): String {
         val visited = BooleanArray(f + 1)
         val queue = mutableListOf(s)
         visited[s] = true

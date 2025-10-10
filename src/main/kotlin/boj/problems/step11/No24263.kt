@@ -7,6 +7,6 @@ class No24263 {
         return """
             ${input.readLine()}
             1
-        """.trimIndent()
+            """.trimIndent()
     }
 }

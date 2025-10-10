@@ -26,7 +26,11 @@ object No10845 {
         return result.toString().trimEnd()
     }
 
-    private fun executeOperation(readLine: String, queue: ArrayDeque<Int>, result: StringBuilder) {
+    private fun executeOperation(
+        readLine: String,
+        queue: ArrayDeque<Int>,
+        result: StringBuilder
+    ) {
         val st = readLine.split(" ")
         when (st[0]) {
             "push" -> queue.addLast(st[1].toInt())

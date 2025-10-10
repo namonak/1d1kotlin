@@ -24,7 +24,10 @@ class No30315 {
         return String.format("%.10f", minAverage)
     }
 
-    private fun computeAverageDistance(center: Point, keeps: List<Point>): Double {
+    private fun computeAverageDistance(
+        center: Point,
+        keeps: List<Point>
+    ): Double {
         var total = 0.0
         for (keep in keeps) {
             if (keep != center) {

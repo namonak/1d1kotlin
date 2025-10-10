@@ -28,11 +28,17 @@ class No28215 {
         }
     }
 
-    private fun manhattanDistance(a: House, b: House): Int {
+    private fun manhattanDistance(
+        a: House,
+        b: House
+    ): Int {
         return abs(a.x - b.x) + abs(a.y - b.y)
     }
 
-    private fun findMinWorstDistance(dist: Array<IntArray>, k: Int): Int {
+    private fun findMinWorstDistance(
+        dist: Array<IntArray>,
+        k: Int
+    ): Int {
         val n = dist.size
         var minWorst = Int.MAX_VALUE
         generateCombinations(n, k).forEach { shelters ->
@@ -44,9 +50,17 @@ class No28215 {
         return minWorst
     }
 
-    private fun generateCombinations(n: Int, k: Int): List<List<Int>> {
+    private fun generateCombinations(
+        n: Int,
+        k: Int
+    ): List<List<Int>> {
         val result = mutableListOf<List<Int>>()
-        fun dfs(start: Int, depth: Int, current: MutableList<Int>) {
+
+        fun dfs(
+            start: Int,
+            depth: Int,
+            current: MutableList<Int>
+        ) {
             if (depth == k) {
                 result.add(current.toList())
                 return

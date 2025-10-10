@@ -8,7 +8,11 @@ class No1987 {
         val board = Array(r) { input.readLine().toCharArray() }
         val visited = BooleanArray(ALPHABET_COUNT)
 
-        fun dfs(x: Int, y: Int, count: Int): Int {
+        fun dfs(
+            x: Int,
+            y: Int,
+            count: Int
+        ): Int {
             if (x < 0 || x >= r || y < 0 || y >= c || visited[board[x][y] - BASE_CHAR]) {
                 return count - 1
             }

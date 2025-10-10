@@ -27,7 +27,11 @@ class No18221 {
         return distance(professor, sungkyu) >= 25 && calculateNumberOfStudents(classRoom, professor, sungkyu) >= 3
     }
 
-    private fun calculateNumberOfStudents(classRoom: Array<IntArray>, professor: Position, sungkyu: Position): Int {
+    private fun calculateNumberOfStudents(
+        classRoom: Array<IntArray>,
+        professor: Position,
+        sungkyu: Position
+    ): Int {
         var numberOfStudents = 0
         for (i in minOf(professor.x, sungkyu.x)..maxOf(professor.x, sungkyu.x)) {
             for (j in minOf(professor.y, sungkyu.y)..maxOf(professor.y, sungkyu.y)) {
@@ -39,7 +43,10 @@ class No18221 {
         return numberOfStudents
     }
 
-    private fun findProfessorAndSungkyuPositions(n: Int, classRoom: Array<IntArray>) {
+    private fun findProfessorAndSungkyuPositions(
+        n: Int,
+        classRoom: Array<IntArray>
+    ) {
         for (i in 0 until n) {
             for (j in 0 until n) {
                 when (classRoom[i][j]) {
@@ -50,7 +57,10 @@ class No18221 {
         }
     }
 
-    private fun distance(p1: Position, p2: Position): Int {
+    private fun distance(
+        p1: Position,
+        p2: Position
+    ): Int {
         val dx = p1.x - p2.x
         val dy = p1.y - p2.y
         return dx * dx + dy * dy

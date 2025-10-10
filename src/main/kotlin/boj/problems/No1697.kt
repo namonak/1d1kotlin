@@ -12,7 +12,10 @@ class No1697 {
         return "${bfs(n, k)}"
     }
 
-    private fun bfs(n: Int, k: Int): Int {
+    private fun bfs(
+        n: Int,
+        k: Int
+    ): Int {
         val visited = IntArray(maxInputNumber + 1) { -1 }
         val queue: Queue<Int> = LinkedList()
 

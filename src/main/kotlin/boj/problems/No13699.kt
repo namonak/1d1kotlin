@@ -10,7 +10,10 @@ object No13699 {
         return memoization(n, dp).toString()
     }
 
-    private fun memoization(n: Int, dp: LongArray): Long {
+    private fun memoization(
+        n: Int,
+        dp: LongArray
+    ): Long {
         if (n == 0) return 1
         if (dp[n] != 0L) return dp[n]
         for (i in 0 until n) {

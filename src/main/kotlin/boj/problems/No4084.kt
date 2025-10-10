@@ -22,7 +22,10 @@ class No4084 {
                 val nb = abs(b - c)
                 val nc = abs(c - d)
                 val nd = abs(d - a)
-                a = na; b = nb; c = nc; d = nd
+                a = na
+                b = nb
+                c = nc
+                d = nd
                 steps++
             }
             out.appendLine(steps)
@@ -31,6 +34,10 @@ class No4084 {
         return out.toString().trimEnd()
     }
 
-    private fun allEqual(a: Int, b: Int, c: Int, d: Int): Boolean =
-        a == b && b == c && c == d
+    private fun allEqual(
+        a: Int,
+        b: Int,
+        c: Int,
+        d: Int
+    ): Boolean = a == b && b == c && c == d
 }

@@ -15,7 +15,10 @@ class No2408 {
             nums.add(BigInteger(br.readLine()))
         }
 
-        fun floorDiv(x: BigInteger, y: BigInteger): BigInteger {
+        fun floorDiv(
+            x: BigInteger,
+            y: BigInteger
+        ): BigInteger {
             val q = x.divide(y)
             val r = x.remainder(y)
             return if (r != BigInteger.ZERO && x.signum() * y.signum() < 0) {

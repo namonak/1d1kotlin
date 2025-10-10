@@ -26,7 +26,12 @@ class No24481 {
         return depth.slice(1..n).joinToString("\n")
     }
 
-    private fun dfsRecursive(graph: Array<MutableList<Int>>, visited: Array<Boolean>, node: Int, depth: IntArray) {
+    private fun dfsRecursive(
+        graph: Array<MutableList<Int>>,
+        visited: Array<Boolean>,
+        node: Int,
+        depth: IntArray
+    ) {
         visited[node] = true
 
         for (neighbor in graph[node]) {

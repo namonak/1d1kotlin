@@ -42,7 +42,10 @@ class SinglyLinkedList() {
     }
 
     // O(1)
-    fun addAfter(node: Node?, value: Int) {
+    fun addAfter(
+        node: Node?,
+        value: Int
+    ) {
         if (mHead == null || node == null) return
 
         val newNode = Node(value)
