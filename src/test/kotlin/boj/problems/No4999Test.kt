@@ -10,15 +10,11 @@ class No4999Test : StringSpec({
             """
                 aaah
                 aaaaah
-            """.trimIndent()
-                to
-                    "no",
+            """.trimIndent() to "no",
             """
                 aaah
                 ah
-            """.trimIndent()
-                to
-                    "go"
+            """.trimIndent() to "go"
         )
 
         testCases.forEach { (input, expected) ->

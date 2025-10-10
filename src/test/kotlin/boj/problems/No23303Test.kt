@@ -8,7 +8,6 @@ class No23303Test : StringSpec({
         val testCases = listOf(
             "naver d2" to "D2",
             "naver d3" to "unrated"
-
         )
 
         testCases.forEach { (given, expected) ->

@@ -19,9 +19,8 @@ class No11047Test : StringSpec({
                 5000
                 10000
                 50000
-            """.trimIndent()
-                to
-                    6,
+            """.trimIndent() to
+                6,
             """
                 10 4790
                 1
@@ -34,9 +33,8 @@ class No11047Test : StringSpec({
                 5000
                 10000
                 50000
-            """.trimIndent()
-                to
-                    12
+            """.trimIndent() to
+                12
         )
 
         testCases.forEach { (input, expected) ->

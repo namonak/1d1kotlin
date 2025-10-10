@@ -14,9 +14,8 @@ class No1302Test : StringSpec({
                 top
                 top
                 kimtop
-            """.trimIndent()
-                to
-                    "top",
+            """.trimIndent() to
+                "top",
             """
                 9
                 table
@@ -28,9 +27,8 @@ class No1302Test : StringSpec({
                 lamp
                 table
                 chair
-            """.trimIndent()
-                to
-                    "table",
+            """.trimIndent() to
+                "table",
             """
                 6
                 a
@@ -39,9 +37,8 @@ class No1302Test : StringSpec({
                 b
                 b
                 b
-            """.trimIndent()
-                to
-                    "a",
+            """.trimIndent() to
+                "a",
             """
                 8
                 icecream
@@ -52,15 +49,13 @@ class No1302Test : StringSpec({
                 chocolate
                 icecream
                 apple
-            """.trimIndent()
-                to
-                    "chocolate",
+            """.trimIndent() to
+                "chocolate",
             """
                 1
                 soul
-            """.trimIndent()
-                to
-                    "soul"
+            """.trimIndent() to
+                "soul"
         )
 
         testCases.forEach { (given, expected) ->

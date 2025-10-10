@@ -2,61 +2,34 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No25757Test : StringSpec({
-    "임스와 함께하는 미니게임 : https://www.acmicpc.net/problem/25757" {
+    "임스와 함께하는 미니게임" {
         val testCases = listOf(
             """
-                7 Y
+                3 Y
                 lms0806
                 lms0806
-                exponentiale
-                lms0806
-                jthis
-                lms0806
-                leo020630
-            """.trimIndent()
-                to
-                    4,
+                exponential
+            """.trimIndent() to "2",
             """
-                12 F
+                7 F
                 lms0806
-                powergee
-                skeep194
                 lms0806
-                tony9402
+                exponential
                 lms0806
-                wider93
                 lms0806
-                mageek2guanaah
+                exponential
                 lms0806
-                jthis
-                lms0806
-            """.trimIndent()
-                to
-                    3,
+            """.trimIndent() to "1",
             """
-                12 O
+                1 O
                 lms0806
-                mageek2guanaah
-                jthis
-                lms0806
-                exponentiale
-                lms0806
-                leo020630
-                lms0806
-                powergee
-                lms0806
-                skeep194
-                lms0806
-            """.trimIndent()
-                to
-                    2
+            """.trimIndent() to "0"
         )
 
         testCases.forEach { (given, expected) ->
-            No25757.solve(BufferedReader(given.reader())) shouldBe expected
+            No25757.solve(given.byteInputStream()) shouldBe expected
         }
     }
 })

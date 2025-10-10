@@ -56,7 +56,6 @@ class No2108Test : StringSpec({
                     0
                     1
                 """.trimIndent()
-
         )
 
         testCases.forEach { (given, expected) ->

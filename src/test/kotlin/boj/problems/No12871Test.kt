@@ -14,7 +14,6 @@ class No12871Test : StringSpec({
                 abc
                 bca
             """.trimIndent() to "0"
-
         )
 
         testCases.forEach { (given, expected) ->

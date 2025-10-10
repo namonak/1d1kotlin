@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No5524Test : StringSpec({
     "입실 관리 : https://www.acmicpc.net/problem/5524" {
@@ -12,31 +11,27 @@ class No5524Test : StringSpec({
                 WatanabE
                 ITO
                 YamaMoto
-            """.trimIndent()
-                to
-                    """
+            """.trimIndent() to """
                 watanabe
                 ito
                 yamamoto
-                    """.trimIndent(),
+            """.trimIndent(),
             """
                 4
                 SUZUKI
                 tanaka
                 tAkAhAshi
                 SuZuKi
-            """.trimIndent()
-                to
-                    """
+            """.trimIndent() to """
                 suzuki
                 tanaka
                 takahashi
                 suzuki
-                    """.trimIndent()
+            """.trimIndent()
         )
 
         testCases.forEach { (given, expected) ->
-            No5524.solve(BufferedReader(given.reader())) shouldBe expected
+            No5524.solve(given.byteInputStream()) shouldBe expected
         }
     }
 })

@@ -10,9 +10,7 @@ class No2217Test : StringSpec({
                 2
                 10
                 15
-            """.trimIndent()
-                to
-                    20,
+            """.trimIndent() to "20",
             """
                 5
                 35
@@ -21,8 +19,7 @@ class No2217Test : StringSpec({
                 20
                 12
             """.trimIndent()
-                to
-                    90
+                to "90"
         )
 
         testCases.forEach { (given, expected) ->

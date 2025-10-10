@@ -9,15 +9,13 @@ class No14487Test : StringSpec({
             """
                 5
                 1 6 5 2 4
-            """.trimIndent()
-                to
-                    12,
+            """.trimIndent() to
+                12,
             """
                 4
                 100 100 100 101
-            """.trimIndent()
-                to
-                    300
+            """.trimIndent() to
+                300
         )
 
         testCases.forEach { (given, expected) ->

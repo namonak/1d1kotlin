@@ -10,9 +10,9 @@ class No30804Test : StringSpec({
             val maxN = 200_000
             val fruits = List(maxN) { if (it % 2 == 0) "1" else "2" }.joinToString(" ")
             return """
-                $maxN
-                $fruits
-            """.trimIndent()
+                    $maxN
+                    $fruits
+                """.trimIndent()
         }
 
         val testCases = listOf(

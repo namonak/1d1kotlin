@@ -24,9 +24,8 @@ class No10866Test : StringSpec({
                 push_front 3
                 empty
                 front
-            """.trimIndent()
-                to
-                    """
+            """.trimIndent() to
+                """
                 2
                 1
                 2
@@ -39,7 +38,7 @@ class No10866Test : StringSpec({
                 -1
                 0
                 3
-                    """.trimIndent(),
+                """.trimIndent(),
             """
                 22
                 front
@@ -64,9 +63,8 @@ class No10866Test : StringSpec({
                 back
                 pop_back
                 pop_back
-            """.trimIndent()
-                to
-                    """
+            """.trimIndent() to
+                """
                 -1
                 -1
                 -1
@@ -83,7 +81,7 @@ class No10866Test : StringSpec({
                 1234
                 1234
                 20
-                    """.trimIndent()
+                """.trimIndent()
         )
 
         testCases.forEach { (given, expected) ->
