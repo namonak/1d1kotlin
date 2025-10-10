@@ -9,8 +9,8 @@
 
 ## Requirement
 
-* [Kotlin](https://kotlinlang.org) (v1.8.21)
-* [JVM](https://www.java.com) (v17)
+* [Kotlin](https://kotlinlang.org) (v1.9.24)
+* [JVM](https://www.java.com) (v21)
 * [Gradle](https://gradle.org) (v8.1.1)
 
 ## Initialize
