@@ -5,7 +5,7 @@ import java.util.Stack
 
 class No25497 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val str = input.readLine()
 
         val sStack = Stack<Char>()

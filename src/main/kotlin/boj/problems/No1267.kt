@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No1267 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val callTimes = input.readLine().split(" ").map { it.toInt() }
 
         var y = 0

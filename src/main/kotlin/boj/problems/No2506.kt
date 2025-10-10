@@ -2,9 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2506 {
+class No2506 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val scores = input.readLine().split(" ").map { it.toInt() }
         var sum = 0
         var count = 0

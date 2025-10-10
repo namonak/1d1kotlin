@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No10250.solve(input))
-
-    input.close()
-    output.flush()
-    input.close()
-}
-
-object No10250 {
+class No10250 {
     fun solve(input: BufferedReader): String {
         val t = input.readLine().toInt()
         val result = StringBuilder()

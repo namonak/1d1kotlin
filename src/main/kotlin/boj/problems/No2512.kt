@@ -2,20 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2512.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2512 {
-    fun solve(input: BufferedReader): Int {
-        val numberOfCities = input.readLine().toInt()
+class No2512 {
+    fun solve(input: BufferedReader): String {
+        input.readLine().toInt()
         val cities = input.readLine().split(" ").map { it.toInt() }
         val budget = input.readLine().toInt()
 
@@ -39,6 +28,6 @@ object No2512 {
             }
         }
 
-        return result
+        return result.toString()
     }
 }

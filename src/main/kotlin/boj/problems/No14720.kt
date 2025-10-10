@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 object No14720 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val stores = input.readLine().split(" ").map { it.toInt() }
         var count = 0
         var current = 0

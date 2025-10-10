@@ -7,7 +7,7 @@ class No14888 {
     private var minResult = Int.MAX_VALUE
 
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val numbers = input.readLine().split(" ").map { it.toInt() }
         val ops = input.readLine().split(" ").map { it.toInt() }
         val (cntPlus, cntMinus, cntMul, cntDiv) = ops

@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No25757.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No25757 {
-    fun solve(input: BufferedReader): Int {
+class No25757 {
+    fun solve(input: BufferedReader): String {
         val (n, gameType) = input.readLine().split(" ")
         val players = HashSet<String>()
 
@@ -22,11 +11,13 @@ object No25757 {
             players.add(input.readLine())
         }
 
-        return when (gameType) {
-            "Y" -> (players.size / 1)
-            "F" -> (players.size / 2)
-            "O" -> (players.size / 3)
+        val divisor = when (gameType) {
+            "Y" -> 1
+            "F" -> 2
+            "O" -> 3
             else -> throw IllegalArgumentException()
         }
+
+        return (players.size / divisor).toString()
     }
 }

@@ -29,7 +29,7 @@ class No2935Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No2935.solve(given.reader().buffered()) shouldBe expected
+            No2935().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

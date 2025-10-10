@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No1350 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val files = input.readLine().split(" ").map { it.toInt() }
         val clusterSize = input.readLine().toInt()
         var totalSize = 0L

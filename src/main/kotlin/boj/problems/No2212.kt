@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 object No2212 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val k = input.readLine().toInt()
         val sensors = input.readLine().split(" ").map { it.toInt() }.sorted()
 

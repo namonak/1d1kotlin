@@ -18,12 +18,11 @@ class No2217Test : StringSpec({
                 30
                 20
                 12
-            """.trimIndent()
-                to "90"
+            """.trimIndent() to "90"
         )
 
         testCases.forEach { (given, expected) ->
-            No2217.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No2217().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })
