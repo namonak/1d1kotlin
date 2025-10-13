@@ -9,20 +9,21 @@ class No4358 {
         val result = StringBuilder()
 
         while (true) {
-            val tree = input.readLine()
-            if (tree == null) break
+            val tree = input.readLine() ?: break
 
             trees[tree] = trees.getOrDefault(tree, 0) + 1
         }
 
         val total = trees.values.sum()
-        val sortedNames = trees.keys.sorted()
-        for (name in sortedNames) {
-            val count = trees[name]!!
-            val percentage = count.toDouble() / total * 100
-            val formatted = String.format(Locale.US, "%.4f", percentage)
-            result.append("$name $formatted\n")
-        }
+        if (total == 0) return ""
+
+        trees.entries
+            .sortedBy { it.key }
+            .forEach { (name, count) ->
+                val percentage = count.toDouble() / total * 100.0
+                val formatted = String.format(Locale.US, "%.4f", percentage)
+                result.append(name).append(' ').append(formatted).append('\n')
+            }
 
         return result.toString().trimEnd()
     }

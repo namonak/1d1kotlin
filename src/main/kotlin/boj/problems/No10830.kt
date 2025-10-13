@@ -11,6 +11,14 @@ private const val MOD = 1000
 data class Matrix(private val data: Array<IntArray>) {
     val size: Int = data.size
 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Matrix) return false
+        return data.contentDeepEquals(other.data)
+    }
+
+    override fun hashCode(): Int = data.contentDeepHashCode()
+
     /**
      * 행렬 곱셈 연산자 오버로딩 (O(n^3))
      * 각 곱셈 및 덧셈 단계에서 모듈로 연산을 적용해 값이 커지는 것을 방지합니다.

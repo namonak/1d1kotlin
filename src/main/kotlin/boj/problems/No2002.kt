@@ -22,7 +22,7 @@ class No2002 {
         // 출구 순서대로 처리
         repeat(n) {
             val car = input.readLine().trim()
-            val idx = entryIndex[car]!!
+            val idx = requireNotNull(entryIndex[car]) { "입력에 없는 차량: $car" }
 
             if (idx > smallestNotExited) {
                 // 자신보다 앞서 들어간 차가 아직 터널에 남아 있었음 → 추월
