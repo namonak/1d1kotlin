@@ -3,26 +3,38 @@ package boj.problems
 import java.io.BufferedReader
 
 class No11507 {
-    fun solve(input: BufferedReader): String {
-        val cards = input.readLine()
-        val cardSet = mutableMapOf<String, BooleanArray>()
-        val cardType = listOf("P", "K", "H", "T")
-        cardType.forEach { card ->
-            cardSet[card] = BooleanArray(13) { false }
-        }
+    companion object {
+        private const val CARDS_PER_SUIT = 13
+        private const val TOKEN_LEN = 3
+        private val SUIT_ORDER = charArrayOf('P', 'K', 'H', 'T')
 
-        for (i in cards.indices step 3) {
-            val card = cards.substring(i, i + 3)
-            val type = card.take(1)
-            val number = card.substring(1, 3).toInt()
-
-            if (cardSet[type]!![number - 1]) {
-                return "GRESKA"
-            } else {
-                cardSet[type]!![number - 1] = true
+        private fun suitIndex(c: Char): Int? =
+            when (c) {
+                'P' -> 0
+                'K' -> 1
+                'H' -> 2
+                'T' -> 3
+                else -> null
             }
+    }
+
+    fun solve(input: BufferedReader): String {
+        val s = input.readLine() ?: return "GRESKA"
+        if (s.length % TOKEN_LEN != 0) return "GRESKA"
+
+        val seen = Array(SUIT_ORDER.size) { BooleanArray(CARDS_PER_SUIT) }
+
+        for (i in 0 until s.length step TOKEN_LEN) {
+            val type = s[i]
+            val num = s.substring(i + 1, i + 3).toIntOrNull() ?: return "GRESKA"
+            if (num !in 1..CARDS_PER_SUIT) return "GRESKA"
+
+            val si = suitIndex(type) ?: return "GRESKA"
+            if (seen[si][num - 1]) return "GRESKA"
+            seen[si][num - 1] = true
         }
 
-        return cardSet.map { (_, value) -> value.count { !it }.toString() }.joinToString(" ")
+        return SUIT_ORDER.indices
+            .joinToString(" ") { idx -> (CARDS_PER_SUIT - seen[idx].count { it }).toString() }
     }
 }
