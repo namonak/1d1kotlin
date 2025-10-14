@@ -1,6 +1,6 @@
 package boj.problems
 
-object No5337 {
+class No5337 {
     fun solve() =
         """
         .  .   .

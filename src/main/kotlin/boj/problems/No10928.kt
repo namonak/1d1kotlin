@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No10928 {
+class No10928 {
     fun solve(input: BufferedReader): String {
         val given = input.readLine()
         return given.sha1()

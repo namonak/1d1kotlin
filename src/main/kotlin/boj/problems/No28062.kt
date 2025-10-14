@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No28062 {
+class No28062 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val candies = input.readLine().split(" ").map { it.toInt() }

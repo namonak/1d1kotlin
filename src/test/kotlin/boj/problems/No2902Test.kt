@@ -13,7 +13,7 @@ class No2902Test : StringSpec({
         )
 
         testCases.forEach { (input, expected) ->
-            No2902.solve(input) shouldBe expected
+            No2902().solve(input) shouldBe expected
         }
     }
 })

@@ -1,27 +1,19 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No7567.solve(input.readLine()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No7567 {
-    fun solve(input: String): Int {
+class No7567 {
+    fun solve(input: BufferedReader): String {
+        val bowlString = input.readLine()
         var height = 10
 
-        for (i in 1 until input.length) {
-            height += if (input[i] == input[i - 1]) {
+        for (i in 1 until bowlString.length) {
+            height += if (bowlString[i] == bowlString[i - 1]) {
                 5
             } else {
                 10
             }
         }
-        return height
+        return height.toString()
     }
 }

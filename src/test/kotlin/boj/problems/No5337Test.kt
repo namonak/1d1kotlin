@@ -11,6 +11,6 @@ class No5337Test : StringSpec({
             |/\|(/.|(_.(_)[ | )(/.
         """.trimIndent()
 
-        No5337.solve() shouldBe expected
+        No5337().solve() shouldBe expected
     }
 })

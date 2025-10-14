@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No31403 {
+class No31403 {
     fun solve(input: BufferedReader): String {
         val a = input.readLine().toInt()
         val b = input.readLine().toInt()

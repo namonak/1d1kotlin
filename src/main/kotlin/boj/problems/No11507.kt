@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No11507 {
+class No11507 {
     fun solve(input: BufferedReader): String {
         val cards = input.readLine()
         val cardSet = mutableMapOf<String, BooleanArray>()
@@ -13,7 +13,7 @@ object No11507 {
 
         for (i in cards.indices step 3) {
             val card = cards.substring(i, i + 3)
-            val type = card.substring(0, 1)
+            val type = card.take(1)
             val number = card.substring(1, 3).toInt()
 
             if (cardSet[type]!![number - 1]) {

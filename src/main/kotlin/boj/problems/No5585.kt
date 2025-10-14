@@ -1,19 +1,11 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No5585.solve(input.readLine().toInt()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No5585 {
-    fun solve(input: Int): Int {
-        var change = 1000 - input
+class No5585 {
+    fun solve(input: BufferedReader): String {
+        val paid = input.readLine().toInt()
+        var change = 1000 - paid
         val coins = listOf(500, 100, 50, 10, 5, 1)
         var result = 0
 
@@ -24,6 +16,6 @@ object No5585 {
             change %= coin
         }
 
-        return result
+        return result.toString()
     }
 }
