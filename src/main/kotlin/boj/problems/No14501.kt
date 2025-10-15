@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No14501 {
+class No14501 {
     fun solve(input: BufferedReader): String {
         val days = input.readLine().toInt()
         val timeRequired = IntArray(days + 1)

@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2669.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2669 {
-    fun solve(input: BufferedReader): Int {
+class No2669 {
+    fun solve(input: BufferedReader): String {
         val board = Array(100) { BooleanArray(100) { false } }
         var answer = 0
 
@@ -31,6 +20,6 @@ object No2669 {
             }
         }
 
-        return answer
+        return answer.toString()
     }
 }

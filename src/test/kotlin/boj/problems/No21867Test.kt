@@ -9,17 +9,15 @@ class No21867Test : StringSpec({
             """
                 4
                 ABCD
-            """.trimIndent()
-                to "BCD",
+            """.trimIndent() to "BCD",
             """
                 4
                 JAVA
-            """.trimIndent()
-                to "nojava"
+            """.trimIndent() to "nojava"
         )
 
-        testCases.forEach { (given, output) ->
-            No21867.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No21867().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

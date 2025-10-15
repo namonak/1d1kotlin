@@ -20,7 +20,7 @@ class No5565Test : StringSpec({
         """.trimIndent()
         val expected = 600
 
-        val actual = No5565.solve(BufferedReader(given.reader()))
+        val actual = No5565().solve(BufferedReader(given.reader()))
 
         actual shouldBe expected
     }

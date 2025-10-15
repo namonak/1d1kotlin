@@ -2,23 +2,12 @@ package boj.problems.step8
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2720.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
 private const val NUMBER_OF_CHANGE_TYPE = 4
 private const val QUARTER = 25
 private const val DIME = 10
 private const val NICKEL = 5
 
-object No2720 {
+class No2720 {
     fun solve(input: BufferedReader): String {
         val t = input.readLine().toInt()
         val arr = IntArray(t)

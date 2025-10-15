@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No30700 {
+class No30700 {
     fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val korea = "KOREA"

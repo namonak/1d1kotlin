@@ -1,19 +1,10 @@
 package boj.problems.step8
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No11005.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11005 {
-    fun solve(input: String): String {
-        val (number, radix) = input.split(" ").map { it.toInt() }
+class No11005 {
+    fun solve(input: BufferedReader): String {
+        val (number, radix) = input.readLine().split(" ").map { it.toInt() }
         val result = StringBuilder()
 
         var quotient = number

@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No13305.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No13305 {
-    fun solve(input: BufferedReader): Long {
+class No13305 {
+    fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val distances = input.readLine().split(" ").map { it.toLong() }
         val prices = input.readLine().split(" ").map { it.toLong() }
@@ -27,6 +16,6 @@ object No13305 {
             }
             result += distances[i] * lowPrice
         }
-        return result
+        return result.toString()
     }
 }

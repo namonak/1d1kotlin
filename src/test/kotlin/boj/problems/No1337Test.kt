@@ -6,14 +6,42 @@ import io.kotest.matchers.shouldBe
 class No1337Test : StringSpec({
     "올바른 배열 : https://www.acmicpc.net/problem/1337" {
         val testCases = listOf(
-            "3\n5\n6\n7" to "2",
-            "6\n5\n7\n9\n8492\n8493\n192398" to "2",
-            "4\n1000\n2000\n3000\n4000" to "4",
-            "7\n6\n1\n9\n5\n7\n15\n8" to "0"
+            """
+                3
+                5
+                6
+                7
+            """.trimIndent() to "2",
+            """
+                6
+                5
+                7
+                9
+                8492
+                8493
+                192398
+            """.trimIndent() to "2",
+            """
+                4
+                1000
+                2000
+                3000
+                4000
+            """.trimIndent() to "4",
+            """
+                7
+                6
+                1
+                9
+                5
+                7
+                15
+                8
+            """.trimIndent() to "0"
         )
 
-        testCases.forEach { (given, output) ->
-            No1337.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No1337().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

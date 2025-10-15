@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2559 {
+class No2559 {
     fun solve(input: BufferedReader): String {
         val (n, k) = input.readLine().split(" ").map { it.toInt() }
         val temperatures = input.readLine().split(" ").map { it.toInt() }

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No10797 {
+class No10797 {
     fun solve(input: BufferedReader): String {
         val day = input.readLine().toInt()
         val cars = input.readLine().split(" ").map { it.toInt() }

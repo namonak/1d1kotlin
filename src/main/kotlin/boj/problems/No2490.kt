@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2490 {
+class No2490 {
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()
         repeat(3) {

@@ -20,6 +20,6 @@ class No11365Test : StringSpec({
             Concealed within his fortress, the lord of Mordor sees all
         """.trimIndent()
 
-        No11365.solve(BufferedReader(given.reader())) shouldBe expected
+        No11365().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })

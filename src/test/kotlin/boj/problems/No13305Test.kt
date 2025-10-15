@@ -12,23 +12,23 @@ class No13305Test : StringSpec({
                 2 3 1
                 5 2 4 1
             """.trimIndent() to
-                18L,
+                "18",
             """
                 4
                 3 3 4
                 1 1 1 1
             """.trimIndent() to
-                10L,
+                "10",
             """
                 4
                 2 2 2
                 5 3 2 4
             """.trimIndent() to
-                20L
+                "20"
         )
 
         testCases.forEach { (given, expected) ->
-            No13305.solve(BufferedReader(given.reader())) shouldBe expected
+            No13305().solve(BufferedReader(given.reader())) shouldBe expected
         }
     }
 })

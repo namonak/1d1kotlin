@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1337 {
+class No1337 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val arr = IntArray(n) { input.readLine().toInt() }.sorted()
