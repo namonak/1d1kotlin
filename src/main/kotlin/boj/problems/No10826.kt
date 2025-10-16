@@ -3,8 +3,9 @@ package boj.problems
 import java.io.BufferedReader
 import java.math.BigInteger
 
-object No10826 {
-    private const val MAX_INPUT = 10000
+private const val MAX_INPUT = 10000
+
+class No10826 {
     private val memo = Array(MAX_INPUT + 1) { BigInteger("-1") }
 
     fun solve(input: BufferedReader): String {

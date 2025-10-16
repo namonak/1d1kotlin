@@ -28,6 +28,6 @@ class No28278Test : StringSpec({
             -1
         """.trimIndent()
 
-        No28278.solve(BufferedReader(given.reader())) shouldBe expected
+        No28278().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })

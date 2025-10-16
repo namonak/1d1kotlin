@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2530 {
+class No2530 {
     fun solve(input: BufferedReader): String {
         val (hour, minute, second) = input.readLine().split(" ").map { it.toInt() }
         val time = input.readLine().toInt()

@@ -15,6 +15,6 @@ class No5988Test : StringSpec({
             odd
         """.trimIndent()
 
-        No5988.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5988().solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1449 {
+class No1449 {
     fun solve(input: BufferedReader): String {
         val (_, l) = input.readLine().split(" ").map { it.toInt() }
         val holes = input.readLine().split(" ").map { it.toInt() }.sorted()

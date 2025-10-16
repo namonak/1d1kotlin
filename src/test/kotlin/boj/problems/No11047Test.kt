@@ -38,7 +38,7 @@ class No11047Test : StringSpec({
         )
 
         testCases.forEach { (input, expected) ->
-            No11047.solve(BufferedReader(input.reader())) shouldBe expected
+            No11047().solve(BufferedReader(input.reader())) shouldBe expected
         }
     }
 })

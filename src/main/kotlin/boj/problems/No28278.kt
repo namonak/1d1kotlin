@@ -3,18 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.util.Stack
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No28278.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No28278 {
+class No28278 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val result = StringBuilder()

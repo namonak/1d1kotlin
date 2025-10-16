@@ -1,25 +1,19 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2747.solve(input.readLine().toInt()).toString())
+private const val MAX_N = 46
 
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2747 {
-    fun solve(input: Int): Int {
-        val dp = IntArray(46)
+class No2747 {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toInt()
+        val dp = IntArray(MAX_N)
 
         dp[1] = 1
-        for (i in 2..input) {
+        for (i in 2..n) {
             dp[i] = dp[i - 1] + dp[i - 2]
         }
 
-        return dp[input]
+        return dp[n].toString()
     }
 }

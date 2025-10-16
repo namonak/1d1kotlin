@@ -2,9 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() = println(No1755.solve(System.`in`.bufferedReader()))
-
-object No1755 {
+class No1755 {
     fun solve(input: BufferedReader): String {
         val numberToWord = listOf("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
         val (m, n) = input.readLine().split(" ").map { it.toInt() }

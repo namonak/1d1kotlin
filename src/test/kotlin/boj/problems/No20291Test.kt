@@ -24,6 +24,6 @@ class No20291Test : StringSpec({
             world 1
         """.trimIndent()
 
-        No20291.solve(BufferedReader(given.reader())) shouldBe expected
+        No20291().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })
