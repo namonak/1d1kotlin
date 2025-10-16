@@ -22,7 +22,7 @@ class No2754Test : StringSpec({
         )
 
         testCases.forEach { (input, expected) ->
-            No2754.solve(input) shouldBe expected
+            No2754().solve(input.reader().buffered()) shouldBe expected
         }
     }
 })

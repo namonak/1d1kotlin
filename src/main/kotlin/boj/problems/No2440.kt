@@ -1,20 +1,12 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2440.solve(input.readLine().toInt()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2440 {
-    fun solve(input: Int): String {
+class No2440 {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toInt()
         val result = StringBuilder()
-        for (i in input downTo 1) {
+        for (i in n downTo 1) {
             for (j in 1..i) {
                 result.append("*")
             }

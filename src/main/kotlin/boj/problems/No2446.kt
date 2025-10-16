@@ -2,17 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2446.solve(input))
-
-    input.close()
-    output.close()
-}
-
-object No2446 {
+class No2446 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val sb = StringBuilder()
@@ -22,7 +12,7 @@ object No2446 {
             for (j in 1..n - i) {
                 sb.append(" ")
             }
-            for (j in 1..2 * i - 1) {
+            for (j in 1..<2 * i) {
                 sb.append("*")
             }
             sb.append("\n")
@@ -33,7 +23,7 @@ object No2446 {
             for (j in 1..n - i) {
                 sb.append(" ")
             }
-            for (j in 1..2 * i - 1) {
+            for (j in 1..<2 * i) {
                 sb.append("*")
             }
             sb.append("\n")

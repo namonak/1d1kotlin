@@ -1,19 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2754.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2754 {
-    fun solve(input: String): String {
-        return when (input) {
+class No2754 {
+    fun solve(input: BufferedReader): String {
+        return when (val grade = input.readLine().trim()) {
             "A+" -> "4.3"
             "A0" -> "4.0"
             "A-" -> "3.7"
@@ -27,7 +18,7 @@ object No2754 {
             "D0" -> "1.0"
             "D-" -> "0.7"
             "F" -> "0.0"
-            else -> throw IllegalArgumentException("Invalid input: $input")
+            else -> throw IllegalArgumentException("Invalid input: $grade")
         }
     }
 }

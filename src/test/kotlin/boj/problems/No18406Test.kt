@@ -12,7 +12,7 @@ class No18406Test : StringSpec({
         )
 
         testCases.forEach { (given, output) ->
-            No18406.solve(BufferedReader(given.reader())) shouldBe output
+            No18406().solve(BufferedReader(given.reader())) shouldBe output
         }
     }
 })

@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 private const val MAX_HEIGHT = 256
 
-object No18111 {
+class No18111 {
     fun solve(input: BufferedReader): String {
         val (n, _, b) = input.readLine().split(" ").map { it.toInt() }
         var min = MAX_HEIGHT

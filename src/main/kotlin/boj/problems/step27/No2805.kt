@@ -2,19 +2,8 @@ package boj.problems.step27
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2805.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2805 {
-    fun solve(input: BufferedReader): Long {
+class No2805 {
+    fun solve(input: BufferedReader): String {
         val (_, needLength) = input.readLine().split(" ").map { it.toLong() }
         val trees = input.readLine().split(" ").map { it.toLong() }
         val max = trees.maxOrNull()!!
@@ -41,6 +30,6 @@ object No2805 {
             }
         }
 
-        return result
+        return result.toString()
     }
 }

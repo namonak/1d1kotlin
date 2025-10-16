@@ -2,19 +2,8 @@ package boj.problems.step27
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1300.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1300 {
-    fun solve(input: BufferedReader): Int {
+class No1300 {
+    fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val k = input.readLine().toInt()
 
@@ -38,6 +27,6 @@ object No1300 {
             }
         }
 
-        return result
+        return result.toString()
     }
 }

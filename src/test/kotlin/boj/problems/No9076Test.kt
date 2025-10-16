@@ -20,6 +20,6 @@ class No9076Test : StringSpec({
             KIN
         """.trimIndent()
 
-        No9076.solve(BufferedReader(given.reader())) shouldBe expected
+        No9076().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })

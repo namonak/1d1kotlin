@@ -5,7 +5,7 @@ import io.kotest.matchers.shouldBe
 
 class No2440Test : StringSpec({
     "별 찍기 - 3: https://www.acmicpc.net/problem/2440" {
-        val given = 5
+        val given = "5"
         val expected = """
             *****
             ****
@@ -14,6 +14,6 @@ class No2440Test : StringSpec({
             *
         """.trimIndent()
 
-        No2440.solve(given) shouldBe expected
+        No2440().solve(given.reader().buffered()) shouldBe expected
     }
 })
