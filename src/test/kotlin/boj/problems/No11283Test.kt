@@ -6,14 +6,14 @@ import io.kotest.matchers.shouldBe
 class No11283Test : StringSpec({
     "한글 2 : https://www.acmicpc.net/problem/11283" {
         val testCases = listOf(
-            "가" to 1,
-            "힣" to 11172,
-            "백" to 4146,
-            "준" to 7425
+            "가" to "1",
+            "힣" to "11172",
+            "백" to "4146",
+            "준" to "7425"
         )
 
-        testCases.forEach { (input, output) ->
-            No11283.solve(input) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No11283().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

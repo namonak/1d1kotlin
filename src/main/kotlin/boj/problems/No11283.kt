@@ -1,18 +1,12 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No11283.solve(input.readLine()).toString())
+private const val HANGUL_INDEX_OFFSET: Int = '가'.code - 1
 
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11283 {
-    fun solve(input: String): Int {
-        return input[0].code - 44031
+class No11283 {
+    fun solve(input: BufferedReader): String {
+        val ch = input.readLine().first()
+        return (ch.code - HANGUL_INDEX_OFFSET).toString()
     }
 }

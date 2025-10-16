@@ -12,7 +12,7 @@ object No9375 {
             val n = input.readLine().toInt()
             val clothes = mutableMapOf<String, Int>()
             repeat(n) {
-                val (name, type) = input.readLine().split(" ")
+                val (_, type) = input.readLine().split(" ")
                 clothes[type] = clothes.getOrDefault(type, 0) + 1
             }
             var answer = 1

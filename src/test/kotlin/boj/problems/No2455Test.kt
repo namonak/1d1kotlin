@@ -12,9 +12,9 @@ class No2455Test : StringSpec({
             28 25
             39 0
         """.trimIndent()
-        val expected = 42
+        val expected = "42"
 
-        val actual = No2455.solve(BufferedReader(given.reader()))
+        val actual = No2455().solve(BufferedReader(given.reader()))
 
         actual shouldBe expected
     }

@@ -4,18 +4,7 @@ import java.io.BufferedReader
 import java.math.BigInteger
 import kotlin.math.sqrt
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No4134.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No4134 {
+class No4134 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val result = StringBuilder()

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No11726 {
+class No11726 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val dp = IntArray(n + 1)

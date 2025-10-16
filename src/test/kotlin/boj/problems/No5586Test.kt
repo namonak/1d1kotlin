@@ -11,8 +11,8 @@ class No5586Test : StringSpec({
             "JOIOIJOINXNXJIOIOIOJ" to "2\n3",
         )
 
-        testCases.forEach { (input, output) ->
-            No5586.solve(input) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No5586().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -1,22 +1,12 @@
 package boj.problems
 
+import java.io.BufferedReader
 import java.math.BigInteger
 import java.security.MessageDigest
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No10932.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No10932 {
-    fun solve(input: String): String {
-        return input.sha512()
+class No10932 {
+    fun solve(input: BufferedReader): String {
+        return input.readLine().sha512()
     }
 
     private fun String.sha512(): String {

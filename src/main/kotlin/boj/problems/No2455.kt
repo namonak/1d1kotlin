@@ -1,20 +1,11 @@
+package boj.problems
+
 import java.io.BufferedReader
 
 private const val STATION_COUNT = 4
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2455.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2455 {
-    fun solve(input: BufferedReader): Int {
+class No2455 {
+    fun solve(input: BufferedReader): String {
         val passengerCounts = IntArray(STATION_COUNT)
 
         for (i in 0 until STATION_COUNT) {
@@ -26,6 +17,6 @@ object No2455 {
             }
         }
 
-        return passengerCounts.maxOrNull()!!
+        return passengerCounts.maxOrNull().toString()
     }
 }

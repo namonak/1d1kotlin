@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1049 {
+class No1049 {
     fun solve(input: BufferedReader): String {
         val (n, m) = input.readLine().split(" ").map { it.toInt() }
         val (minPackage, minPiece) = (1..m).fold(Pair(Int.MAX_VALUE, Int.MAX_VALUE)) { acc, _ ->

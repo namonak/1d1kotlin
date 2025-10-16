@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2960 {
+class No2960 {
     fun solve(input: BufferedReader): String {
         val (maxNumber, targetCount) = input.readLine().split(" ").map { it.toInt() }
         val isPrime = BooleanArray(maxNumber + 1) { true }

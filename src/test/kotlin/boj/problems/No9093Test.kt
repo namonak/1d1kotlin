@@ -15,6 +15,6 @@ class No9093Test : StringSpec({
             eW tnaw ot niw eht tsrif ezirp
         """.trimIndent()
 
-        No9093.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No9093().solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })

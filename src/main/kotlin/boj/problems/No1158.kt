@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1158 {
+class No1158 {
     fun solve(input: BufferedReader): String {
         val (n, k) = input.readLine().split(" ").map { it.toInt() }
         val queue = (1..n).toMutableList()

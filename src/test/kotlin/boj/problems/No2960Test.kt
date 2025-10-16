@@ -12,7 +12,7 @@ class No2960Test : StringSpec({
         )
 
         testCases.forEach { (given, output) ->
-            No2960.solve(given.byteInputStream().bufferedReader()) shouldBe output
+            No2960().solve(given.byteInputStream().bufferedReader()) shouldBe output
         }
     }
 })

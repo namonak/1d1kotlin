@@ -1,19 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No1924.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1924 {
-    fun solve(input: String): String {
-        val (x, y) = input.split(" ").map { it.toInt() }
+class No1924 {
+    fun solve(input: BufferedReader): String {
+        val (x, y) = input.readLine().split(" ").map { it.toInt() }
 
         val days = listOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT")
         val monthDays = listOf(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)

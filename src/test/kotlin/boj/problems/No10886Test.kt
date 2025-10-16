@@ -33,7 +33,7 @@ class No10886Test : StringSpec({
         )
 
         testCases.forEach { (given, output) ->
-            No10886.solve(given.byteInputStream().bufferedReader()) shouldBe output
+            No10886().solve(given.byteInputStream().bufferedReader()) shouldBe output
         }
     }
 })

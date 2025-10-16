@@ -2,19 +2,23 @@ package boj.problems.step15
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
-import java.io.StringReader
 
 class No1934Test : StringSpec({
     "최소공배수 : https://www.acmicpc.net/problem/1934" {
-        val testCases = listOf(
-            "3\n1 45000\n6 10\n13 17" to "45000\n30\n221"
-        )
+        val given = """
+            3
+            1 45000
+            6 10
+            13 17
+        """.trimIndent()
+        val expected = """
+            45000
+            30
+            221
+        """.trimIndent()
 
-        testCases.forEach { (given, expected) ->
-            val actual = No1934.solve(BufferedReader(StringReader(given)))
+        val actual = No1934().solve(given.reader().buffered())
 
-            actual shouldBe expected
-        }
+        actual shouldBe expected
     }
 })
