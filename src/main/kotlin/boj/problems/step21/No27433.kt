@@ -1,18 +1,14 @@
 package boj.problems.step21
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No27433.solve(input.readLine().toLong()).toString())
+class No27433 {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toLong()
+        return factorial(n).toString()
+    }
 
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No27433 {
-    fun solve(input: Long): Long {
-        return if (input == 0L) 1 else input * solve(input - 1)
+    private fun factorial(n: Long): Long {
+        return if (n <= 1) 1 else n * factorial(n - 1)
     }
 }

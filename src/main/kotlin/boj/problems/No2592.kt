@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2592 {
+class No2592 {
     fun solve(input: BufferedReader): String {
         val numbers = IntArray(10)
         var sum = 0

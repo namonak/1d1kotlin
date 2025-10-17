@@ -1,18 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No10822.solve(input.readLine()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No10822 {
-    fun solve(input: String): Int {
-        return input.split(",").sumOf { it.toInt() }
+class No10822 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
+        return (str.split(",").sumOf { it.toInt() }).toString()
     }
 }

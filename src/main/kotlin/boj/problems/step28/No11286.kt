@@ -4,18 +4,7 @@ import java.io.BufferedReader
 import java.util.PriorityQueue
 import kotlin.math.abs
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No11286.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11286 {
+class No11286 {
     fun solve(input: BufferedReader): String {
         val count = input.readLine().toInt()
         val priorityQueue = PriorityQueue<Int> { o1, o2 ->

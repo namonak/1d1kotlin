@@ -15,8 +15,7 @@ class No1100Test : StringSpec({
                 F...F.F.
                 .F.F.F.F
                 ..FF..F.
-            """.trimIndent()
-                to 1,
+            """.trimIndent() to "1",
             """
                 ........
                 ........
@@ -26,8 +25,7 @@ class No1100Test : StringSpec({
                 ........
                 ........
                 ........
-            """.trimIndent()
-                to 0,
+            """.trimIndent() to "0",
             """
                 FFFFFFFF
                 FFFFFFFF
@@ -37,8 +35,7 @@ class No1100Test : StringSpec({
                 FFFFFFFF
                 FFFFFFFF
                 FFFFFFFF
-            """.trimIndent()
-                to 32,
+            """.trimIndent() to "32",
             """
                 ........
                 ..F.....
@@ -48,12 +45,11 @@ class No1100Test : StringSpec({
                 ........
                 .......F
                 .F......
-            """.trimIndent()
-                to 2
+            """.trimIndent() to "2"
         )
 
         testCases.forEach { (given, expected) ->
-            No1100.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1100().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

@@ -10,8 +10,8 @@ class No11655Test : StringSpec({
             "One is 1" to "Bar vf 1",
         )
 
-        testCases.forEach { (input, output) ->
-            No11655.solve(input) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No11655().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

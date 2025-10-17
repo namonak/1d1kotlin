@@ -1,11 +1,10 @@
 package boj.problems
 
-fun main() {
-    println(No2442.solve(System.`in`.bufferedReader().readLine().toInt()))
-}
+import java.io.BufferedReader
 
-object No2442 {
-    fun solve(n: Int): String {
+class No2442 {
+    fun solve(n: BufferedReader): String {
+        val n = n.readLine().toInt()
         val builder = StringBuilder()
         for (i in 0 until n) {
             for (j in 0 until n - i - 1) {

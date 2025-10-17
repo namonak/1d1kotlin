@@ -29,8 +29,8 @@ class No25640Test : StringSpec({
                 to "3"
         )
 
-        testCases.forEach { (given, output) ->
-            No25640.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No25640().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

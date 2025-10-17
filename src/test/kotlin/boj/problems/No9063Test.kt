@@ -11,25 +11,22 @@ class No9063Test : StringSpec({
                 20 24
                 40 21
                 10 12
-            """.trimIndent()
-                to 360,
+            """.trimIndent() to "360",
             """
                 1
                 15 13
-            """.trimIndent()
-                to 0,
+            """.trimIndent() to "0",
             """
                 4
                 2 1
                 3 2
                 5 2
                 3 4
-            """.trimIndent()
-                to 9
+            """.trimIndent() to "9"
         )
 
         testCases.forEach { (input, output) ->
-            No9063.solve(input.byteInputStream().bufferedReader()) shouldBe output
+            No9063().solve(input.byteInputStream().bufferedReader()) shouldBe output
         }
     }
 })

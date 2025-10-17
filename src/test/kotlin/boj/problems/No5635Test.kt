@@ -16,6 +16,6 @@ class No5635Test : StringSpec({
         """.trimIndent()
         val expected = "Tom\nJerry"
 
-        No5635.solve(BufferedReader(given.reader())) shouldBe expected
+        No5635().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })

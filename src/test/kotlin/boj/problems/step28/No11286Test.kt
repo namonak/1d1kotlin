@@ -40,7 +40,7 @@ class No11286Test : StringSpec({
             0
         """.trimIndent()
 
-        val actual = No11286.solve(BufferedReader(given.reader()))
+        val actual = No11286().solve(BufferedReader(given.reader()))
 
         actual shouldBe expected
     }

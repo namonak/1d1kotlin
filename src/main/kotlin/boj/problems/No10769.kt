@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No10769 {
+class No10769 {
     fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val happyCount = str.windowed(3).count { it == ":-)" }

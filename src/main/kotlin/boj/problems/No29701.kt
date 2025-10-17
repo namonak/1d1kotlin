@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No29701 {
+class No29701 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val morse = input.readLine().split(" ")

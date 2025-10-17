@@ -1,35 +1,29 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No11655.solve(input.readLine()))
+private const val ROT13 = 13
 
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11655 {
-    fun solve(input: String): String {
+class No11655 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
         val stringBuilder = StringBuilder()
 
-        input.forEach {
+        str.forEach {
             if (it.isLowerCase()) {
                 stringBuilder.append(
-                    if (it + 13 > 'z') {
-                        (it + 13 - 'z' + 'a'.code - 1).toChar()
+                    if (it + ROT13 > 'z') {
+                        (it + ROT13 - 'z' + 'a'.code - 1).toChar()
                     } else {
-                        (it + 13)
+                        (it + ROT13)
                     }
                 )
             } else if (it.isUpperCase()) {
                 stringBuilder.append(
-                    if (it + 13 > 'Z') {
-                        (it + 13 - 'Z' + 'A'.code - 1).toChar()
+                    if (it + ROT13 > 'Z') {
+                        (it + ROT13 - 'Z' + 'A'.code - 1).toChar()
                     } else {
-                        (it + 13)
+                        (it + ROT13)
                     }
                 )
             } else {

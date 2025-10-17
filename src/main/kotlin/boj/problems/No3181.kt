@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No3181 {
+class No3181 {
     fun solve(input: BufferedReader): String {
         val ignoreWords = listOf("i", "pa", "te", "ni", "niti", "a", "ali", "nego", "no", "ili")
         val words = input.readLine().split(" ")
