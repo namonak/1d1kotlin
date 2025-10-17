@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1235 {
+class No1235 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val studentNumbers = mutableListOf<String>()

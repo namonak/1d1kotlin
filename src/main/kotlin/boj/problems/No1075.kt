@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1075 {
+class No1075 {
     fun solve(input: BufferedReader): String {
         val number = input.readLine().toInt()
         val divisor = input.readLine().toInt()

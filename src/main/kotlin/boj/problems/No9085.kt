@@ -2,12 +2,12 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No9085 {
+class No9085 {
     fun solve(input: BufferedReader): String {
         val t = input.readLine().toInt()
         val sb = StringBuilder()
         repeat(t) {
-            val n = input.readLine().toInt()
+            input.readLine().toInt()
             val numbers = input.readLine().split(" ").map { it.toInt() }
             sb.append("${numbers.sum()}\n")
         }

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2309 {
+class No2309 {
     fun solve(input: BufferedReader): String {
         val heights = mutableListOf<Int>()
         repeat(9) {

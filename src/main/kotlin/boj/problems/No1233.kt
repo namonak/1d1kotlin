@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1233 {
+class No1233 {
     fun solve(input: BufferedReader): String {
         val (s1, s2, s3) = input.readLine().split(" ").map { it.toInt() }
         val sum = IntArray(s1 + s2 + s3 + 1)

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1371 {
+class No1371 {
     fun solve(input: BufferedReader): String {
         val alphabet = IntArray(26)
         var line: String?

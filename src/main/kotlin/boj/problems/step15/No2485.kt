@@ -2,22 +2,12 @@ package boj.problems.step15
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2485.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2485 {
-    fun solve(input: BufferedReader): Int {
+class No2485 {
+    fun solve(input: BufferedReader): String {
         val count = input.readLine().toInt()
         val trees = mutableListOf<Int>()
-        for (i in 0 until count) {
+
+        repeat(count) {
             trees.add(input.readLine().toInt())
         }
 
@@ -31,7 +21,7 @@ object No2485 {
             gcd = gcd(gcd, distances[i])
         }
 
-        return (trees.last() - trees.first()) / gcd - count + 1
+        return ((trees.last() - trees.first()) / gcd - count + 1).toString()
     }
 
     private fun gcd(

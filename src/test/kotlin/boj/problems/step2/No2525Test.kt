@@ -1,6 +1,5 @@
 package boj.problems.step2
 
-import boj.problems.step2.No2525.solve
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
@@ -22,7 +21,7 @@ class No2525Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No2525().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

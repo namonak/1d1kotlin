@@ -2,7 +2,7 @@ package boj.problems.step2
 
 import java.io.BufferedReader
 
-object No9498 {
+class No9498 {
     fun solve(input: BufferedReader): String {
         return when (input.readLine().toInt()) {
             in 90..100 -> "A"

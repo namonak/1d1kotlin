@@ -8,6 +8,6 @@ class No1233Test : StringSpec({
         val given = "3 2 3"
         val expected = "5"
 
-        No1233.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No1233().solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })

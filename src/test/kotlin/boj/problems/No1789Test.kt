@@ -5,9 +5,9 @@ import io.kotest.matchers.shouldBe
 
 class No1789Test : StringSpec({
     "수들의 합 : https://www.acmicpc.net/problem/1789" {
-        val given = 200L
-        val expected = 19
+        val given = "200"
+        val expected = "19"
 
-        No1789.solve(given) shouldBe expected
+        No1789().solve(given.reader().buffered()) shouldBe expected
     }
 })

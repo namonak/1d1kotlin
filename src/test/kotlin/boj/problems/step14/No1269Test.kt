@@ -16,7 +16,7 @@ class No1269Test : StringSpec({
         val expected = 4
 
         // when
-        val actual = No1269.solve(BufferedReader(StringReader(input)))
+        val actual = No1269().solve(BufferedReader(StringReader(input)))
 
         // then
         actual shouldBe expected

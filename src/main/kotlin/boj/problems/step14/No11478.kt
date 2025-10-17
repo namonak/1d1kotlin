@@ -1,26 +1,18 @@
 package boj.problems.step14
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No11478.solve(input.readLine()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11478 {
-    fun solve(input: String): Int {
+class No11478 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
         val strSet = HashSet<String>()
 
-        for (i in input.indices) {
-            for (j in i + 1..input.length) {
-                strSet.add(input.substring(i, j))
+        for (i in str.indices) {
+            for (j in i + 1..str.length) {
+                strSet.add(str.substring(i, j))
             }
         }
 
-        return strSet.size
+        return (strSet.size).toString()
     }
 }

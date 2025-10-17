@@ -2,24 +2,13 @@ package boj.problems.step18
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1037.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1037 {
-    fun solve(input: BufferedReader): Int {
-        val count = input.readLine().toInt()
+class No1037 {
+    fun solve(input: BufferedReader): String {
+        input.readLine().toInt()
         val numbers = input.readLine().split(" ").map { it.toInt() }
-        val max = numbers.maxOrNull()!!
-        val min = numbers.minOrNull()!!
+        val max = numbers.maxOrNull() ?: 0
+        val min = numbers.minOrNull() ?: 0
 
-        return max * min
+        return (max * min).toString()
     }
 }

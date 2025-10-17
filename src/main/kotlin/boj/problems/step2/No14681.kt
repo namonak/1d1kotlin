@@ -1,10 +1,8 @@
 package boj.problems.step2
 
 import java.io.BufferedReader
-import java.io.IOException
 
-object No14681 {
-    @Throws(IOException::class)
+class No14681 {
     fun solve(input: BufferedReader): String {
         val x = input.readLine().toInt()
         val y = input.readLine().toInt()

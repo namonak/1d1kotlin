@@ -36,6 +36,6 @@ class No17219Test : StringSpec({
             ADREAMER
         """.trimIndent()
 
-        No17219.solve(BufferedReader(given.reader())) shouldBe expected
+        No17219().solve(BufferedReader(given.reader())) shouldBe expected
     }
 })

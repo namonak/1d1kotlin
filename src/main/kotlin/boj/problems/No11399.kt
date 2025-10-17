@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No11399.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11399 {
-    fun solve(input: BufferedReader): Int {
+class No11399 {
+    fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val numbers = input.readLine().split(" ").map { it.toInt() }.sorted()
 
@@ -26,6 +15,6 @@ object No11399 {
             prev += numbers[i]
         }
 
-        return sum
+        return sum.toString()
     }
 }

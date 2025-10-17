@@ -12,8 +12,8 @@ class No11816Test : StringSpec({
             "0x3f6" to "1014"
         )
 
-        testCases.forEach { (input, output) ->
-            No11816.solve(input.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No11816().solve(given.byteInputStream().bufferedReader()) shouldBe expected
         }
     }
 })

@@ -3,9 +3,11 @@ package boj.problems.step2
 import java.io.BufferedReader
 import java.util.StringTokenizer
 
-object No2525 {
-    private const val ONE_HOUR = 60
-    private const val ONE_DAY = 24
+class No2525 {
+    companion object {
+        private const val ONE_HOUR = 60
+        private const val ONE_DAY = 24
+    }
 
     fun solve(input: BufferedReader): String {
         val st = StringTokenizer(input.readLine())

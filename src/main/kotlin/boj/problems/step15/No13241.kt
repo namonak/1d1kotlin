@@ -2,22 +2,11 @@ package boj.problems.step15
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No13241.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No13241 {
-    fun solve(input: BufferedReader): Long {
+class No13241 {
+    fun solve(input: BufferedReader): String {
         val (a, b) = input.readLine().split("\\s+".toRegex()).map { it.toLong() }
 
-        return a * b / gcd(a, b)
+        return (a * b / gcd(a, b)).toString()
     }
 
     private fun gcd(

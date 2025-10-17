@@ -3,9 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.util.PriorityQueue
 
-fun main() = println(No20920.solve(System.`in`.bufferedReader()))
-
-object No20920 {
+class No20920 {
     fun solve(input: BufferedReader): String {
         val (n, m) = input.readLine().split(" ").map { it.toInt() }
         val wordFrequency = mutableMapOf<String, Int>()

@@ -2,18 +2,7 @@ package boj.problems.step15
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1735.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1735 {
+class No1735 {
     fun solve(input: BufferedReader): String {
         val (a1, b1) = input.readLine().split(" ").map { it.toInt() }
         val (a2, b2) = input.readLine().split(" ").map { it.toInt() }
