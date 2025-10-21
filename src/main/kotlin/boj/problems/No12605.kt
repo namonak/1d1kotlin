@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No12605.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No12605 {
+class No12605 {
     fun solve(bufferedReader: BufferedReader): String {
         val caseCount = bufferedReader.readLine().toInt()
         val stringBuilder = StringBuilder()

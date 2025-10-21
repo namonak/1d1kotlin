@@ -7,18 +7,20 @@ import java.io.InputStreamReader
 
 class No2587Test : StringSpec({
     "대표값2 : https://www.acmicpc.net/problem/2587" {
-        // given
-        val given = "10\n" +
-            "40\n" +
-            "30\n" +
-            "60\n" +
-            "30"
-        val expected = "34\n30"
+        val given = """
+            10
+            40
+            30
+            60
+            30
+        """.trimIndent()
+        val expected = """
+            34
+            30
+        """.trimIndent()
 
-        // when
-        val actual = No2587.solve(BufferedReader(InputStreamReader(given.byteInputStream())))
+        val actual = No2587().solve(BufferedReader(InputStreamReader(given.byteInputStream())))
 
-        // then
         actual shouldBe expected
     }
 })

@@ -1,20 +1,12 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No11721.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11721 {
-    fun solve(input: String): String {
+class No11721 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
         val result = StringBuilder()
-        input.forEachIndexed { index, c ->
+        str.forEachIndexed { index, c ->
             result.append(c)
             if (index % 10 == 9) {
                 result.append("\n")

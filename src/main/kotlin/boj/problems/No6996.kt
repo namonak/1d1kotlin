@@ -2,11 +2,12 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No6996 {
+class No6996 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val result = StringBuilder()
-        for (i in 0 until n) {
+
+        repeat(n) {
             val (a, b) = input.readLine().split(" ")
             result.append("$a & $b are ${if (isAnagram(a, b)) "" else "NOT "}anagrams.\n")
         }

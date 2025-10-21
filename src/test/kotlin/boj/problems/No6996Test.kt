@@ -17,6 +17,6 @@ class No6996Test : StringSpec({
             bizarre & brazier are anagrams.
         """.trimIndent()
 
-        No6996.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No6996().solve(given.reader().buffered()) shouldBe expected
     }
 })

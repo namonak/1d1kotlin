@@ -21,6 +21,6 @@ class No4470Test : StringSpec({
             5. Fido
         """.trimIndent()
 
-        No4470.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No4470().solve(given.byteInputStream().bufferedReader()) shouldBe expected
     }
 })

@@ -10,23 +10,21 @@ class No1822Test : StringSpec({
                 4 3
                 2 5 11 7
                 9 7 4
-            """.trimIndent()
-                to """
-                    3
-                    2 5 11
-                """.trimIndent(),
+            """.trimIndent() to """
+                3
+                2 5 11
+            """.trimIndent(),
             """
                 3 5
                 2 5 4
                 1 2 3 4 5
+            """.trimIndent() to """
+                0
             """.trimIndent()
-                to """
-                    0
-                """.trimIndent()
         )
 
-        testCases.forEach { (given, output) ->
-            No1822.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No1822().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -19,7 +19,7 @@ class No10814Test : StringSpec({
             21 Dohyun
         """.trimIndent()
 
-        val actual = No10814.solve(BufferedReader(StringReader(given)))
+        val actual = No10814().solve(BufferedReader(StringReader(given)))
 
         actual shouldBe expected
     }

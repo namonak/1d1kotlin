@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No12605Test : StringSpec({
     "단어순서 뒤집기 : https://www.acmicpc.net/problem/12605" {
@@ -12,12 +11,12 @@ class No12605Test : StringSpec({
             foobar
             all your base
         """.trimIndent()
-        val output = """
+        val expected = """
             Case #1: test a is this
             Case #2: foobar
             Case #3: base your all
         """.trimIndent()
 
-        No12605.solve(BufferedReader(given.reader())) shouldBe output
+        No12605().solve(given.reader().buffered()) shouldBe expected
     }
 })

@@ -37,7 +37,7 @@ class No1181Test : StringSpec({
             hesitate
         """.trimIndent()
 
-        val actual = No1181.solve(BufferedReader(StringReader(given)))
+        val actual = No1181().solve(BufferedReader(StringReader(given)))
 
         actual shouldBe expected
     }

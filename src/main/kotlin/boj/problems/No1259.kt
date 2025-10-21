@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1259.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1259 {
+class No1259 {
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()
 

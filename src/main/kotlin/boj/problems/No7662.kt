@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.util.TreeMap
 
-object No7662 {
+class No7662 {
     fun solve(input: BufferedReader): String {
         val testCaseCount = input.readLine().toInt()
         val results = StringBuilder()

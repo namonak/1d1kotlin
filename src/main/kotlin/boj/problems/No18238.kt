@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import kotlin.math.abs
 
-object No18238 {
+class No18238 {
     fun solve(input: BufferedReader): String {
         val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         val inputString = input.readLine()
