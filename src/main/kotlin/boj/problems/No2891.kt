@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No2891 {
     fun solve(input: BufferedReader): String {
-        val (n, s, r) = input.readLine().split(" ").map { it.toInt() }
+        input.readLine().split(" ").map { it.toInt() }
         val damaged = input.readLine().split(" ").map { it.toInt() }.toMutableSet()
         val reserve = input.readLine().split(" ").map { it.toInt() }.toMutableSet()
 

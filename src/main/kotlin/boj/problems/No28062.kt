@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No28062 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val candies = input.readLine().split(" ").map { it.toInt() }
 
         val totalCandies = candies.sum()

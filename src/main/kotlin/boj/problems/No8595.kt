@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No8595 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val word = input.readLine()
 
         var sum = 0L

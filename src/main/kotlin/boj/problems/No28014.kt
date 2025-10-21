@@ -2,9 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No28014 {
+class No28014 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val spires = input.readLine().split(" ").map { it.toInt() }
         var pushes = 1
 

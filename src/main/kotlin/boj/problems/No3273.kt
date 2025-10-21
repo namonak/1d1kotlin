@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No3273 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val numbers = input.readLine().split(" ").map { it.toInt() }
         val x = input.readLine().toInt()
 

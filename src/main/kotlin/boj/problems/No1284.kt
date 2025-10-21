@@ -8,11 +8,11 @@ class No1284 {
         while (true) {
             val n = input.readLine().toInt()
             if (n == 0) break
-            val sum = n.toString().sumBy {
+            val sum = n.toString().sumOf {
                 when (it) {
-                    '1' -> 2
-                    '0' -> 4
-                    else -> 3
+                    '1' -> 2L
+                    '0' -> 4L
+                    else -> 3L
                 }
             } + n.toString().length + 1
             result.append(sum).append("\n")

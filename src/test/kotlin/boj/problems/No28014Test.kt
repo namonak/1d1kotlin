@@ -9,22 +9,19 @@ class No28014Test : StringSpec({
             """
                 6
                 1 3 2 5 8 1
-            """.trimIndent()
-                to "4",
+            """.trimIndent() to "4",
             """
                 8
                 1 2 3 4 5 6 7 8
-            """.trimIndent()
-                to "8",
+            """.trimIndent() to "8",
             """
                 5
                 5 4 3 2 1
-            """.trimIndent()
-                to "1"
+            """.trimIndent() to "1"
         )
 
         testCases.forEach { (given, expected) ->
-            No28014.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No28014().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

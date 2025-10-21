@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 class No31867 {
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
+        input.readLine().toInt()
         val k = input.readLine()
 
         var evenCount = 0
