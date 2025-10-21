@@ -1,10 +1,13 @@
 package boj.problems.step22
 
-object No2164 {
-    fun solve(input: Int): Int {
+import java.io.BufferedReader
+
+class No2164 {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toInt()
         val queue = ArrayDeque<Int>()
 
-        for (i in 1..input) {
+        for (i in 1..n) {
             queue.add(i)
         }
 
@@ -13,16 +16,6 @@ object No2164 {
             queue.add(queue.removeFirst())
         }
 
-        return queue.first()
+        return queue.first().toString()
     }
-}
-
-fun main() {
-    val input = System.`in`.bufferedReader().readLine().toInt()
-    val output = System.out.bufferedWriter()
-
-    output.write("${No2164.solve(input)}\n")
-
-    output.flush()
-    output.close()
 }
