@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No16165.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No16165 {
+class No16165 {
     fun solve(input: BufferedReader): String {
         val (n, m) = input.readLine().split(" ").map { it.toInt() }
         val groups = HashMap<String, List<String>>(n)

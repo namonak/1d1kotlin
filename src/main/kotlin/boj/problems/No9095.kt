@@ -4,18 +4,7 @@ import java.io.BufferedReader
 
 private const val MAX_INPUT_NUMBER = 11
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No9095.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No9095 {
+class No9095 {
     fun solve(input: BufferedReader): String {
         val count = input.readLine().toInt()
         val result = Array(count) { "" }

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No11008 {
+class No11008 {
     fun solve(input: BufferedReader): String {
         val testCaseCount = input.readLine().toInt()
         val results = StringBuilder()

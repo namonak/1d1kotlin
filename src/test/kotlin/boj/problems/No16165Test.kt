@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No16165Test : StringSpec({
     "걸그룹 마스터 준석이 : https://www.acmicpc.net/problem/16165" {
@@ -56,6 +55,6 @@ class No16165Test : StringSpec({
             blackpink
         """.trimIndent()
 
-        No16165.solve(BufferedReader(given.reader())) shouldBe expected
+        No16165().solve(given.reader().buffered()) shouldBe expected
     }
 })

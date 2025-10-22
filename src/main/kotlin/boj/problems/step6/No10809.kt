@@ -2,9 +2,9 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-object No10809 {
-    private const val ALPHABET_NUMBER = 26
+private const val ALPHABET_NUMBER = 26
 
+class No10809 {
     fun solve(input: BufferedReader): String {
         val alphabet = IntArray(ALPHABET_NUMBER) { -1 }
         updateAlphabetArray(input.readLine(), alphabet)

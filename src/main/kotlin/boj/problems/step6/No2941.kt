@@ -2,7 +2,7 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-object No2941 {
+class No2941 {
     private val croatianAlphabetArray = arrayOf("c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z=")
 
     fun solve(input: BufferedReader): String {

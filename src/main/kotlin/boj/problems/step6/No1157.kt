@@ -2,9 +2,9 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-object No1157 {
-    private const val NUMBER_OF_LETTERS = 26
+private const val NUMBER_OF_LETTERS = 26
 
+class No1157 {
     fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val alphabet = IntArray(NUMBER_OF_LETTERS)

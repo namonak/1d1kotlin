@@ -2,7 +2,7 @@ package boj.problems.step6
 
 import java.io.BufferedReader
 
-object No2444 {
+class No2444 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val sb = StringBuilder()

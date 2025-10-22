@@ -11,16 +11,14 @@ class No1316Test : StringSpec({
                 happy
                 new
                 year
-            """.trimIndent()
-                to "3",
+            """.trimIndent() to "3",
             """
                 4
                 aba
                 abab
                 abcabc
                 a
-            """.trimIndent()
-                to "1",
+            """.trimIndent() to "1",
             """
                 5
                 ab
@@ -28,19 +26,16 @@ class No1316Test : StringSpec({
                 aca
                 ba
                 bb
-            """.trimIndent()
-                to "4",
+            """.trimIndent() to "4",
             """
                 2
                 yzyzy
                 zyzyz
-            """.trimIndent()
-                to "0",
+            """.trimIndent() to "0",
             """
                 1
                 z
-            """.trimIndent()
-                to "1",
+            """.trimIndent() to "1",
             """
                 9
                 aaa
@@ -52,12 +47,11 @@ class No1316Test : StringSpec({
                 abacc
                 aba
                 zzaz
-            """.trimIndent()
-                to "2"
+            """.trimIndent() to "2"
         )
 
         testCases.forEach { (given, expected) ->
-            No1316.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1316().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

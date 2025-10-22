@@ -5,7 +5,6 @@ import io.kotest.matchers.shouldBe
 
 class No1157Test : StringSpec({
     "단어 공부 : https://www.acmicpc.net/problem/1157" {
-        // Define the test cases as a Table
         val testCases = listOf(
             "Mississipi" to "?",
             "zZa" to "Z",
@@ -14,7 +13,7 @@ class No1157Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No1157.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1157().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

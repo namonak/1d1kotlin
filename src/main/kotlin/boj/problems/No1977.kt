@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import kotlin.math.sqrt
 
-object No1977 {
+class No1977 {
     fun solve(input: BufferedReader): String {
         val m = input.readLine().toInt()
         val n = input.readLine().toInt()

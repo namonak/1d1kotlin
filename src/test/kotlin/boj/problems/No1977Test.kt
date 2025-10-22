@@ -9,22 +9,20 @@ class No1977Test : StringSpec({
             """
                 60
                 100
-            """.trimIndent()
-                to """
-                    245
-                    64
-                """.trimIndent(),
+            """.trimIndent() to """
+                245
+                64
+            """.trimIndent(),
             """
                 75
                 80
+            """.trimIndent() to """
+                -1
             """.trimIndent()
-                to """
-                    -1
-                """.trimIndent()
         )
 
         testCases.forEach { (given, expected) ->
-            No1977.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1977().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

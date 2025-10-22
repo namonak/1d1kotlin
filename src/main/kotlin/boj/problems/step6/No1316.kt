@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 private const val ALPHABET_COUNT = 26
 
-object No1316 {
+class No1316 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         var result = 0
