@@ -2,9 +2,9 @@ package boj.problems
 
 import java.io.BufferedReader
 
-data class Time(val h1: Int, val m1: Int, val s1: Int, val h2: Int, val m2: Int, val s2: Int)
-
 class No5575 {
+    data class Time(val h1: Int, val m1: Int, val s1: Int, val h2: Int, val m2: Int, val s2: Int)
+
     fun solve(input: BufferedReader): String {
         val sb = StringBuilder()
         repeat(3) {
