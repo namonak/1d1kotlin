@@ -1,8 +1,10 @@
-package boj.problems.step6
+package boj.problems
 
 import java.io.BufferedReader
 
-object No25206 {
+private const val NUMBER_OF_LINES = 20
+
+class No25206 {
     private val gradeToScore = mapOf(
         "A+" to 4.5,
         "A0" to 4.0,
@@ -19,7 +21,7 @@ object No25206 {
         val totalScore = mutableListOf<Pair<Double, Double>>()
         var result = 0.0
 
-        for (i in 1..20) {
+        repeat(NUMBER_OF_LINES) {
             val (_, credit, grade) = input.readLine().split(" ")
             if (grade != "P") {
                 totalScore.add(Pair(credit.toDouble(), gradeToScore[grade] ?: 0.0))

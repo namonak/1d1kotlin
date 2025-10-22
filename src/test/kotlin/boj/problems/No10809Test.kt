@@ -1,4 +1,4 @@
-package boj.problems.step6
+package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
