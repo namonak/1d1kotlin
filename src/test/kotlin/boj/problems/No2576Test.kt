@@ -14,11 +14,10 @@ class No2576Test : StringSpec({
                 53
                 92
                 85
-            """.trimIndent()
-                to """
-                    256
-                    41
-                """.trimIndent(),
+            """.trimIndent() to """
+                256
+                41
+            """.trimIndent(),
             """
                 2
                 4
@@ -27,14 +26,13 @@ class No2576Test : StringSpec({
                 6
                 10
                 8
-            """.trimIndent()
-                to """
-                    -1
-                """.trimIndent(),
+            """.trimIndent() to """
+                -1
+            """.trimIndent(),
         )
 
-        testCases.forEach { (input, output) ->
-            No2576.solve(input.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No2576().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

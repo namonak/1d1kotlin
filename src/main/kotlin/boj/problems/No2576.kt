@@ -2,11 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    println(No2576.solve(System.`in`.bufferedReader()))
-}
-
-object No2576 {
+class No2576 {
     fun solve(input: BufferedReader): String {
         var sum = 0
         var min = Int.MAX_VALUE

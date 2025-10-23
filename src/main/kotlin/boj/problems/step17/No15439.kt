@@ -1,18 +1,10 @@
 package boj.problems.step17
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No15439.solve(input.readLine().toInt()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No15439 {
-    fun solve(input: Int): Int {
-        return input * (input - 1)
+class No15439 {
+    fun solve(input: BufferedReader): String {
+        val n = input.readLine().toInt()
+        return (n * (n - 1)).toString()
     }
 }

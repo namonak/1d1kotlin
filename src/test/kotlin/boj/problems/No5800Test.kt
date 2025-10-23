@@ -17,6 +17,6 @@ class No5800Test : StringSpec({
             Max 99, Min 25, Largest gap 25
         """.trimIndent()
 
-        No5800.solve(givne.byteInputStream().bufferedReader()) shouldBe expected
+        No5800().solve(givne.reader().buffered()) shouldBe expected
     }
 })

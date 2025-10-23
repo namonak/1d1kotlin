@@ -5,9 +5,16 @@ import io.kotest.matchers.shouldBe
 
 class No9461Test : StringSpec({
     "파도반 수열 : https://www.acmicpc.net/problem/9461" {
-        val given = "2\n6\n12"
-        val expected = "3\n16"
+        val given = """
+            2
+            6
+            12
+        """.trimIndent()
+        val expected = """
+            3
+            16
+        """.trimIndent()
 
-        No9461.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No9461().solve(given.reader().buffered()) shouldBe expected
     }
 })

@@ -13,8 +13,7 @@ class No11652Test : StringSpec({
                 1
                 2
                 1
-            """.trimIndent()
-                to "1",
+            """.trimIndent() to "1",
             """
                 6
                 1
@@ -23,12 +22,11 @@ class No11652Test : StringSpec({
                 2
                 1
                 2
-            """.trimIndent()
-                to "1"
+            """.trimIndent() to "1"
         )
 
         testCases.forEach { (given, expected) ->
-            No11652.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No11652().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -9,17 +9,15 @@ class No9935Test : StringSpec({
             """
                 mirkovC4nizCC44
                 C4
-            """.trimIndent()
-                to "mirkovniz",
+            """.trimIndent() to "mirkovniz",
             """
                 12ab112ab2ab
                 12ab
-            """.trimIndent()
-                to "FRULA",
+            """.trimIndent() to "FRULA",
         )
 
         testCases.forEach { (given, expected) ->
-            No9935.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No9935().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

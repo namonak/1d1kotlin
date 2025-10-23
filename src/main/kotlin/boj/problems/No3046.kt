@@ -1,20 +1,11 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No3046.solve(input.readLine()).toString())
+class No3046 {
+    fun solve(input: BufferedReader): String {
+        val (r1, s) = input.readLine().split(" ").map { it.toInt() }
 
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No3046 {
-    fun solve(input: String): Int {
-        val (r1, s) = input.split(" ").map { it.toInt() }
-
-        return s * 2 - r1
+        return (s * 2 - r1).toString()
     }
 }
