@@ -12,8 +12,8 @@ class No1212Test : StringSpec({
             "767676767676" to "111110111110111110111110111110111110"
         )
 
-        testCases.forEach { (input, output) ->
-            No1212.solve(input.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No1212().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -12,20 +12,18 @@ class No5522Test : StringSpec({
                 3
                 4
                 5
-            """.trimIndent()
-                to "15",
+            """.trimIndent() to "15",
             """
                 0
                 100
                 0
                 10
                 100
-            """.trimIndent()
-                to "210"
+            """.trimIndent() to "210"
         )
 
         testCases.forEach { (given, expected) ->
-            No5522.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No5522().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -13,8 +13,8 @@ class No1357Test : StringSpec({
             "456 789" to "1461"
         )
 
-        testCases.forEach { (input, output) ->
-            No1357.solve(input.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No1357().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

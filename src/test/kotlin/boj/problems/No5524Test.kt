@@ -31,7 +31,7 @@ class No5524Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No5524.solve(given.reader().buffered()) shouldBe expected
+            No5524().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })
