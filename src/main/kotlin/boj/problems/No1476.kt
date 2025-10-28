@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1476 {
+class No1476 {
     fun solve(input: BufferedReader): String {
         val (e, s, m) = input.readLine().split(" ").map { it.toInt() }
         var year = 1

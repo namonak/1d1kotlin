@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No8979 {
+class No8979 {
     data class Country(val id: Int, val gold: Int, val silver: Int, val bronze: Int)
 
     fun solve(input: BufferedReader): String {

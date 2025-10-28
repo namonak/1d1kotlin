@@ -20,6 +20,6 @@ class No11557Test : StringSpec({
             Korea
         """.trimIndent()
 
-        No11557.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No11557().solve(given.reader().buffered()) shouldBe expected
     }
 })

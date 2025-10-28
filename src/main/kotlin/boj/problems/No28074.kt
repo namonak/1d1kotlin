@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No28074 {
+class No28074 {
     fun solve(input: BufferedReader): String {
         val str = input.readLine()
         val charCounts = str.groupBy { it }.mapValues { it.value.size }

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No29766 {
+class No29766 {
     fun solve(input: BufferedReader): String {
         val text = input.readLine()
         var count = 0

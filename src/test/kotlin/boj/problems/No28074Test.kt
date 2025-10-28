@@ -12,8 +12,8 @@ class No28074Test : StringSpec({
             "MOBII" to "NO"
         )
 
-        testCases.forEach { (given, output) ->
-            No28074.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No28074().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

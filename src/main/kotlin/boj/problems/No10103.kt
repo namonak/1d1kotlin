@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No10103 {
+class No10103 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         var (a, b) = 100 to 100

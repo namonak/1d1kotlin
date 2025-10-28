@@ -11,8 +11,8 @@ class No13277Test : StringSpec({
             "893724358493284 238947328947329" to "213553048277135320552236238436"
         )
 
-        testCases.forEach { (given, output) ->
-            No13277.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No13277().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1475 {
+class No1475 {
     fun solve(input: BufferedReader): String {
         val numbers = input.readLine()
         val count = IntArray(10)

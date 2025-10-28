@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.util.Locale
 
-object No2204 {
+class No2204 {
     fun solve(input: BufferedReader): String {
         val sb = StringBuilder()
         while (true) {

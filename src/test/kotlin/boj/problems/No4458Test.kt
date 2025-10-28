@@ -21,6 +21,6 @@ class No4458Test : StringSpec({
             Darth Vader
         """.trimIndent()
 
-        No4458.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No4458().solve(given.reader().buffered()) shouldBe expected
     }
 })

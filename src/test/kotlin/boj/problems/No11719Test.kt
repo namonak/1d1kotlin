@@ -5,11 +5,19 @@ import io.kotest.matchers.shouldBe
 
 class No11719Test : StringSpec({
     "그대로 출력하기 2 : https://www.acmicpc.net/problem/11719" {
-        val given = "    Hello\nBaekjoon\n    Online Judge"
-        val expected = "    Hello\nBaekjoon\n    Online Judge"
+        val given = """
+                Hello
 
-        val actual = No11719.solve(given)
+Baekjoon     
+   Online Judge    
+        """.trimIndent()
+        val expected = """
+                Hello
 
-        actual shouldBe expected
+Baekjoon     
+   Online Judge    
+        """.trimIndent()
+
+        No11719().solve(given.reader().buffered()) shouldBe expected
     }
 })
