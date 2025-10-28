@@ -1,18 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No10987.solve(input.readLine()).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No10987 {
-    fun solve(input: String): Int {
-        return input.count { it in "aeiou" }
+class No10987 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
+        return str.count { it in "aeiou" }.toString()
     }
 }

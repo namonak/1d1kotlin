@@ -4,18 +4,7 @@ import java.io.BufferedReader
 
 private const val MAX_INPUT_NUMBER = 68
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No9507.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No9507 {
+class No9507 {
     private val memo = LongArray(MAX_INPUT_NUMBER) { -1 }
 
     fun solve(input: BufferedReader): String {

@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No2609.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2609 {
+class No2609 {
     fun solve(input: BufferedReader): String {
         val (a, b) = input.readLine().split(" ").map { it.toInt() }
         val gcd = gcd(a, b)

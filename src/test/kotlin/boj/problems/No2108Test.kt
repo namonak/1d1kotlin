@@ -13,23 +13,21 @@ class No2108Test : StringSpec({
                 8
                 -2
                 2
-            """.trimIndent()
-                to """
-                    2
-                    2
-                    1
-                    10
-                """.trimIndent(),
+            """.trimIndent() to """
+                2
+                2
+                1
+                10
+            """.trimIndent(),
             """
                 1
                 4000
-            """.trimIndent()
-                to """
-                    4000
-                    4000
-                    4000
-                    0
-                """.trimIndent(),
+            """.trimIndent() to """
+                4000
+                4000
+                4000
+                0
+            """.trimIndent(),
             """
                 5
                 -1
@@ -37,29 +35,27 @@ class No2108Test : StringSpec({
                 -3
                 -1
                 -2
-            """.trimIndent()
-                to """
-                    -2
-                    -2
-                    -1
-                    2
-                """.trimIndent(),
+            """.trimIndent() to """
+                -2
+                -2
+                -1
+                2
+            """.trimIndent(),
             """
                 3
                 0
                 0
                 -1
+            """.trimIndent() to """
+                0
+                0
+                0
+                1
             """.trimIndent()
-                to """
-                    0
-                    0
-                    0
-                    1
-                """.trimIndent()
         )
 
         testCases.forEach { (given, expected) ->
-            No2108.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No2108().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

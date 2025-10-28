@@ -12,8 +12,8 @@ class No10156Test : StringSpec({
             "20 10 320" to "0"
         )
 
-        testCases.forEach { (input, output) ->
-            No10156.solve(input.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No10156().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

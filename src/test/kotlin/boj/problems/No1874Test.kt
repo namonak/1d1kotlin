@@ -16,25 +16,24 @@ class No1874Test : StringSpec({
                 5
                 2
                 1
-            """.trimIndent()
-                to """
-                    +
-                    +
-                    +
-                    +
-                    -
-                    -
-                    +
-                    +
-                    -
-                    +
-                    +
-                    -
-                    -
-                    -
-                    -
-                    -
-                """.trimIndent(),
+            """.trimIndent() to """
+                +
+                +
+                +
+                +
+                -
+                -
+                +
+                +
+                -
+                +
+                +
+                -
+                -
+                -
+                -
+                -
+            """.trimIndent(),
             """
                 5
                 1
@@ -42,12 +41,11 @@ class No1874Test : StringSpec({
                 5
                 3
                 4
-            """.trimIndent()
-                to "NO"
+            """.trimIndent() to "NO"
         )
 
-        testCases.forEach { (input, expected) ->
-            No1874.solve(input.byteInputStream().bufferedReader()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1874().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

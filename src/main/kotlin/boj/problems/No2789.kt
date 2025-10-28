@@ -1,20 +1,12 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2789.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2789 {
-    fun solve(input: String): String {
+class No2789 {
+    fun solve(input: BufferedReader): String {
+        val str = input.readLine()
         val banned = "CAMBRIDGE"
 
-        return input.filter { !banned.contains(it) }
+        return str.filter { !banned.contains(it) }
     }
 }

@@ -2,18 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No11728.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No11728 {
+class No11728 {
     fun solve(input: BufferedReader): String {
         val (_, _) = input.readLine().split(" ").map { it.toInt() }
         val a = input.readLine().split(" ").map { it.toInt() }

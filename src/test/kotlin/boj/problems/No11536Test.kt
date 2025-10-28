@@ -13,8 +13,7 @@ class No11536Test : StringSpec({
                 ANDY
                 AL
                 ADAM
-            """.trimIndent()
-                to "DECREASING",
+            """.trimIndent() to "DECREASING",
             """
                 11
                 HOPE
@@ -28,12 +27,11 @@ class No11536Test : StringSpec({
                 MEGAN
                 ALEX
                 TOBIN
-            """.trimIndent()
-                to "NEITHER",
+            """.trimIndent() to "NEITHER"
         )
 
         testCases.forEach { (given, expected) ->
-            No11536.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No11536().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

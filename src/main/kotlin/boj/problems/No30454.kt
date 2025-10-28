@@ -11,7 +11,6 @@ class No30454 {
         repeat(n) {
             val zebra = input.readLine()
             var currentStripes = 0
-            var maxCurrentStripes = 0
 
             for (i in zebra.indices) {
                 if (zebra[i] == '1') {
@@ -21,7 +20,7 @@ class No30454 {
                 }
             }
 
-            maxCurrentStripes = currentStripes
+            val maxCurrentStripes = currentStripes
 
             if (maxCurrentStripes > maxBlackStripes) {
                 maxBlackStripes = maxCurrentStripes

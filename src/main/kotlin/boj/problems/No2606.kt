@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No2606 {
+class No2606 {
     fun solve(input: BufferedReader): String {
         val computerCount = input.readLine().toInt()
         val networkCount = input.readLine().toInt()

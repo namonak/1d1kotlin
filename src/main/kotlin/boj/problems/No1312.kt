@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1312.solve(input).toString())
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1312 {
-    fun solve(input: BufferedReader): Int {
+class No1312 {
+    fun solve(input: BufferedReader): String {
         val (a, b, n) = input.readLine().split(" ").map { it.toInt() }
         var result = a % b
 
@@ -23,6 +12,6 @@ object No1312 {
             result %= b
         }
 
-        return result * 10 / b
+        return (result * 10 / b).toString()
     }
 }

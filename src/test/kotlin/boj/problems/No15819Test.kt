@@ -12,8 +12,7 @@ class No15819Test : StringSpec({
                 spectaclehong
                 mitslll
                 luke0201
-            """.trimIndent()
-                to "acka1357",
+            """.trimIndent() to "acka1357",
             """
                 9 7
                 tourist
@@ -25,12 +24,11 @@ class No15819Test : StringSpec({
                 hjhj97
                 bio8641
                 kangjieun9843
-            """.trimIndent()
-                to "qilip"
+            """.trimIndent() to "qilip"
         )
 
         testCases.forEach { (given, expected) ->
-            No15819.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No15819().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

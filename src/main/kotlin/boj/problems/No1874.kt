@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.util.Stack
 
-object No1874 {
+class No1874 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val stack = Stack<Int>()
