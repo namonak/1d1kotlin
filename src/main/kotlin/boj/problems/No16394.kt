@@ -2,10 +2,14 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No16394 {
+class No16394 {
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
 
-        return (n - 1946).toString()
+        return (n - FOUNDATION_YEAR).toString()
+    }
+
+    private companion object {
+        private const val FOUNDATION_YEAR = 1946
     }
 }

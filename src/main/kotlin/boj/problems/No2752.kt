@@ -1,19 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2752.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2752 {
-    fun solve(input: String): String {
-        val numbers = input.split(" ").map { it.toInt() }.sorted()
+class No2752 {
+    fun solve(input: BufferedReader): String {
+        val numbers = input.readLine().split(" ").map { it.toInt() }.sorted()
         return numbers.joinToString(" ")
     }
 }

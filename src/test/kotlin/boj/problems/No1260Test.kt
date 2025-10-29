@@ -13,11 +13,10 @@ class No1260Test : StringSpec({
                 1 4
                 2 4
                 3 4
-            """.trimIndent()
-                to """
-                   1 2 4 3
-                   1 2 3 4
-                """.trimIndent(),
+            """.trimIndent() to """
+               1 2 4 3
+               1 2 3 4
+            """.trimIndent(),
             """
                 5 5 3
                 5 4
@@ -25,23 +24,21 @@ class No1260Test : StringSpec({
                 1 2
                 3 4
                 3 1
-            """.trimIndent()
-                to """
-                    3 1 2 5 4
-                    3 1 4 2 5
-                """.trimIndent(),
+            """.trimIndent() to """
+                3 1 2 5 4
+                3 1 4 2 5
+            """.trimIndent(),
             """
                 1000 1 1000
                 999 1000
+            """.trimIndent() to """
+                1000 999
+                1000 999
             """.trimIndent()
-                to """
-                    1000 999
-                    1000 999
-                """.trimIndent()
         )
 
         testCases.forEach { (given, expected) ->
-            No1260.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1260().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

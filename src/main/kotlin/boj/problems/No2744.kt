@@ -1,19 +1,10 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2744.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2744 {
-    fun solve(input: String): String {
-        return input.map {
+class No2744 {
+    fun solve(input: BufferedReader): String {
+        return input.readLine().map {
             if (it.isUpperCase()) it.lowercaseChar() else it.uppercaseChar()
         }.joinToString("")
     }

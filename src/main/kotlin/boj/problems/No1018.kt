@@ -2,19 +2,8 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write("${No1018.solve(input)}")
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1018 {
-    fun solve(input: BufferedReader): Int {
+class No1018 {
+    fun solve(input: BufferedReader): String {
         val (n, m) = input.readLine().split(" ").map { it.toInt() }
         val board = Array(n) { input.readLine() }
         val result = mutableListOf<Int>()
@@ -25,7 +14,7 @@ object No1018 {
             }
         }
 
-        return result.min()
+        return result.min().toString()
     }
 
     private fun getPaintingCount(

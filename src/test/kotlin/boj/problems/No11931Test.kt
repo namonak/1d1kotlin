@@ -21,6 +21,6 @@ class No11931Test : StringSpec({
             1
         """.trimIndent()
 
-        No11931.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No11931().solve(given.reader().buffered()) shouldBe expected
     }
 })

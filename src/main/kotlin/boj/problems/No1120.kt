@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1120 {
+class No1120 {
     fun solve(input: BufferedReader): String {
         val (a, b) = input.readLine().split(" ")
         var min = Int.MAX_VALUE

@@ -12,18 +12,16 @@ class No16499Test : StringSpec({
                 dog
                 god
                 tca
-            """.trimIndent()
-                to "2",
+            """.trimIndent() to "2",
             """
                 2
                 a
                 a
-            """.trimIndent()
-                to "1"
+            """.trimIndent() to "1"
         )
 
-        testCases.forEach { (given, output) ->
-            No16499.solve(given.byteInputStream().bufferedReader()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No16499().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

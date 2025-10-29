@@ -11,8 +11,8 @@ class No2864Test : StringSpec({
             "16796 58786" to "74580 85582",
         )
 
-        testCases.forEach { (input, output) ->
-            No2864.solve(input) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No2864().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No5218Test : StringSpec({
     "알파벳 거리 : https://www.acmicpc.net/problem/5218" {
@@ -22,6 +21,6 @@ class No5218Test : StringSpec({
             Distances: 17 7 19 5 1 16
         """.trimIndent()
 
-        No5218.solve(BufferedReader(given.reader())) shouldBe expected
+        No5218().solve(given.reader().buffered()) shouldBe expected
     }
 })

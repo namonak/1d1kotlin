@@ -2,9 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() = println(No10820.solve(System.`in`.bufferedReader()))
-
-object No10820 {
+class No10820 {
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()
         var line: String?

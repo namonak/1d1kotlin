@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1260 {
+class No1260 {
     fun solve(input: BufferedReader): String {
         val (n, m, v) = input.readLine().split(" ").map { it.toInt() }
         val graph = Array(n + 1) { mutableListOf<Int>() }

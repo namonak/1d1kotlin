@@ -2,8 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No14495 {
-    private const val MAX_INPUT = 116
+class No14495 {
     private val memo = Array(MAX_INPUT + 1) { -1L }
 
     fun solve(input: BufferedReader): String {
@@ -22,5 +21,9 @@ object No14495 {
         memo[n] = fibonacci(n - 1) + fibonacci(n - 3)
 
         return memo[n]
+    }
+
+    private companion object {
+        private const val MAX_INPUT = 116
     }
 }

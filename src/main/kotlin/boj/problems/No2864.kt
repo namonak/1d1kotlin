@@ -1,21 +1,16 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No2864.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No2864 {
-    fun solve(input: String): String {
-        val (a, b) = input.split(" ").map { it.replace("6", "5") }
-        val (c, d) = input.split(" ").map { it.replace("5", "6") }
-
-        return "${a.toInt() + b.toInt()} ${c.toInt() + d.toInt()}"
+class No2864 {
+    fun solve(input: BufferedReader): String {
+        val (a, b) = input.readLine().trim().split(Regex("\\s+"), limit = 2)
+        val minSum = a.asMinVariant() + b.asMinVariant()
+        val maxSum = a.asMaxVariant() + b.asMaxVariant()
+        return "$minSum $maxSum"
     }
+
+    private fun String.asMinVariant(): Int = replace('6', '5').toInt()
+
+    private fun String.asMaxVariant(): Int = replace('5', '6').toInt()
 }

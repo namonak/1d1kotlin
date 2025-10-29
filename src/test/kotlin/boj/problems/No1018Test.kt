@@ -16,8 +16,7 @@ class No1018Test : StringSpec({
                 BWBWBWBW
                 WBWBWBWB
                 BWBWBWBW
-            """.trimIndent()
-                to 1,
+            """.trimIndent() to "1",
             """
                 10 13
                 BBBBBBBBWBWBW
@@ -30,8 +29,7 @@ class No1018Test : StringSpec({
                 BBBBBBBBBWBWB
                 WWWWWWWWWWBWB
                 WWWWWWWWWWBWB
-            """.trimIndent()
-                to 12,
+            """.trimIndent() to "12",
             """
                 8 8
                 BWBWBWBW
@@ -42,8 +40,7 @@ class No1018Test : StringSpec({
                 WBWBWBWB
                 BWBWBWBW
                 WBWBWBWB
-            """.trimIndent()
-                to 0,
+            """.trimIndent() to "0",
             """
                 9 23
                 BBBBBBBBBBBBBBBBBBBBBBB
@@ -55,8 +52,7 @@ class No1018Test : StringSpec({
                 BBBBBBBBBBBBBBBBBBBBBBB
                 BBBBBBBBBBBBBBBBBBBBBBB
                 BBBBBBBBBBBBBBBBBBBBBBW
-            """.trimIndent()
-                to 31,
+            """.trimIndent() to "31",
             """
                 10 10
                 BBBBBBBBBB
@@ -69,8 +65,7 @@ class No1018Test : StringSpec({
                 BBWBWBWBWB
                 BWBWBWBWBB
                 BBBBBBBBBB
-            """.trimIndent()
-                to 0,
+            """.trimIndent() to "0",
             """
                 8 8
                 WBWBWBWB
@@ -81,8 +76,7 @@ class No1018Test : StringSpec({
                 BWBWBWBW
                 WBWBWWWB
                 BWBWBWBW
-            """.trimIndent()
-                to 2,
+            """.trimIndent() to "2",
             """
                 11 12
                 BWWBWWBWWBWW
@@ -96,12 +90,11 @@ class No1018Test : StringSpec({
                 WBWWBWBBWWBW
                 BWWBWBBWWBWW
                 WBWWBWBBWWBW
-            """.trimIndent()
-                to 15
+            """.trimIndent() to "15"
         )
 
         testCases.forEach { (given, expected) ->
-            No1018.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1018().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

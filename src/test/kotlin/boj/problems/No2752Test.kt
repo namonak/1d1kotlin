@@ -14,8 +14,8 @@ class No2752Test : StringSpec({
             "2 3 1" to "1 2 3"
         )
 
-        testCases.forEach { (input, expected) ->
-            No2752.solve(input) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No2752().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -9,22 +9,19 @@ class No15829Test : StringSpec({
             """
                 5
                 abcde
-            """.trimIndent()
-                to "4739715",
+            """.trimIndent() to "4739715",
             """
                 3
                 zzz
-            """.trimIndent()
-                to "25818",
+            """.trimIndent() to "25818",
             """
                 1
                 i
-            """.trimIndent()
-                to "9"
+            """.trimIndent() to "9"
         )
 
         testCases.forEach { (given, expected) ->
-            No15829.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No15829().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

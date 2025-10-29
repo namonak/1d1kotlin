@@ -3,8 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 import java.math.BigInteger
 
-object No9711 {
-    private const val MAX_INPUT = 10000
+class No9711 {
     private val memo = Array(MAX_INPUT + 1) { BigInteger("-1") }
 
     fun solve(input: BufferedReader): String {
@@ -30,5 +29,9 @@ object No9711 {
         memo[a] = fibonacci(a - 1) + fibonacci(a - 2)
 
         return memo[a]
+    }
+
+    private companion object {
+        private const val MAX_INPUT = 10000
     }
 }
