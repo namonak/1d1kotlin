@@ -13,9 +13,9 @@ class No33835Test : StringSpec({
             1 0
         """.trimIndent()
         val expected = "2"
-        val eps = 1e-4
 
-        val actual = No33835().solve(given.reader().buffered())
-        actual.toDouble() shouldBe (expected.toDouble() plusOrMinus eps)
+        val actual = No33835().solve(given.reader().buffered()).toDouble()
+
+        actual shouldBe (expected.toDouble() plusOrMinus 1e-4)
     }
 })

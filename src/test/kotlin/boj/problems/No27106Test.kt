@@ -8,7 +8,6 @@ class No27106Test : StringSpec({
         val given = "43"
         val expected = "2 0 1 2"
 
-        val actual = No27106().solve(given.reader().buffered())
-        actual shouldBe expected
+        No27106().solve(given.reader().buffered()) shouldBe expected
     }
 })

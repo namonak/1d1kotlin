@@ -15,7 +15,6 @@ class No11121Test : StringSpec({
             ERROR
         """.trimIndent()
 
-        val actual = No11121().solve(given.reader().buffered())
-        actual shouldBe expected
+        No11121().solve(given.reader().buffered()) shouldBe expected
     }
 })

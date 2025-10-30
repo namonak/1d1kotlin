@@ -8,8 +8,6 @@ class No2475Test : StringSpec({
         val given = "0 4 2 5 6"
         val expected = "1"
 
-        val actual = No2475().solve(given.reader().buffered())
-
-        actual shouldBe expected
+        No2475().solve(given.reader().buffered()) shouldBe expected
     }
 })

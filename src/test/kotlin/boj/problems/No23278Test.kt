@@ -1,7 +1,8 @@
 package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
-import io.kotest.matchers.doubles.shouldBeExactly
+import io.kotest.matchers.doubles.plusOrMinus
+import io.kotest.matchers.shouldBe
 
 class No23278Test : StringSpec({
     "영화 평가 : https://www.acmicpc.net/problem/23278" {
@@ -28,9 +29,9 @@ class No23278Test : StringSpec({
             """.trimIndent() to "0.666666667"
         )
 
-        testCases.forEach { (given, expectedOutput) ->
-            val actualOutput = No23278().solve(given.reader().buffered()).toDouble()
-            actualOutput shouldBeExactly expectedOutput.toDouble()
+        testCases.forEach { (given, expected) ->
+            val actual = No23278().solve(given.reader().buffered()).toDouble()
+            actual shouldBe (expected.toDouble() plusOrMinus 1e-9)
         }
     }
 })

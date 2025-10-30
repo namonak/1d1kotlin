@@ -17,8 +17,6 @@ class No9095Test : StringSpec({
             274
         """.trimIndent()
 
-        val actual = No9095().solve(given.reader().buffered())
-
-        actual shouldBe expected
+        No9095().solve(given.reader().buffered()) shouldBe expected
     }
 })

@@ -13,7 +13,7 @@ class No11466Test : StringSpec({
 
         testCases.forEach { (given, expected) ->
             val actual = No11466().solve(given.reader().buffered()).toDouble()
-            // 허용 오차 1e-6
+
             actual shouldBe (expected.toDouble() plusOrMinus 1e-6)
         }
     }

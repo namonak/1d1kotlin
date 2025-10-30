@@ -19,7 +19,6 @@ class No4649Test : StringSpec({
             2 customer(s) walked away.
         """.trimIndent()
 
-        val actual = No4649().solve(given.reader().buffered())
-        actual shouldBe expected
+        No4649().solve(given.reader().buffered()) shouldBe expected
     }
 })

@@ -17,7 +17,6 @@ class No2408Test : StringSpec({
         """.trimIndent()
         val expected = "10"
 
-        val actual = No2408().solve(given.reader().buffered())
-        actual shouldBe expected
+        No2408().solve(given.reader().buffered()) shouldBe expected
     }
 })

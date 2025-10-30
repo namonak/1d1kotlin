@@ -17,7 +17,6 @@ class No11319Test : StringSpec({
             11 5
         """.trimIndent()
 
-        val actual = No11319().solve(given.reader().buffered())
-        actual shouldBe expected
+        No11319().solve(given.reader().buffered()) shouldBe expected
     }
 })
