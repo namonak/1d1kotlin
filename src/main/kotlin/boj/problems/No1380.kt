@@ -2,7 +2,7 @@ package boj.problems
 
 import java.io.BufferedReader
 
-object No1380 {
+class No1380 {
     fun solve(input: BufferedReader): String {
         val sb = StringBuilder()
         var case = 1

@@ -1,20 +1,15 @@
 package boj.problems
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
+import java.io.BufferedReader
 
-    output.write(No10808.solve(input.readLine()))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No10808 {
-    fun solve(input: String): String {
-        val alphabetCount = IntArray(26)
-        input.forEach { alphabetCount[it - 'a']++ }
+class No10808 {
+    fun solve(input: BufferedReader): String {
+        val alphabetCount = IntArray(ALPHABET_SIZE)
+        input.readLine().forEach { alphabetCount[it - 'a']++ }
         return alphabetCount.joinToString(" ")
+    }
+
+    companion object {
+        private const val ALPHABET_SIZE = 26
     }
 }

@@ -13,8 +13,7 @@ class No18110Test : StringSpec({
                 5
                 7
                 8
-            """.trimIndent()
-                to 6,
+            """.trimIndent() to "6",
             """
                 10
                 1
@@ -27,12 +26,11 @@ class No18110Test : StringSpec({
                 12
                 14
                 15
-            """.trimIndent()
-                to 13
+            """.trimIndent() to "13"
         )
 
         testCases.forEach { (input, expected) ->
-            No18110.solve(input.byteInputStream().bufferedReader()) shouldBe expected
+            No18110().solve(input.reader().buffered()) shouldBe expected
         }
     }
 })

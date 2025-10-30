@@ -11,6 +11,6 @@ class No21964Test : StringSpec({
         """.trimIndent()
         val expected = "Hair."
 
-        No21964.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No21964().solve(given.reader().buffered()) shouldBe expected
     }
 })

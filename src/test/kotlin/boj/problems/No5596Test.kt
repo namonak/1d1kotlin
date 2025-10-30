@@ -9,17 +9,15 @@ class No5596Test : StringSpec({
             """
                 100 80 70 60
                 80 70 80 90
-            """.trimIndent()
-                to "320",
+            """.trimIndent() to "320",
             """
                 100 80 70 60
                 80 70 60 100
-            """.trimIndent()
-                to "310"
+            """.trimIndent() to "310"
         )
 
         testCases.forEach { (given, expected) ->
-            No5596.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No5596().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

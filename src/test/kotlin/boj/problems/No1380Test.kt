@@ -28,6 +28,6 @@ class No1380Test : StringSpec({
             2 Helen Clark
         """.trimIndent()
 
-        No1380.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No1380().solve(given.reader().buffered()) shouldBe expected
     }
 })

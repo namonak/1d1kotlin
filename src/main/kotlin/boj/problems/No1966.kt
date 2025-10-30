@@ -2,23 +2,12 @@ package boj.problems
 
 import java.io.BufferedReader
 
-fun main() {
-    val input = System.`in`.bufferedReader()
-    val output = System.out.bufferedWriter()
-
-    output.write(No1966.solve(input))
-
-    input.close()
-    output.flush()
-    output.close()
-}
-
-object No1966 {
+class No1966 {
     fun solve(input: BufferedReader): String {
         val caseCount = input.readLine().toInt()
         val result = StringBuilder()
 
-        for (i in 0 until caseCount) {
+        repeat(caseCount) {
             val (_, targetIndex) = input.readLine().split(" ").map { it.toInt() }
             val docs = input.readLine().split(" ").map { it.toInt() }
             val queue = docs.mapIndexed { index, priority -> index to priority }.toMutableList()

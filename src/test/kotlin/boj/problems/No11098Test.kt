@@ -20,6 +20,6 @@ class No11098Test : StringSpec({
             Maradona
         """.trimIndent()
 
-        No11098.solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No11098().solve(given.reader().buffered()) shouldBe expected
     }
 })
