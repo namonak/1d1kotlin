@@ -17,10 +17,8 @@ class No5565Test : StringSpec({
             1800
             980
         """.trimIndent()
-        val expected = 600
+        val expected = "600"
 
-        val actual = No5565().solve(given.reader().buffered())
-
-        actual shouldBe expected
+        No5565().solve(given.reader().buffered()) shouldBe expected
     }
 })

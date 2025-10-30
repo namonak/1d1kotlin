@@ -19,8 +19,7 @@ class No22193Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val actual = No22193().solve(given.reader().buffered())
-            actual shouldBe expected
+            No22193().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

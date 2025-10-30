@@ -27,7 +27,6 @@ class No18766Test : StringSpec({
             NOT CHEATER
         """.trimIndent()
 
-        val actual = No18766().solve(given.reader().buffered())
-        actual shouldBe expected
+        No18766().solve(given.reader().buffered()) shouldBe expected
     }
 })

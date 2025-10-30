@@ -14,8 +14,9 @@ class No1166Test : StringSpec({
         )
 
         for ((given, expected) in testCases) {
-            val actual = No1166().solve(given.reader().buffered())
-            actual.toDouble() shouldBe (expected.toDouble() plusOrMinus 1e-9)
+            val actual = No1166().solve(given.reader().buffered()).toDouble()
+
+            actual shouldBe (expected.toDouble() plusOrMinus 1e-9)
         }
     }
 })

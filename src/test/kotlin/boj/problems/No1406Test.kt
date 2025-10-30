@@ -44,8 +44,7 @@ class No1406Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val actual = No1406().solve(given.reader().buffered())
-            actual shouldBe expected
+            No1406().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

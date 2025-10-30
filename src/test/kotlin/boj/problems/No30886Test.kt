@@ -11,14 +11,10 @@ class No30886Test : StringSpec({
             "20231125" to "25779373.7414336279"
         )
 
-        testCases.forEach { (given, expectedStr) ->
-            // 1) 실제 결과를 문자열로 받고
-            val actualStr = No30886().solve(given.reader().buffered())
-            // 2) Double로 파싱
-            val actual = actualStr.toDouble()
-            val expected = expectedStr.toDouble()
-            // 3) 절대 오차 1e-9 이내인지 비교
-            actual shouldBe (expected plusOrMinus 1e-9)
+        testCases.forEach { (given, expected) ->
+            val actual = No30886().solve(given.reader().buffered()).toDouble()
+
+            actual shouldBe (expected.toDouble() plusOrMinus 1e-9)
         }
     }
 })
