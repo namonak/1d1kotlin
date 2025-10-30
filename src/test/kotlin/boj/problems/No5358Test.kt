@@ -24,6 +24,6 @@ class No5358Test : StringSpec({
             Leon Washington
         """.trimIndent()
 
-        No5358().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5358().solve(given.reader().buffered()) shouldBe expected
     }
 })

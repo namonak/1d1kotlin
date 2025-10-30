@@ -17,6 +17,6 @@ class No6502Test : StringSpec({
             Pizza 3 fits on the table.
         """.trimIndent()
 
-        No6502().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No6502().solve(given.reader().buffered()) shouldBe expected
     }
 })

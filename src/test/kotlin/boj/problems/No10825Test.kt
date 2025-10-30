@@ -35,6 +35,6 @@ class No10825Test : StringSpec({
             Taewhan
         """.trimIndent()
 
-        No10825().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No10825().solve(given.reader().buffered()) shouldBe expected
     }
 })

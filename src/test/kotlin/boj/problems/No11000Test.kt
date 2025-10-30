@@ -13,6 +13,6 @@ class No11000Test : StringSpec({
         """.trimIndent()
         val expected = "2"
 
-        No11000().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No11000().solve(given.reader().buffered()) shouldBe expected
     }
 })

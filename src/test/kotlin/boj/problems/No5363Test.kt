@@ -19,6 +19,6 @@ class No5363Test : StringSpec({
             find Luke before he can escape Vader will
         """.trimIndent()
 
-        No5363().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5363().solve(given.reader().buffered()) shouldBe expected
     }
 })

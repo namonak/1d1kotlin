@@ -37,7 +37,7 @@ class No1032Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No1032().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No1032().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

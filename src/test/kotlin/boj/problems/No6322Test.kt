@@ -22,6 +22,6 @@ class No6322Test : StringSpec({
             Impossible.
         """.trimIndent()
 
-        No6322().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No6322().solve(given.reader().buffered()) shouldBe expected
     }
 })

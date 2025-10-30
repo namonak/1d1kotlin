@@ -26,7 +26,7 @@ class No9063Test : StringSpec({
         )
 
         testCases.forEach { (input, output) ->
-            No9063().solve(input.byteInputStream().bufferedReader()) shouldBe output
+            No9063().solve(input.reader().buffered()) shouldBe output
         }
     }
 })

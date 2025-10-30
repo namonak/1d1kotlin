@@ -19,7 +19,7 @@ class No2003Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No2003().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No2003().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

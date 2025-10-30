@@ -24,7 +24,7 @@ class No2441Test : StringSpec({
         )
 
         testCases.forEach { (input, output) ->
-            No2441().solve(input.byteInputStream().bufferedReader()) shouldBe output
+            No2441().solve(input.reader().buffered()) shouldBe output
         }
     }
 })

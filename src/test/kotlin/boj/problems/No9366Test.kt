@@ -15,6 +15,6 @@ class No9366Test : StringSpec({
             Case #2: invalid!
         """.trimIndent()
 
-        No9366().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No9366().solve(given.reader().buffered()) shouldBe expected
     }
 })

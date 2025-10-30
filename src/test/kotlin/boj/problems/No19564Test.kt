@@ -8,6 +8,6 @@ class No19564Test : StringSpec({
         val given = "polymath"
         val expected = "6"
 
-        No19564().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No19564().solve(given.reader().buffered()) shouldBe expected
     }
 })

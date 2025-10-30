@@ -17,7 +17,7 @@ class No6799Test : StringSpec({
             DEF
         """.trimIndent()
 
-        val actual = No6799().solve(given.byteInputStream().bufferedReader())
+        val actual = No6799().solve(given.reader().buffered())
 
         actual shouldBe expected
     }

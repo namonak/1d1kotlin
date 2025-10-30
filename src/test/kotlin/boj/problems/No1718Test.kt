@@ -11,6 +11,6 @@ class No1718Test : StringSpec({
         """.trimIndent()
         val expected = "btgz oet"
 
-        No1718().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No1718().solve(given.reader().buffered()) shouldBe expected
     }
 })

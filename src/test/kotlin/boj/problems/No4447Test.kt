@@ -27,6 +27,6 @@ class No4447Test : StringSpec({
             Spider Pig is GOOD
         """.trimIndent()
 
-        No4447().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No4447().solve(given.reader().buffered()) shouldBe expected
     }
 })

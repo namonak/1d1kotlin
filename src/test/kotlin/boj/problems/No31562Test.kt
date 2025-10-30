@@ -23,6 +23,6 @@ class No31562Test : StringSpec({
             TwinkleStar
         """.trimIndent()
 
-        No31562().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No31562().solve(given.reader().buffered()) shouldBe expected
     }
 })

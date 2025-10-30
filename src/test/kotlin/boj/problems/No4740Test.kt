@@ -17,6 +17,6 @@ class No4740Test : StringSpec({
             mada m'i ,madam
         """.trimIndent()
 
-        No4740().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No4740().solve(given.reader().buffered()) shouldBe expected
     }
 })

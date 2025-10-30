@@ -22,6 +22,6 @@ class No26069Test : StringSpec({
         """.trimIndent()
         val expected = "10"
 
-        No26069().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No26069().solve(given.reader().buffered()) shouldBe expected
     }
 })

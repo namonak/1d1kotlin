@@ -23,6 +23,6 @@ class No3449Test : StringSpec({
             Hamming distance is 2.
         """.trimIndent()
 
-        No3449().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No3449().solve(given.reader().buffered()) shouldBe expected
     }
 })

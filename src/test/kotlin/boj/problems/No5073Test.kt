@@ -19,6 +19,6 @@ class No5073Test : StringSpec({
             Isosceles
         """.trimIndent()
 
-        No5073().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5073().solve(given.reader().buffered()) shouldBe expected
     }
 })

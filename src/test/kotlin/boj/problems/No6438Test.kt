@@ -18,6 +18,6 @@ class No6438Test : StringSpec({
             mada m'I madam
         """.trimIndent()
 
-        No6438().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No6438().solve(given.reader().buffered()) shouldBe expected
     }
 })

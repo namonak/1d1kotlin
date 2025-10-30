@@ -17,6 +17,6 @@ class No5361Test : StringSpec({
             ${'$'}16182.54
         """.trimIndent()
 
-        No5361().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5361().solve(given.reader().buffered()) shouldBe expected
     }
 })

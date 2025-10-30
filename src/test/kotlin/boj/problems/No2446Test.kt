@@ -23,7 +23,7 @@ class No2446Test : StringSpec({
         )
 
         testCases.forEach { (input, output) ->
-            No2446().solve(input.byteInputStream().bufferedReader()) shouldBe output
+            No2446().solve(input.reader().buffered()) shouldBe output
         }
     }
 })

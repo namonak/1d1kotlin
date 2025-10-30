@@ -27,6 +27,6 @@ class No13420Test : StringSpec({
             wrong answer
         """.trimIndent()
 
-        No13420().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No13420().solve(given.reader().buffered()) shouldBe expected
     }
 })

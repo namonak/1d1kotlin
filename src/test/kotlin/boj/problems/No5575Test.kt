@@ -16,6 +16,6 @@ class No5575Test : StringSpec({
             0 0 38
         """.trimIndent()
 
-        No5575().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No5575().solve(given.reader().buffered()) shouldBe expected
     }
 })

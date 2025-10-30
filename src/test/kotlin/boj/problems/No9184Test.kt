@@ -21,6 +21,6 @@ class No9184Test : StringSpec({
             w(-1, 7, 18) = 1
         """.trimIndent()
 
-        No9184().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No9184().solve(given.reader().buffered()) shouldBe expected
     }
 })

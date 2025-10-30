@@ -8,6 +8,6 @@ class No10928Test : StringSpec({
         val given = "Baekjoon"
         val expected = "a25cdb0b8ead2861a3ef2c48cdc15517994ab278"
 
-        No10928().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No10928().solve(given.reader().buffered()) shouldBe expected
     }
 })

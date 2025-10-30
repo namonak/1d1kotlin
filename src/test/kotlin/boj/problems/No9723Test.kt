@@ -31,6 +31,6 @@ class No9723Test : StringSpec({
             Case #10: YES
         """.trimIndent()
 
-        No9723().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No9723().solve(given.reader().buffered()) shouldBe expected
     }
 })

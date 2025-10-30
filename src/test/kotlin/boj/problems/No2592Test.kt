@@ -22,6 +22,6 @@ class No2592Test : StringSpec({
             30
         """.trimIndent()
 
-        No2592().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+        No2592().solve(given.reader().buffered()) shouldBe expected
     }
 })

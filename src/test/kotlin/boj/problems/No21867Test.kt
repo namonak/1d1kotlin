@@ -17,7 +17,7 @@ class No21867Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No21867().solve(given.byteInputStream().bufferedReader()) shouldBe expected
+            No21867().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })
