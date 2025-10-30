@@ -15,12 +15,10 @@ class No2535 {
         val result = mutableListOf<Student>()
         val nationCount = mutableMapOf<Int, Int>()
         for (student in sortedStudents) {
-            if (nationCount[student.nation] == null) {
-                nationCount[student.nation] = 1
+            val currentCount = nationCount.getOrDefault(student.nation, 0)
+            if (currentCount < 2) {
                 result.add(student)
-            } else if (nationCount[student.nation]!! < 2) {
-                nationCount[student.nation] = nationCount[student.nation]!! + 1
-                result.add(student)
+                nationCount[student.nation] = currentCount + 1
             }
             if (result.size == 3) break
         }
