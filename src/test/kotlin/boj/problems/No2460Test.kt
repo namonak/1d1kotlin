@@ -17,8 +17,8 @@ class No2460Test : StringSpec({
             0 8
             21 0
         """.trimIndent()
-        val output = "42"
+        val expected = "42"
 
-        No2460().solve(given.reader().buffered()) shouldBe output
+        No2460().solve(given.reader().buffered()) shouldBe expected
     }
 })

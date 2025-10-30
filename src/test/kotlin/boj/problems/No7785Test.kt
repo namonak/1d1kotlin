@@ -5,7 +5,7 @@ import io.kotest.matchers.shouldBe
 
 class No7785Test : StringSpec({
     "회사에 있는 사람 : https://www.acmicpc.net/problem/7785" {
-        val input = """
+        val given = """
             4
             Baha enter
             Askar enter
@@ -17,6 +17,6 @@ class No7785Test : StringSpec({
             Artem
         """.trimIndent()
 
-        No7785().solve(input.reader().buffered()) shouldBe expected
+        No7785().solve(given.reader().buffered()) shouldBe expected
     }
 })

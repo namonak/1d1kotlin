@@ -10,8 +10,8 @@ class No2153Test : StringSpec({
             "contest" to "It is not a prime word."
         )
 
-        testCases.forEach { (input, expected) ->
-            No2153().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No2153().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

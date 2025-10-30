@@ -27,8 +27,8 @@ class No1817Test : StringSpec({
             """.trimIndent() to "0"
         )
 
-        testCases.forEach { (input, expected) ->
-            No1817().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1817().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

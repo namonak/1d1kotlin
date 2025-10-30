@@ -69,8 +69,8 @@ class No15656Test : StringSpec({
             """.trimIndent()
         )
 
-        testCases.forEach { (given, output) ->
-            No15656().solve(given.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No15656().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -12,8 +12,8 @@ class No10769Test : StringSpec({
             ":-):-):-(:-(" to "unsure"
         )
 
-        testCases.forEach { (given, output) ->
-            No10769().solve(given.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No10769().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

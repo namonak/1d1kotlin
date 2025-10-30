@@ -26,8 +26,8 @@ class No8117Test : StringSpec({
             """.trimIndent() to "NIE"
         )
 
-        testCases.forEach { (input, output) ->
-            No8117().solve(input.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No8117().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

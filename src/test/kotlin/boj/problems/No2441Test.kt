@@ -23,8 +23,8 @@ class No2441Test : StringSpec({
             """.trimIndent()
         )
 
-        testCases.forEach { (input, output) ->
-            No2441().solve(input.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No2441().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -5,8 +5,8 @@ import io.kotest.matchers.shouldBe
 
 class No1929Test : StringSpec({
     "소수 구하기 : https://www.acmicpc.net/problem/1929" {
-        val input = "3 16"
-        val output = """
+        val given = "3 16"
+        val expected = """
             3
             5
             7
@@ -14,6 +14,6 @@ class No1929Test : StringSpec({
             13
         """.trimIndent()
 
-        No1929().solve(input.reader().buffered()) shouldBe output
+        No1929().solve(given.reader().buffered()) shouldBe expected
     }
 })

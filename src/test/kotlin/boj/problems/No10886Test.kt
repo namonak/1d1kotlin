@@ -32,8 +32,8 @@ class No10886Test : StringSpec({
                 to "Junhee is not cute!",
         )
 
-        testCases.forEach { (given, output) ->
-            No10886().solve(given.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No10886().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

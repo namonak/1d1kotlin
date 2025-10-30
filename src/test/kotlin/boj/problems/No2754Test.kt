@@ -21,8 +21,8 @@ class No2754Test : StringSpec({
             "F" to "0.0"
         )
 
-        testCases.forEach { (input, expected) ->
-            No2754().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No2754().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

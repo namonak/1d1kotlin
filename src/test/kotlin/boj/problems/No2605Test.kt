@@ -9,8 +9,8 @@ class No2605Test : StringSpec({
             5
             0 1 1 3 2
         """.trimIndent()
-        val output = "4 2 5 3 1"
+        val expected = "4 2 5 3 1"
 
-        No2605().solve(given.reader().buffered()) shouldBe output
+        No2605().solve(given.reader().buffered()) shouldBe expected
     }
 })

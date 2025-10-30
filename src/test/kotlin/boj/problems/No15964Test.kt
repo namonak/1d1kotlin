@@ -10,8 +10,8 @@ class No15964Test : StringSpec({
             "3 4" to "-7"
         )
 
-        testCases.forEach { (input, expected) ->
-            No15964().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No15964().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

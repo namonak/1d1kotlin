@@ -12,8 +12,8 @@ class No20353Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val input = given.reader().buffered()
-            val actual = No20353().solve(input).toDouble()
+            val actual = No20353().solve(given.reader().buffered()).toDouble()
+
             actual shouldBe (expected.toDouble() plusOrMinus 1e-6)
         }
     }

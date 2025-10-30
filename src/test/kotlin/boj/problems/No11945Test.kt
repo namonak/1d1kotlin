@@ -13,7 +13,7 @@ class No11945Test : StringSpec({
             0111010
             0010000
         """.trimIndent()
-        val output = """
+        val expected = """
             0000100
             0101110
             1111111
@@ -21,6 +21,6 @@ class No11945Test : StringSpec({
             0000100
         """.trimIndent()
 
-        No11945().solve(given.reader().buffered()) shouldBe output
+        No11945().solve(given.reader().buffered()) shouldBe expected
     }
 })

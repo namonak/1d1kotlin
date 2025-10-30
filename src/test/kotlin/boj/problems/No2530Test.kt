@@ -9,22 +9,19 @@ class No2530Test : StringSpec({
             """
                 14 30 0
                 200
-            """.trimIndent()
-                to "14 33 20",
+            """.trimIndent() to "14 33 20",
             """
                 17 40 45
                 6015
-            """.trimIndent()
-                to "19 21 0",
+            """.trimIndent() to "19 21 0",
             """
                 23 48 59
                 2515
-            """.trimIndent()
-                to "0 30 54"
+            """.trimIndent() to "0 30 54"
         )
 
-        testCases.forEach { (input, output) ->
-            No2530().solve(input.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No2530().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

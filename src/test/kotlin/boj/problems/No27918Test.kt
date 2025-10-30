@@ -29,9 +29,8 @@ class No27918Test : StringSpec({
             """.trimIndent() to "3:5"
         )
 
-        for ((input, expected) in testCases) {
-            val result = No27918().solve(input.reader().buffered())
-            result shouldBe expected
+        for ((given, expected) in testCases) {
+            No27918().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

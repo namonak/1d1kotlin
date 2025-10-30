@@ -28,8 +28,8 @@ class No1068Test : StringSpec({
             """.trimIndent() to "2"
         )
 
-        testCases.forEach { (input, expected) ->
-            val actual = No1068().solve(input.reader().buffered())
+        testCases.forEach { (given, expected) ->
+            val actual = No1068().solve(given.reader().buffered())
             actual shouldBe expected
         }
     }

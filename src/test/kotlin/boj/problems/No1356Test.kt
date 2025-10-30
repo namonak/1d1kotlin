@@ -13,8 +13,8 @@ class No1356Test : StringSpec({
             "42393338" to "YES"
         )
 
-        testCases.forEach { (input, expected) ->
-            No1356().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1356().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

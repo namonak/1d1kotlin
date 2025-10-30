@@ -25,8 +25,8 @@ class No9063Test : StringSpec({
             """.trimIndent() to "9"
         )
 
-        testCases.forEach { (input, output) ->
-            No9063().solve(input.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No9063().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

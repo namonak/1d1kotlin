@@ -12,8 +12,8 @@ class No2902Test : StringSpec({
             "Kuchiguse" to "K"
         )
 
-        testCases.forEach { (input, expected) ->
-            No2902().solve(input) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No2902().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

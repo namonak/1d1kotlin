@@ -11,8 +11,8 @@ class No1158Test : StringSpec({
             "10 3" to "<3, 6, 9, 2, 7, 1, 8, 5, 10, 4>"
         )
 
-        testCases.forEach { (input, expected) ->
-            No1158().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1158().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

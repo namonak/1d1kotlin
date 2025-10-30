@@ -10,8 +10,8 @@ class No5598Test : StringSpec({
             "FURDWLD" to "CROATIA"
         )
 
-        testCases.forEach { (given, output) ->
-            No5598().solve(given.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No5598().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

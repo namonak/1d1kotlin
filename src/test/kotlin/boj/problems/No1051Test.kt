@@ -42,8 +42,8 @@ class No1051Test : StringSpec({
             """.trimIndent() to "49"
         )
 
-        testCases.forEach { (input, expected) ->
-            No1051().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No1051().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -39,23 +39,23 @@ class No23530Test : StringSpec({
 
     "샘플 유사 케이스: '값 동일성'이 아니라 '조건'을 검증한다" {
         val pairs = listOf(1 to 2, 3 to 4, 5 to 6)
-        val input = buildInput(pairs)
-        val out = No23530().solve(input.reader().buffered())
+        val given = buildInput(pairs)
+        val out = No23530().solve(given.reader().buffered())
         assertNotAPlusB(pairs, out)
     }
 
     "랜덤 케이스(제한 범위 내에서 여러 쌍 검증)" {
         val rng = Random(1234)
         val pairs = List(100) { rng.nextInt(1, 51) to rng.nextInt(1, 51) }
-        val input = buildInput(pairs)
-        val out = No23530().solve(input.reader().buffered())
+        val given = buildInput(pairs)
+        val out = No23530().solve(given.reader().buffered())
         assertNotAPlusB(pairs, out)
     }
 
     "경계값 케이스(합이 최소·최대 근처)" {
         val pairs = listOf(1 to 1, 50 to 50, 1 to 50, 2 to 49)
-        val input = buildInput(pairs)
-        val out = No23530().solve(input.reader().buffered())
+        val given = buildInput(pairs)
+        val out = No23530().solve(given.reader().buffered())
         assertNotAPlusB(pairs, out)
     }
 })

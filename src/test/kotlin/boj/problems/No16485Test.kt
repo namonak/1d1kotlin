@@ -10,8 +10,8 @@ class No16485Test : StringSpec({
             "15 7" to "2.142857142857143"
         )
 
-        testCases.forEach { (input, output) ->
-            No16485().solve(input.reader().buffered()) shouldBe output
+        testCases.forEach { (given, expected) ->
+            No16485().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

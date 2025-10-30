@@ -10,8 +10,8 @@ class No2748Test : StringSpec({
             "90" to "2880067194370816120"
         )
 
-        testCases.forEach { (input, expected) ->
-            No2748().solve(input.reader().buffered()) shouldBe expected
+        testCases.forEach { (given, expected) ->
+            No2748().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -52,9 +52,8 @@ class No5576Test : StringSpec({
             """.trimIndent() to "240 250"
         )
 
-        testCases.forEach { (input, output) ->
-            val actual = No5576().solve(input.reader().buffered())
-            actual shouldBe output
+        testCases.forEach { (given, expected) ->
+            No5576().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

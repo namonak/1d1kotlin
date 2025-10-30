@@ -8,8 +8,6 @@ class No11944Test : StringSpec({
         val given = "20 16"
         val expected = "2020202020202020"
 
-        val input = given.reader().buffered()
-        val result = No11944().solve(input)
-        result shouldBe expected
+        No11944().solve(given.reader().buffered()) shouldBe expected
     }
 })
