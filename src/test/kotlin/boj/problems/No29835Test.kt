@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No29835Test : StringSpec({
     "Palindroom : https://www.acmicpc.net/problem/29835" {
@@ -24,7 +23,7 @@ class No29835Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val result = No29835().solve(BufferedReader(given.reader()))
+            val result = No29835().solve(given.reader().buffered())
             result shouldBe expected
         }
     }

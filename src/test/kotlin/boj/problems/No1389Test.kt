@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No1389Test : StringSpec({
     "케빈 베이컨의 6단계 법칙 : https://www.acmicpc.net/problem/1389" {
@@ -16,6 +15,6 @@ class No1389Test : StringSpec({
         """.trimIndent()
         val expected = "3"
 
-        No1389().solve(BufferedReader(given.reader())) shouldBe expected
+        No1389().solve(given.reader().buffered()) shouldBe expected
     }
 })

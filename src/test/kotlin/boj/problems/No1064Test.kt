@@ -3,7 +3,6 @@ package boj.problems
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.doubles.plusOrMinus
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No1064Test : StringSpec({
     "평행사변형 : https://www.acmicpc.net/problem/1064" {
@@ -16,7 +15,7 @@ class No1064Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val result = No1064().solve(BufferedReader(given.reader())).toDouble()
+            val result = No1064().solve(given.reader().buffered()).toDouble()
             val expectedDouble = expected.toDouble()
             result shouldBe (expectedDouble plusOrMinus 1e-9)
         }

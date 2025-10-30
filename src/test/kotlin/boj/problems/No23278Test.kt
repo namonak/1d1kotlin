@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.doubles.shouldBeExactly
-import java.io.BufferedReader
 
 class No23278Test : StringSpec({
     "영화 평가 : https://www.acmicpc.net/problem/23278" {
@@ -30,7 +29,7 @@ class No23278Test : StringSpec({
         )
 
         testCases.forEach { (given, expectedOutput) ->
-            val actualOutput = No23278().solve(BufferedReader(given.reader())).toDouble()
+            val actualOutput = No23278().solve(given.reader().buffered()).toDouble()
             actualOutput shouldBeExactly expectedOutput.toDouble()
         }
     }

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No9933Test : StringSpec({
     "민균이의 비밀번호 : https://www.acmicpc.net/problem/9933" {
@@ -24,7 +23,7 @@ class No9933Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No9933().solve(BufferedReader(given.reader())) shouldBe expected
+            No9933().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

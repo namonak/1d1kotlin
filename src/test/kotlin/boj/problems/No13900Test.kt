@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No13900Test : StringSpec({
     "순서쌍의 곱의 합 : https://www.acmicpc.net/problem/13900" {
@@ -22,7 +21,7 @@ class No13900Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No13900().solve(BufferedReader(given.reader())) shouldBe expected
+            No13900().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

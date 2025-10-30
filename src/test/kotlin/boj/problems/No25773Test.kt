@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No25773Test : StringSpec({
     "Number Maximization : https://www.acmicpc.net/problem/25773" {
@@ -13,7 +12,7 @@ class No25773Test : StringSpec({
         )
 
         for ((given, expected) in testCases) {
-            val result = No25773().solve(BufferedReader(given.reader()))
+            val result = No25773().solve(given.reader().buffered())
             result shouldBe expected
         }
     }

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No8117Test : StringSpec({
     "Triangles : https://www.acmicpc.net/problem/8117" {
@@ -28,7 +27,7 @@ class No8117Test : StringSpec({
         )
 
         testCases.forEach { (input, output) ->
-            No8117().solve(BufferedReader(input.reader())) shouldBe output
+            No8117().solve(input.reader().buffered()) shouldBe output
         }
     }
 })

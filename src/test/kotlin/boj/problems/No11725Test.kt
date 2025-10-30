@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No11725Test : StringSpec({
     "트리의 부모 찾기 : https://www.acmicpc.net/problem/11725" {
@@ -52,7 +51,7 @@ class No11725Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No11725().solve(BufferedReader(given.reader())) shouldBe expected
+            No11725().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No4771Test : StringSpec({
     "아름다운 삼각형 : https://www.acmicpc.net/problem/4771" {
@@ -16,7 +15,7 @@ class No4771Test : StringSpec({
             Equilateral Acute
         """.trimIndent()
 
-        val result = No4771().solve(BufferedReader(given.reader()))
+        val result = No4771().solve(given.reader().buffered())
         result shouldBe expected
     }
 })

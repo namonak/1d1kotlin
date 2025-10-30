@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No29847Test : StringSpec({
     "Character Frequencies : https://www.acmicpc.net/problem/29847" {
@@ -42,7 +41,7 @@ class No29847Test : StringSpec({
             y 2
         """.trimIndent()
 
-        val result = No29847().solve(BufferedReader(given.reader()))
+        val result = No29847().solve(given.reader().buffered())
         result shouldBe expected
     }
 })

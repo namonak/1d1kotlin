@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No23746Test : StringSpec({
     "문자열 압축 해제 : https://www.acmicpc.net/problem/23746" {
@@ -37,7 +36,7 @@ class No23746Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No23746().solve(BufferedReader(given.reader())) shouldBe expected
+            No23746().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

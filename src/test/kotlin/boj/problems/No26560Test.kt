@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No26560Test : StringSpec({
     "Periods : https://www.acmicpc.net/problem/26560" {
@@ -18,6 +17,6 @@ class No26560Test : StringSpec({
             It was the kid that did.
         """.trimIndent()
 
-        No26560().solve(BufferedReader(given.reader())) shouldBe expected
+        No26560().solve(given.reader().buffered()) shouldBe expected
     }
 })

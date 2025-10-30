@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No6696Test : StringSpec({
     "Too Much Water : https://www.acmicpc.net/problem/6696" {
@@ -16,6 +15,6 @@ class No6696Test : StringSpec({
             The property will be flooded in hour 20.
         """.trimIndent()
 
-        No6696().solve(BufferedReader(given.reader())) shouldBe expected
+        No6696().solve(given.reader().buffered()) shouldBe expected
     }
 })

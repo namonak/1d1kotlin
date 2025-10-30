@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No9298Test : StringSpec({
     "Ant Entrapment : https://www.acmicpc.net/problem/9298" {
@@ -21,6 +20,6 @@ class No9298Test : StringSpec({
             Case 2: Area 40.85, Perimeter 26.7
         """.trimIndent()
 
-        No9298().solve(BufferedReader(given.reader())) shouldBe expected
+        No9298().solve(given.reader().buffered()) shouldBe expected
     }
 })

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No17836Test : StringSpec({
     "공주님을 구해라! : https://www.acmicpc.net/problem/17836" {
@@ -33,7 +32,7 @@ class No17836Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No17836().solve(BufferedReader(given.reader())) shouldBe expected
+            No17836().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

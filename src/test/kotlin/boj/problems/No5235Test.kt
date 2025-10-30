@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No5235Test : StringSpec({
     "Even Sum More Than Odd Sum : https://www.acmicpc.net/problem/5235" {
@@ -20,6 +19,6 @@ class No5235Test : StringSpec({
             TIE
         """.trimIndent()
 
-        No5235().solve(BufferedReader(given.reader())) shouldBe expected
+        No5235().solve(given.reader().buffered()) shouldBe expected
     }
 })

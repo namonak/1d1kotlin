@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No18005Test : StringSpec({
     "Even or Odd? : https://www.acmicpc.net/problem/18005" {
@@ -13,7 +12,7 @@ class No18005Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val actual = No18005().solve(BufferedReader(given.reader()))
+            val actual = No18005().solve(given.reader().buffered())
             actual shouldBe expected
         }
     }

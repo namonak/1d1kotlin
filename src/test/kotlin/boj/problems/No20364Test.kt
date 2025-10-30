@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No20364Test : StringSpec({
     "부동산 다툼 : https://www.acmicpc.net/problem/20364" {
@@ -20,7 +19,7 @@ class No20364Test : StringSpec({
             0
         """.trimIndent()
 
-        val result = No20364().solve(BufferedReader(given.reader()))
+        val result = No20364().solve(given.reader().buffered())
         result shouldBe expected
     }
 })

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No25418Test : StringSpec({
     "정수 a를 k로 만들기 : https://www.acmicpc.net/problem/25418" {
@@ -13,7 +12,7 @@ class No25418Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No25418().solve(BufferedReader(given.reader())) shouldBe expected
+            No25418().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No2669Test : StringSpec({
     "직사각형 네개의 합집합의 면적 구하기 : https://www.acmicpc.net/problem/2669" {
@@ -14,7 +13,7 @@ class No2669Test : StringSpec({
         """.trimIndent()
         val expected = "26"
 
-        val actual = No2669().solve(BufferedReader(given.reader()))
+        val actual = No2669().solve(given.reader().buffered())
 
         actual shouldBe expected
     }

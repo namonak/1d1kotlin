@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No5364Test : StringSpec({
     "Escape Route : https://www.acmicpc.net/problem/5364" {
@@ -22,6 +21,6 @@ class No5364Test : StringSpec({
             13.45
         """.trimIndent()
 
-        No5364().solve(BufferedReader(given.reader())) shouldBe expected
+        No5364().solve(given.reader().buffered()) shouldBe expected
     }
 })

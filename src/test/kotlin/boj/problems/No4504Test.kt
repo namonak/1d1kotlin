@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No4504Test : StringSpec({
     "배수 찾기 : https://www.acmicpc.net/problem/4504" {
@@ -23,6 +22,6 @@ class No4504Test : StringSpec({
             777 is a multiple of 3.
         """.trimIndent()
 
-        No4504().solve(BufferedReader(given.reader())) shouldBe expected
+        No4504().solve(given.reader().buffered()) shouldBe expected
     }
 })

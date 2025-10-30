@@ -3,7 +3,6 @@ package boj.problems
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.doubles.plusOrMinus
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No33835Test : StringSpec({
     "도로 공사 : https://www.acmicpc.net/problem/33835" {
@@ -16,7 +15,7 @@ class No33835Test : StringSpec({
         val expected = "2"
         val eps = 1e-4
 
-        val actual = No33835().solve(BufferedReader(given.reader()))
+        val actual = No33835().solve(given.reader().buffered())
         actual.toDouble() shouldBe (expected.toDouble() plusOrMinus eps)
     }
 })

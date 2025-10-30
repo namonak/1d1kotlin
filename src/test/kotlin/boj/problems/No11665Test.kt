@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No11665Test : StringSpec({
     "Rectangular Prisms Intersection Volume : https://www.acmicpc.net/problem/11665" {
@@ -35,7 +34,7 @@ class No11665Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val result = No11665().solve(BufferedReader(given.reader()))
+            val result = No11665().solve(given.reader().buffered())
             result shouldBe expected
         }
     }

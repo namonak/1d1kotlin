@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No5959Test : StringSpec({
     "Crop Circles : https://www.acmicpc.net/problem/5959" {
@@ -24,7 +23,7 @@ class No5959Test : StringSpec({
             2
         """.trimIndent()
 
-        val result = No5959().solve(BufferedReader(given.reader()))
+        val result = No5959().solve(given.reader().buffered())
         result shouldBe expected
     }
 })

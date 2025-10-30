@@ -3,7 +3,6 @@ package boj.problems
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.doubles.plusOrMinus
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No20215Test : StringSpec({
     "Cutting Corners : https://www.acmicpc.net/problem/20215" {
@@ -14,7 +13,7 @@ class No20215Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            val actual = No20215().solve(BufferedReader(given.reader())).toDouble()
+            val actual = No20215().solve(given.reader().buffered()).toDouble()
             actual shouldBe (expected plusOrMinus 1e-6)
         }
     }

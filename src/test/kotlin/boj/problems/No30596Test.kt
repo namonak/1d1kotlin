@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No30596Test : StringSpec({
     "Axis-Aligned Area : https://www.acmicpc.net/problem/30596" {
@@ -22,7 +21,7 @@ class No30596Test : StringSpec({
         )
 
         testCases.forEach { (given, expected) ->
-            No30596().solve(BufferedReader(given.reader())) shouldBe expected
+            No30596().solve(given.reader().buffered()) shouldBe expected
         }
     }
 })

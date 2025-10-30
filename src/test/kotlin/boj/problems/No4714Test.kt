@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No4714Test : StringSpec({
     "Lunacy : https://www.acmicpc.net/problem/4714" {
@@ -20,6 +19,6 @@ class No4714Test : StringSpec({
             Objects weighing 120000.00 on Earth will weigh 20040.00 on the moon.
         """.trimIndent()
 
-        No4714().solve(BufferedReader(given.reader())) shouldBe expected
+        No4714().solve(given.reader().buffered()) shouldBe expected
     }
 })

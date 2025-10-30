@@ -3,7 +3,6 @@ package boj.problems
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.doubles.plusOrMinus
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No30315Test : StringSpec({
     "King's Keep : https://www.acmicpc.net/problem/30315" {
@@ -27,7 +26,7 @@ class No30315Test : StringSpec({
         val tolerance = 1e-6
 
         testCases.forEach { (given, expected) ->
-            val result = No30315().solve(BufferedReader(given.reader())).toDouble()
+            val result = No30315().solve(given.reader().buffered()).toDouble()
             result shouldBe (expected plusOrMinus tolerance)
         }
     }

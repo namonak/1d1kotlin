@@ -2,7 +2,6 @@ package boj.problems
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import java.io.BufferedReader
 
 class No11365Test : StringSpec({
     "!밀비 급일 : https://www.acmicpc.net/problem/11365" {
@@ -20,6 +19,6 @@ class No11365Test : StringSpec({
             Concealed within his fortress, the lord of Mordor sees all
         """.trimIndent()
 
-        No11365().solve(BufferedReader(given.reader())) shouldBe expected
+        No11365().solve(given.reader().buffered()) shouldBe expected
     }
 })
