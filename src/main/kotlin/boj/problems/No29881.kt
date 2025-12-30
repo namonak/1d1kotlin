@@ -28,6 +28,6 @@ class No29881 {
                 val accountName = accountNameByFirstName[firstName]!!
                 appendLine("$lastName $accountName")
             }
-        }
+        }.trimEnd()
     }
 }

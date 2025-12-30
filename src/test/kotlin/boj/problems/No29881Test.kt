@@ -17,7 +17,7 @@ class No29881Test : StringSpec({
         val expected = """
             Kask jk
             Kuusk mk
-            Tamm mt            
+            Tamm mt
         """.trimIndent()
 
         No29881().solve(given.reader().buffered()) shouldBe expected
