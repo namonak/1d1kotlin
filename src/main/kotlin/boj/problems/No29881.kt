@@ -25,7 +25,7 @@ class No29881 {
 
         return buildString {
             for ((firstName, lastName) in lastNameByFirstName) {
-                val accountName = accountNameByFirstName[firstName]!!
+                val accountName = accountNameByFirstName.getValue(firstName)
                 appendLine("$lastName $accountName")
             }
         }.trimEnd()
