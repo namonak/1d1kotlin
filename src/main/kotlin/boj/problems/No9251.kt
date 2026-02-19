@@ -6,26 +6,29 @@ class No9251 {
     fun solve(input: BufferedReader): String {
         val strA = input.readLine()
         val strB = input.readLine()
-        return lcsLenSpaceOptimized(strA, strB).toString()
+
+        return lcsLen(strA, strB).toString()
     }
 
-    private fun lcsLenSpaceOptimized(
-        a: String,
-        b: String
+    private fun lcsLen(
+        strA: String,
+        strB: String
     ): Int {
-        val (s, t) = if (a.length <= b.length) a to b else b to a
-        val m = t.length
-        var prev = IntArray(m + 1)
-        var curr = IntArray(m + 1)
-        for (ch in s) {
-            for (j in 1..m) {
-                curr[j] = if (ch == t[j - 1]) prev[j - 1] + 1 else maxOf(prev[j], curr[j - 1])
+        val lenStrA = strA.length
+        val lenStrB = strB.length
+
+        val dp = Array(lenStrA + 1) { IntArray(lenStrB + 1) }
+
+        for (i in 1..lenStrA) {
+            for (j in 1..lenStrB) {
+                if (strA[i - 1] == strB[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1
+                } else {
+                    dp[i][j] = maxOf(dp[i - 1][j], dp[i][j - 1])
+                }
             }
-            // swap
-            val tmp = prev
-            prev = curr
-            curr = tmp
         }
-        return prev[m]
+
+        return dp[lenStrA][lenStrB]
     }
 }
