@@ -1,24 +1,15 @@
 package boj.problems
 
 import java.io.BufferedReader
-import java.util.StringTokenizer
 
 class No30805 {
     fun solve(input: BufferedReader): String {
         // 1. 입력 처리 및 배열 초기화
         val n = input.readLine().toInt()
-        val a = IntArray(n)
-        var st = StringTokenizer(input.readLine())
-        for (i in 0 until n) {
-            a[i] = st.nextToken().toInt()
-        }
+        val a = input.readLine().split(" ").map { it.toInt() }.toIntArray()
 
         val m = input.readLine().toInt()
-        val b = IntArray(m)
-        st = StringTokenizer(input.readLine())
-        for (i in 0 until m) {
-            b[i] = st.nextToken().toInt()
-        }
+        val b = input.readLine().split(" ").map { it.toInt() }.toIntArray()
 
         // 2. 공통 부분 수열 탐색
         val result = mutableListOf<Int>()
@@ -44,13 +35,12 @@ class No30805 {
         }
 
         // 3. 결과 출력 포맷팅
-        val sb = StringBuilder()
-        sb.append(result.size).append("\n")
-        if (result.isNotEmpty()) {
-            sb.append(result.joinToString(" "))
-        }
-
-        return sb.toString().trimEnd()
+        return buildString {
+            appendLine(result.size)
+            if (result.isNotEmpty()) {
+                append(result.joinToString(" "))
+            }
+        }.trimEnd()
     }
 
     /**
