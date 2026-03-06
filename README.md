@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/namonak/1d1kotlin/actions/workflows/ci.yml/badge.svg)](https://github.com/namonak/1d1kotlin/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=namonak_1d1kotlin&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=namonak_1d1kotlin)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=namonak_1d1kotlin&metric=coverage)](https://sonarcloud.io/summary/new_code?id=namonak_1d1kotlin)
 
 ---
 
