@@ -11,10 +11,9 @@ class No30684 {
         var best: String? = null
         repeat(n) {
             val name = input.readLine().trim()
-            if (name.length == TARGET_LENGTH) {
-                if (best == null || name < requireNotNull(best)) {
-                    best = name
-                }
+            val currentBest = best
+            if (name.length == TARGET_LENGTH && (currentBest == null || name < currentBest)) {
+                best = name
             }
         }
 
