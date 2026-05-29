@@ -16,10 +16,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter", "junit-jupiter", "5.9.3")
-    testImplementation("org.assertj", "assertj-core", "3.22.0")
-    testImplementation("io.kotest", "kotest-runner-junit5", "5.6.1")
-    testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.9.24")
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.assertj.core)
+    testImplementation(libs.kotest.runner.junit5)
+    testImplementation(libs.kotlin.reflect)
 }
 
 /** JDK 21 일관성 보장 */

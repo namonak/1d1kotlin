@@ -1,0 +1,11 @@
+[versions]
+assertj = "3.22.0"
+junit-jupiter = "5.9.3"
+kotest = "5.6.1"
+kotlin = "1.9.24"
+
+[libraries]
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
