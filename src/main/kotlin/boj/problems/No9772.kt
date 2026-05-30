@@ -5,8 +5,8 @@ import java.io.BufferedReader
 class No9772 {
     fun solve(input: BufferedReader): String {
         val sb = StringBuilder()
-        input.lineSequence().forEach { it ->
-            val (x, y) = it.trim().split(" ").map { it.toDouble() }
+        input.lineSequence().forEach { line ->
+            val (x, y) = line.trim().split(" ").map { it.toDouble() }
             sb.append(
                 when {
                     x > 0 && y > 0 -> "Q1"

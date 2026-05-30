@@ -7,9 +7,9 @@ class No2693 {
         val n = input.readLine().toInt()
         val result = IntArray(n)
 
-        repeat(n) { it ->
+        repeat(n) { index ->
             val array = input.readLine().split(" ").map { it.toInt() }
-            result[it] = array.sortedDescending()[2]
+            result[index] = array.sortedDescending()[2]
         }
 
         return result.joinToString("\n").trimEnd()
