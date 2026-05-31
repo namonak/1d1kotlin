@@ -11,10 +11,11 @@ class No9935 {
 
         for (char in str) {
             stack.add(char)
-            if (char == bombLastChar && stack.size >= bomb.length) {
-                if (stack.subList(stack.size - bomb.length, stack.size).joinToString("") == bomb) {
-                    repeat(bomb.length) { stack.removeAt(stack.size - 1) }
-                }
+            if (char == bombLastChar &&
+                stack.size >= bomb.length &&
+                stack.subList(stack.size - bomb.length, stack.size).joinToString("") == bomb
+            ) {
+                repeat(bomb.length) { stack.removeAt(stack.size - 1) }
             }
         }
 

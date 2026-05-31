@@ -13,10 +13,8 @@ class No30454 {
             var currentStripes = 0
 
             for (i in zebra.indices) {
-                if (zebra[i] == '1') {
-                    if (i == 0 || zebra[i - 1] == '0') {
-                        currentStripes++
-                    }
+                if (zebra[i] == '1' && (i == 0 || zebra[i - 1] == '0')) {
+                    currentStripes++
                 }
             }
 
