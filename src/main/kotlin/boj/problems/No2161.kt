@@ -13,7 +13,7 @@ class No2161 {
         }
 
         val sb = StringBuilder()
-        while (!q.isEmpty()) {
+        while (q.isNotEmpty()) {
             sb.append(q.poll()).append(" ")
             if (q.isEmpty()) {
                 break
