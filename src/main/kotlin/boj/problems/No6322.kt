@@ -3,6 +3,8 @@ package boj.problems
 import java.io.BufferedReader
 import kotlin.math.sqrt
 
+private const val IMPOSSIBLE = "Impossible."
+
 class No6322 {
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()
@@ -24,14 +26,14 @@ class No6322 {
             return when {
                 a == -1.0 -> {
                     if (c <= b) {
-                        "Impossible."
+                        IMPOSSIBLE
                     } else {
                         "a = ${String.format("%.3f", sqrt(c * c - b * b))}"
                     }
                 }
                 b == -1.0 -> {
                     if (c <= a) {
-                        "Impossible."
+                        IMPOSSIBLE
                     } else {
                         "b = ${String.format("%.3f", sqrt(c * c - a * a))}"
                     }
@@ -39,7 +41,7 @@ class No6322 {
                 c == -1.0 -> {
                     "c = ${String.format("%.3f", sqrt(a * a + b * b))}"
                 }
-                else -> "Impossible."
+                else -> IMPOSSIBLE
             } + "\n"
         }
     }
