@@ -24,17 +24,20 @@ class No1074 {
 
         val half = size / 2
 
-        if (r < half && c < half) {
-            findCount(half, r, c)
-        } else if (r < half && c >= half) {
-            count += size * size / 4
-            findCount(half, r, c - half)
-        } else if (r >= half && c < half) {
-            count += (size * size / 4) * 2
-            findCount(half, r - half, c)
-        } else {
-            count += (size * size / 4) * 3
-            findCount(half, r - half, c - half)
+        when {
+            r < half && c < half -> findCount(half, r, c)
+            r < half && c >= half -> {
+                count += size * size / 4
+                findCount(half, r, c - half)
+            }
+            r >= half && c < half -> {
+                count += (size * size / 4) * 2
+                findCount(half, r - half, c)
+            }
+            else -> {
+                count += (size * size / 4) * 3
+                findCount(half, r - half, c - half)
+            }
         }
     }
 }

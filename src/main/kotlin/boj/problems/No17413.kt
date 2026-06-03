@@ -10,24 +10,24 @@ class No17413 {
         var word = StringBuilder()
 
         for (i in s.indices) {
-            if (s[i] == '<') {
-                isTag = true
-                sb.append(word.reversed())
-                word = StringBuilder()
-                sb.append('<')
-            } else if (s[i] == '>') {
-                isTag = false
-                sb.append('>')
-            } else if (isTag) {
-                sb.append(s[i])
-            } else {
-                if (s[i] == ' ') {
+            when {
+                s[i] == '<' -> {
+                    isTag = true
+                    sb.append(word.reversed())
+                    word = StringBuilder()
+                    sb.append('<')
+                }
+                s[i] == '>' -> {
+                    isTag = false
+                    sb.append('>')
+                }
+                isTag -> sb.append(s[i])
+                s[i] == ' ' -> {
                     sb.append(word.reversed())
                     sb.append(' ')
                     word = StringBuilder()
-                } else {
-                    word.append(s[i])
                 }
+                else -> word.append(s[i])
             }
         }
 
