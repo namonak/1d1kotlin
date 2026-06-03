@@ -27,7 +27,7 @@ class No25593 {
         if (workTime.isEmpty()) return "Yes"
 
         // 최댓값·최솟값 차이 검사
-        val times = workTime.values
+        val times = workTime.values.toList()
         val maxTime = times.maxOrNull()!!
         val minTime = times.minOrNull()!!
         return if (maxTime - minTime <= 12) "Yes" else "No"

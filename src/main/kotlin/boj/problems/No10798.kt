@@ -8,7 +8,7 @@ class No10798 {
     }
 
     fun solve(input: BufferedReader): String {
-        val lines = MutableList(ROWS) { input.readLine() }
+        val lines = List(ROWS) { input.readLine() }
         val maxCols = lines.maxOf { it.length }
         val sb = StringBuilder(maxCols * ROWS)
 
