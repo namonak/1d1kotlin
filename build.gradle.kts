@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.9.24"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
-    id("org.sonarqube") version "4.3.1.3277"
+    id("org.sonarqube") version "7.3.1.8318"
     id("jacoco")
 }
 
@@ -73,7 +73,6 @@ sonar {
     properties {
         property("sonar.projectKey", "namonak_1d1kotlin")
         property("sonar.organization", "namonak")
-        property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.coverage.exclusions", "src/main/kotlin/boj/problems/Main.kt")
     }
 }
