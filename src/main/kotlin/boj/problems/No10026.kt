@@ -12,6 +12,18 @@ class No10026 {
         val visitedColorBlind = Array(n) { BooleanArray(n) }
         val direction = arrayOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
+        fun isSameAreaColor(
+            currentColor: Char,
+            nextColor: Char,
+            isColorBlind: Boolean
+        ): Boolean {
+            return if (isColorBlind) {
+                currentColor == nextColor || currentColor in "RG" && nextColor in "RG"
+            } else {
+                currentColor == nextColor
+            }
+        }
+
         fun bfs(
             x: Int,
             y: Int,
@@ -31,19 +43,9 @@ class No10026 {
                     val nY = curY + dy
 
                     if (nX in 0 until n && nY in 0 until n && !visited[nX][nY]) {
-                        if (isColorBlind) {
-                            if ((currentColor == 'R' || currentColor == 'G') && (grid[nX][nY] == 'R' || grid[nX][nY] == 'G')) {
-                                visited[nX][nY] = true
-                                queue.add(Pair(nX, nY))
-                            } else if (currentColor == 'B' && grid[nX][nY] == 'B') {
-                                visited[nX][nY] = true
-                                queue.add(Pair(nX, nY))
-                            }
-                        } else {
-                            if (grid[nX][nY] == currentColor) {
-                                visited[nX][nY] = true
-                                queue.add(Pair(nX, nY))
-                            }
+                        if (isSameAreaColor(currentColor, grid[nX][nY], isColorBlind)) {
+                            visited[nX][nY] = true
+                            queue.add(Pair(nX, nY))
                         }
                     }
                 }
