@@ -42,11 +42,13 @@ class No10026 {
                     val nX = curX + dx
                     val nY = curY + dy
 
-                    if (nX in 0 until n && nY in 0 until n && !visited[nX][nY]) {
-                        if (isSameAreaColor(currentColor, grid[nX][nY], isColorBlind)) {
-                            visited[nX][nY] = true
-                            queue.add(Pair(nX, nY))
-                        }
+                    if (nX in 0 until n &&
+                        nY in 0 until n &&
+                        !visited[nX][nY] &&
+                        isSameAreaColor(currentColor, grid[nX][nY], isColorBlind)
+                    ) {
+                        visited[nX][nY] = true
+                        queue.add(Pair(nX, nY))
                     }
                 }
             }
