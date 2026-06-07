@@ -18,9 +18,7 @@ class No10939 {
         val inputTrimmed = input.trimEnd('=')
 
         for (char in inputTrimmed) {
-            if (char !in BASE32_ALPHABET) {
-                throw IllegalArgumentException("Invalid character in Base32 string")
-            }
+            require(char in BASE32_ALPHABET) { "Invalid character in Base32 string" }
 
             buffer = (buffer shl 5) or BASE32_ALPHABET.indexOf(char)
             bitsLeft += 5

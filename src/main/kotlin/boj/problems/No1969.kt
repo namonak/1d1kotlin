@@ -27,7 +27,7 @@ class No1969 {
                     1 -> 'C'
                     2 -> 'G'
                     3 -> 'T'
-                    else -> throw IllegalStateException()
+                    else -> error("Unexpected nucleotide count")
                 }
             )
         }
