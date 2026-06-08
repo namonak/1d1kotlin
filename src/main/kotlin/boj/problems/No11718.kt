@@ -8,7 +8,7 @@ class No11718 {
 
         while (true) {
             val str = input.readLine()
-            if (str == null || str.isEmpty()) {
+            if (str.isNullOrEmpty()) {
                 break
             }
             result.append("$str\n")

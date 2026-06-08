@@ -37,7 +37,7 @@ class No2644 {
         distance[start] = 0
         queue.add(start)
 
-        while (!queue.isEmpty()) {
+        while (queue.isNotEmpty()) {
             val current = queue.removeFirst()
 
             if (current == target) {
