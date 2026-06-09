@@ -47,31 +47,30 @@ private class GameBoard {
         t: Int,
         y: Int
     ) {
-        var r = 0
+        val row = findGreenLandingRow(t, y)
+
         when (t) {
-            1 -> {
-                for (row in 0 until 6) {
-                    if (green[row][y] == 1) break
-                    r = row
-                }
-                green[r][y] = 1
-            }
+            1 -> green[row][y] = 1
             2 -> {
-                for (row in 0 until 6) {
-                    if (green[row][y] == 1 || green[row][y + 1] == 1) break
-                    r = row
-                }
-                green[r][y] = 1
-                green[r][y + 1] = 1
+                green[row][y] = 1
+                green[row][y + 1] = 1
             }
             3 -> {
-                for (row in 0 until 5) {
-                    if (green[row][y] == 1 || green[row + 1][y] == 1) break
-                    r = row
-                }
-                green[r][y] = 1
-                green[r + 1][y] = 1
+                green[row][y] = 1
+                green[row + 1][y] = 1
             }
+        }
+    }
+
+    private fun findGreenLandingRow(
+        t: Int,
+        y: Int
+    ): Int {
+        return when (t) {
+            1 -> findLandingPosition(green.indices) { row -> green[row][y] == 1 }
+            2 -> findLandingPosition(green.indices) { row -> green[row][y] == 1 || green[row][y + 1] == 1 }
+            3 -> findLandingPosition(0 until green.lastIndex) { row -> green[row][y] == 1 || green[row + 1][y] == 1 }
+            else -> 0
         }
     }
 
@@ -79,55 +78,45 @@ private class GameBoard {
         t: Int,
         x: Int,
     ) {
-        var c = 0
+        val col = findBlueLandingCol(t, x)
+
         when (t) {
-            1 -> {
-                for (col in 0 until 6) {
-                    if (blue[x][col] == 1) break
-                    c = col
-                }
-                blue[x][c] = 1
-            }
+            1 -> blue[x][col] = 1
             2 -> {
-                for (col in 0 until 6) {
-                    if (blue[x][col] == 1) break
-                    c = col
-                }
-                blue[x][c] = 1
-                blue[x][c - 1] = 1
+                blue[x][col] = 1
+                blue[x][col - 1] = 1
             }
             3 -> {
-                for (col in 0 until 6) {
-                    if (blue[x][col] == 1 || blue[x + 1][col] == 1) break
-                    c = col
-                }
-                blue[x][c] = 1
-                blue[x + 1][c] = 1
+                blue[x][col] = 1
+                blue[x + 1][col] = 1
             }
         }
+    }
+
+    private fun findBlueLandingCol(
+        t: Int,
+        x: Int
+    ): Int {
+        return when (t) {
+            1, 2 -> findLandingPosition(blue[x].indices) { col -> blue[x][col] == 1 }
+            3 -> findLandingPosition(blue[x].indices) { col -> blue[x][col] == 1 || blue[x + 1][col] == 1 }
+            else -> 0
+        }
+    }
+
+    private fun findLandingPosition(
+        positions: IntRange,
+        isBlocked: (Int) -> Boolean
+    ): Int {
+        return positions.firstOrNull(isBlocked)?.minus(1)?.coerceAtLeast(0) ?: positions.last
     }
 
     private fun clearGreenLines() {
         var r = 5
         while (r >= 2) {
-            var full = true
-            for (c in 0..3) {
-                if (green[r][c] == 0) {
-                    full = false
-                    break
-                }
-            }
-            if (full) {
+            if (green[r].all { block -> block == 1 }) {
                 score++
-                // 행 삭제
-                for (row in r downTo 1) {
-                    for (col in 0..3) {
-                        green[row][col] = green[row - 1][col]
-                    }
-                }
-                // 최상단 비우기
-                for (col in 0..3) green[0][col] = 0
-
+                removeGreenRow(r)
                 r++ // 삭제 후 한 번 더 검사 (압축으로 인해 새로운 full row 생길 수 있음)
             }
             r--
@@ -137,24 +126,9 @@ private class GameBoard {
     private fun clearBlueLines() {
         var c = 5
         while (c >= 2) {
-            var full = true
-            for (r in 0..3) {
-                if (blue[r][c] == 0) {
-                    full = false
-                    break
-                }
-            }
-            if (full) {
+            if (blue.all { row -> row[c] == 1 }) {
                 score++
-                // 열 삭제 + 오른쪽으로 밀기
-                for (col in c downTo 1) {
-                    for (row in 0..3) {
-                        blue[row][col] = blue[row][col - 1]
-                    }
-                }
-                // 최좌측 비움
-                for (row in 0..3) blue[row][0] = 0
-
+                removeBlueCol(c)
                 c++ // 새로운 full column 발생 가능성 반영
             }
             c--
@@ -162,49 +136,37 @@ private class GameBoard {
     }
 
     private fun removeGreenLightRows() {
-        var cnt = 0
-        for (r in 0..1) {
-            for (c in 0..3) {
-                if (green[r][c] == 1) {
-                    cnt++
-                    break
-                }
-            }
-        }
+        val cnt = (0..1).count { row -> green[row].any { block -> block == 1 } }
         if (cnt == 0) return
 
         // 맨 아래 cnt개 행 삭제(4~5행)
         repeat(cnt) {
-            for (r in 5 downTo 1) {
-                for (c in 0..3) {
-                    green[r][c] = green[r - 1][c]
-                }
-            }
-            for (c in 0..3) green[0][c] = 0
+            removeGreenRow(green.lastIndex)
         }
     }
 
     private fun removeBlueLightCols() {
-        var cnt = 0
-        for (c in 0..1) {
-            for (r in 0..3) {
-                if (blue[r][c] == 1) {
-                    cnt++
-                    break
-                }
-            }
-        }
+        val cnt = (0..1).count { col -> blue.any { row -> row[col] == 1 } }
         if (cnt == 0) return
 
         // 맨 오른쪽 열 cnt개 삭제 (4~5열)
         repeat(cnt) {
-            for (col in 5 downTo 1) {
-                for (row in 0..3) {
-                    blue[row][col] = blue[row][col - 1]
-                }
-            }
-            for (row in 0..3) blue[row][0] = 0
+            removeBlueCol(blue[0].lastIndex)
         }
+    }
+
+    private fun removeGreenRow(targetRow: Int) {
+        for (row in targetRow downTo 1) {
+            green[row - 1].copyInto(green[row])
+        }
+        green[0].fill(0)
+    }
+
+    private fun removeBlueCol(targetCol: Int) {
+        for (col in targetCol downTo 1) {
+            blue.forEach { row -> row[col] = row[col - 1] }
+        }
+        blue.forEach { row -> row[0] = 0 }
     }
 
     fun countBlocks(): Int {
