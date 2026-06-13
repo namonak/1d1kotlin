@@ -13,11 +13,8 @@ class No14494 {
         for (i in 1..n) {
             for (j in 1..m) {
                 if (i == 1 && j == 1) continue
-                val fromLeft = if (j > 1) dp[i][j - 1] else 0
-                val fromTop = if (i > 1) dp[i - 1][j] else 0
-                val fromDiagonal = if (i > 1 && j > 1) dp[i - 1][j - 1] else 0
 
-                dp[i][j] = (fromLeft + fromTop + fromDiagonal) % mod
+                dp[i][j] = (dp[i][j - 1] + dp[i - 1][j] + dp[i - 1][j - 1]) % mod
             }
         }
 
