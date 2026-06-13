@@ -3,6 +3,12 @@ package boj.problems
 import java.io.BufferedReader
 
 class No6593 {
+    private data class BuildingInfo(
+        val building: Array<Array<CharArray>>,
+        val start: Triple<Int, Int, Int>,
+        val end: Triple<Int, Int, Int>
+    )
+
     fun solve(input: BufferedReader): String {
         val result = StringBuilder()
 
@@ -10,27 +16,38 @@ class No6593 {
             val (l, r, c) = input.readLine().split(" ").map { it.toInt() }
             if (l == 0 && r == 0 && c == 0) break
 
-            val building = Array(l) { Array(r) { CharArray(c) } }
-            var start = Triple(0, 0, 0)
-            var end = Triple(0, 0, 0)
-
-            for (floor in 0 until l) {
-                for (row in 0 until r) {
-                    val line = input.readLine()
-                    building[floor][row] = line.toCharArray()
-                    for (col in line.indices) {
-                        when (line[col]) {
-                            'S' -> start = Triple(floor, row, col)
-                            'E' -> end = Triple(floor, row, col)
-                        }
-                    }
-                }
-                input.readLine()
-            }
-            result.append(bfs(building, start, end, l, r, c))
+            val buildingInfo = readBuilding(input, l, r, c)
+            result.append(bfs(buildingInfo.building, buildingInfo.start, buildingInfo.end, l, r, c))
         }
 
         return result.toString().trimEnd()
+    }
+
+    private fun readBuilding(
+        input: BufferedReader,
+        l: Int,
+        r: Int,
+        c: Int
+    ): BuildingInfo {
+        val building = Array(l) { Array(r) { CharArray(c) } }
+        var start = Triple(0, 0, 0)
+        var end = Triple(0, 0, 0)
+
+        for (floor in 0 until l) {
+            for (row in 0 until r) {
+                val line = input.readLine()
+                building[floor][row] = line.toCharArray()
+                for (col in line.indices) {
+                    when (line[col]) {
+                        'S' -> start = Triple(floor, row, col)
+                        'E' -> end = Triple(floor, row, col)
+                    }
+                }
+            }
+            input.readLine()
+        }
+
+        return BuildingInfo(building, start, end)
     }
 
     private fun bfs(
