@@ -3,7 +3,7 @@ package boj.problems
 import java.io.BufferedReader
 
 class No6593 {
-    private data class BuildingInfo(
+    private class BuildingInfo(
         val building: Array<Array<CharArray>>,
         val start: Triple<Int, Int, Int>,
         val end: Triple<Int, Int, Int>
