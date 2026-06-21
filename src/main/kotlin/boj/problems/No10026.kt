@@ -1,79 +1,86 @@
 package boj.problems
 
 import java.io.BufferedReader
-import java.util.LinkedList
-import java.util.Queue
 
 class No10026 {
+    private val directions = arrayOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
+
     fun solve(input: BufferedReader): String {
         val n = input.readLine().toInt()
         val grid = Array(n) { input.readLine().toCharArray() }
-        val visitedNormal = Array(n) { BooleanArray(n) }
-        val visitedColorBlind = Array(n) { BooleanArray(n) }
-        val direction = arrayOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
-        fun isSameAreaColor(
-            currentColor: Char,
-            nextColor: Char,
-            isColorBlind: Boolean
-        ): Boolean {
-            return if (isColorBlind) {
-                currentColor == nextColor || currentColor in "RG" && nextColor in "RG"
-            } else {
-                currentColor == nextColor
-            }
-        }
-
-        fun bfs(
-            x: Int,
-            y: Int,
-            visited: Array<BooleanArray>,
-            isColorBlind: Boolean
-        ) {
-            val queue: Queue<Pair<Int, Int>> = LinkedList()
-            queue.add(Pair(x, y))
-            visited[x][y] = true
-            val currentColor = grid[x][y]
-
-            while (queue.isNotEmpty()) {
-                val (curX, curY) = queue.poll()
-
-                for ((dx, dy) in direction) {
-                    val nX = curX + dx
-                    val nY = curY + dy
-
-                    if (nX in 0 until n &&
-                        nY in 0 until n &&
-                        !visited[nX][nY] &&
-                        isSameAreaColor(currentColor, grid[nX][nY], isColorBlind)
-                    ) {
-                        visited[nX][nY] = true
-                        queue.add(Pair(nX, nY))
-                    }
-                }
-            }
-        }
-        var normalCount = 0
-        var colorBlindCount = 0
-
-        for (i in 0 until n) {
-            for (j in 0 until n) {
-                if (!visitedNormal[i][j]) {
-                    bfs(i, j, visitedNormal, isColorBlind = false)
-                    normalCount++
-                }
-            }
-        }
-
-        for (i in 0 until n) {
-            for (j in 0 until n) {
-                if (!visitedColorBlind[i][j]) {
-                    bfs(i, j, visitedColorBlind, isColorBlind = true)
-                    colorBlindCount++
-                }
-            }
-        }
-
+        val normalCount = countAreas(grid, isColorBlind = false)
+        val colorBlindCount = countAreas(grid, isColorBlind = true)
         return "$normalCount $colorBlindCount"
+    }
+
+    private fun countAreas(
+        grid: Array<CharArray>,
+        isColorBlind: Boolean
+    ): Int {
+        val visited = Array(grid.size) { BooleanArray(grid.size) }
+        var areaCount = 0
+
+        for (x in grid.indices) {
+            for (y in grid[x].indices) {
+                if (!visited[x][y]) {
+                    visitArea(grid, visited, x, y, isColorBlind)
+                    areaCount++
+                }
+            }
+        }
+
+        return areaCount
+    }
+
+    private fun visitArea(
+        grid: Array<CharArray>,
+        visited: Array<BooleanArray>,
+        startX: Int,
+        startY: Int,
+        isColorBlind: Boolean
+    ) {
+        val queue = ArrayDeque<Pair<Int, Int>>()
+        val areaColor = grid[startX][startY]
+
+        queue.add(startX to startY)
+        visited[startX][startY] = true
+
+        while (queue.isNotEmpty()) {
+            val (x, y) = queue.removeFirst()
+
+            for ((dx, dy) in directions) {
+                val nextX = x + dx
+                val nextY = y + dy
+
+                if (canVisit(grid, visited, nextX, nextY, areaColor, isColorBlind)) {
+                    visited[nextX][nextY] = true
+                    queue.add(nextX to nextY)
+                }
+            }
+        }
+    }
+
+    private fun canVisit(
+        grid: Array<CharArray>,
+        visited: Array<BooleanArray>,
+        x: Int,
+        y: Int,
+        areaColor: Char,
+        isColorBlind: Boolean
+    ): Boolean {
+        return x in grid.indices &&
+            y in grid[x].indices &&
+            !visited[x][y] &&
+            isSameAreaColor(areaColor, grid[x][y], isColorBlind)
+    }
+
+    private fun isSameAreaColor(
+        currentColor: Char,
+        nextColor: Char,
+        isColorBlind: Boolean
+    ): Boolean {
+        return currentColor == nextColor ||
+            isColorBlind && currentColor in "RG" && nextColor in "RG"
     }
 }

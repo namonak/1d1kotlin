@@ -3,61 +3,79 @@ package boj.problems
 import java.io.BufferedReader
 
 class No17836 {
-    data class Position(val x: Int, val y: Int, val time: Int, val hasGram: Boolean)
+    private data class Position(val x: Int, val y: Int, val time: Int, val hasGram: Boolean)
 
     private val directions = arrayOf(-1 to 0, 1 to 0, 0 to -1, 0 to 1)
 
     fun solve(input: BufferedReader): String {
-        val (n, m, t) = input.readLine().split(" ").map { it.toInt() }
-        val map = Array(n) { input.readLine().split(" ").map { it.toInt() }.toIntArray() }
+        val (n, _, timeLimit) = input.readLine().split(" ").map { it.toInt() }
+        val castle = Array(n) { input.readLine().split(" ").map { it.toInt() }.toIntArray() }
 
-        val time = findPrincess(map, n, m)
-        return if (time == -1 || time > t) "Fail" else time.toString()
+        val time = findPrincess(castle)
+        return if (time == -1 || time > timeLimit) "Fail" else time.toString()
     }
 
-    private fun findPrincess(
-        map: Array<IntArray>,
-        n: Int,
-        m: Int
-    ): Int {
+    private fun findPrincess(castle: Array<IntArray>): Int {
         val queue = ArrayDeque<Position>()
-        val visited = Array(n) { BooleanArray(m) { false } }
-        val visitedWithGram = Array(n) { BooleanArray(m) { false } }
+        val visited = Array(castle.size) { Array(castle[0].size) { BooleanArray(2) } }
 
         queue.add(Position(0, 0, 0, false))
-        visited[0][0] = true
+        visited[0][0][WITHOUT_GRAM] = true
 
         while (queue.isNotEmpty()) {
-            val (x, y, time, hasGram) = queue.removeFirst()
+            val current = queue.removeFirst()
+            if (isPrincessPosition(castle, current.x, current.y)) return current.time
 
             for ((dx, dy) in directions) {
-                val nx = x + dx
-                val ny = y + dy
+                val nextX = current.x + dx
+                val nextY = current.y + dy
 
-                if (nx == n - 1 && ny == m - 1) {
-                    return time + 1
-                }
+                if (!isInside(castle, nextX, nextY)) continue
 
-                if (nx >= n || ny >= m || nx < 0 || ny < 0) continue
+                val hasGram = current.hasGram || castle[nextX][nextY] == GRAM
+                if (!canVisit(castle, visited, nextX, nextY, hasGram)) continue
 
-                if (hasGram) {
-                    if (!visitedWithGram[nx][ny]) {
-                        visitedWithGram[nx][ny] = true
-                        queue.add(Position(nx, ny, time + 1, true))
-                    }
-                } else {
-                    if (!visited[nx][ny] && map[nx][ny] != 1) {
-                        var isSword = false
-                        if (map[nx][ny] == 2) {
-                            isSword = true
-                        }
-                        visited[nx][ny] = true
-                        queue.add(Position(nx, ny, time + 1, isSword))
-                    }
-                }
+                visited[nextX][nextY][gramState(hasGram)] = true
+                queue.add(Position(nextX, nextY, current.time + 1, hasGram))
             }
         }
 
         return -1
+    }
+
+    private fun canVisit(
+        castle: Array<IntArray>,
+        visited: Array<Array<BooleanArray>>,
+        x: Int,
+        y: Int,
+        hasGram: Boolean
+    ): Boolean {
+        return (hasGram || castle[x][y] != WALL) &&
+            !visited[x][y][gramState(hasGram)]
+    }
+
+    private fun isInside(
+        castle: Array<IntArray>,
+        x: Int,
+        y: Int
+    ): Boolean {
+        return x in castle.indices && y in castle[x].indices
+    }
+
+    private fun isPrincessPosition(
+        castle: Array<IntArray>,
+        x: Int,
+        y: Int
+    ): Boolean {
+        return x == castle.lastIndex && y == castle[x].lastIndex
+    }
+
+    private fun gramState(hasGram: Boolean): Int = if (hasGram) WITH_GRAM else WITHOUT_GRAM
+
+    private companion object {
+        const val WALL = 1
+        const val GRAM = 2
+        const val WITHOUT_GRAM = 0
+        const val WITH_GRAM = 1
     }
 }
