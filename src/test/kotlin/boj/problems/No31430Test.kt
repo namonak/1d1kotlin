@@ -13,7 +13,23 @@ class No31430Test : StringSpec({
             """
                 2
                 aaaaaaaathree
-            """.trimIndent() to "3"
+            """.trimIndent() to "3",
+            """
+                1
+                1 0
+            """.trimIndent() to "baaaaaaaaaaaa",
+            """
+                2
+                baaaaaaaaaaaa
+            """.trimIndent() to "1",
+            """
+                1
+                13 13
+            """.trimIndent() to "abaaaaaaaaaaa",
+            """
+                2
+                abaaaaaaaaaaa
+            """.trimIndent() to "26"
         )
 
         testCases.forEach { (given, expected) ->

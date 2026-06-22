@@ -4,38 +4,41 @@ import java.io.BufferedReader
 
 class No31430 {
     fun solve(input: BufferedReader): String {
-        val t = input.readLine().toInt()
-        return if (t == 1) {
-            val (a, b) = input.readLine().split(" ").map { it.toLong() }
-            val k = a + b
-            if (k == 3L) {
-                "aaaaaaaathree"
-            } else {
-                val arr = CharArray(13) { 'a' }
-                var tmp = k
-                for (i in arr.indices) {
-                    if (tmp > 0) {
-                        arr[i] = ((tmp % 26).toInt() + 'a'.code).toChar()
-                        tmp /= 26
-                    } else {
-                        break
-                    }
-                }
-                arr.joinToString("")
-            }
-        } else {
-            val s = input.readLine()
-            if (s == "aaaaaaaathree") {
-                "3"
-            } else {
-                var ans = 0L
-                var r = 1L
-                for (i in s.indices) {
-                    ans += (s[i].code - 'a'.code) * r
-                    r *= 26
-                }
-                ans.toString()
-            }
+        return when (input.readLine().toInt()) {
+            1 -> encodeSum(input.readLine())
+            else -> decodeSum(input.readLine())
         }
+    }
+
+    private fun encodeSum(input: String): String {
+        val sum = input.split(" ").sumOf { it.toLong() }
+        return if (sum == SPECIAL_VALUE) SPECIAL_TOKEN else encodeBase26(sum)
+    }
+
+    private fun decodeSum(encoded: String): String {
+        return if (encoded == SPECIAL_TOKEN) SPECIAL_VALUE.toString() else decodeBase26(encoded).toString()
+    }
+
+    private fun encodeBase26(value: Long): String {
+        var remaining = value
+        return CharArray(ENCODED_LENGTH) {
+            val encoded = ((remaining % BASE).toInt() + 'a'.code).toChar()
+            remaining /= BASE
+            encoded
+        }.concatToString()
+    }
+
+    private fun decodeBase26(encoded: String): Long {
+        return encoded.fold(0L to 1L) { (value, placeValue), char ->
+            val decoded = value + (char.code - 'a'.code) * placeValue
+            decoded to placeValue * BASE
+        }.first
+    }
+
+    companion object {
+        private const val BASE = 26L
+        private const val ENCODED_LENGTH = 13
+        private const val SPECIAL_VALUE = 3L
+        private const val SPECIAL_TOKEN = "aaaaaaaathree"
     }
 }
