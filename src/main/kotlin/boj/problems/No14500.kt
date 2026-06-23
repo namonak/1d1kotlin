@@ -4,40 +4,41 @@ import java.io.BufferedReader
 
 class No14500 {
     fun solve(input: BufferedReader): String {
-        val (n, m) = input.readLine().split(" ").map { it.toInt() }
+        val (n, _) = input.readLine().split(" ").map { it.toInt() }
         val board = Array(n) { input.readLine().split(" ").map { it.toInt() }.toIntArray() }
 
-        return getMaxTetrominoSum(board, n, m).toString()
+        return getMaxTetrominoSum(board).toString()
     }
 
-    private fun getMaxTetrominoSum(
-        board: Array<IntArray>,
-        n: Int,
-        m: Int
-    ): Int {
+    private fun getMaxTetrominoSum(board: Array<IntArray>): Int {
         var maxSum = 0
 
-        for (i in 0 until n) {
-            for (j in 0 until m) {
+        for (row in board.indices) {
+            for (col in board[0].indices) {
                 for (tetromino in tetrominoes) {
-                    var sum = 0
-                    var valid = true
-                    for ((dx, dy) in tetromino) {
-                        val x = i + dx
-                        val y = j + dy
-                        if (x in 0 until n && y in 0 until m) {
-                            sum += board[x][y]
-                        } else {
-                            valid = false
-                            break
-                        }
-                    }
-                    if (valid) maxSum = maxOf(maxSum, sum)
+                    val sum = calculateSum(board, row, col, tetromino) ?: 0
+                    maxSum = maxOf(maxSum, sum)
                 }
             }
         }
 
         return maxSum
+    }
+
+    private fun calculateSum(
+        board: Array<IntArray>,
+        row: Int,
+        col: Int,
+        tetromino: List<Pair<Int, Int>>
+    ): Int? {
+        var sum = 0
+        for ((rowOffset, colOffset) in tetromino) {
+            val nextRow = row + rowOffset
+            val nextCol = col + colOffset
+            if (nextRow !in board.indices || nextCol !in board[0].indices) return null
+            sum += board[nextRow][nextCol]
+        }
+        return sum
     }
 
     companion object {
