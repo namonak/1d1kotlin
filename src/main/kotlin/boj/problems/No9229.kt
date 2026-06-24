@@ -4,25 +4,27 @@ import java.io.BufferedReader
 
 class No9229 {
     fun solve(input: BufferedReader): String {
-        val result = StringBuilder()
+        val results = mutableListOf<String>()
 
         while (true) {
-            val testCase = mutableListOf<String>()
-            while (true) {
-                val line = input.readLine()?.trim() ?: "#"
-                if (line == "#") {
-                    if (testCase.isNotEmpty()) {
-                        result.append(if (isWordLadder(testCase)) "Correct" else "Incorrect").append('\n')
-                    }
-                    break
-                }
-                testCase.add(line)
-            }
-
+            val testCase = readTestCase(input)
             if (testCase.isEmpty()) break
+
+            results.add(if (isWordLadder(testCase)) "Correct" else "Incorrect")
         }
 
-        return result.toString().trim()
+        return results.joinToString("\n")
+    }
+
+    private fun readTestCase(input: BufferedReader): List<String> {
+        val words = mutableListOf<String>()
+
+        while (true) {
+            val line = input.readLine()?.trim() ?: return words
+            if (line == "#") return words
+
+            words.add(line)
+        }
     }
 
     private fun isWordLadder(words: List<String>): Boolean {
