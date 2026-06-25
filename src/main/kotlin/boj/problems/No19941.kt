@@ -4,26 +4,37 @@ import java.io.BufferedReader
 
 class No19941 {
     fun solve(input: BufferedReader): String {
-        val (n, k) = input.readLine().split(" ").map { it.toInt() }
+        val (_, k) = input.readLine().split(" ").map { it.toInt() }
         val seats = input.readLine()
-        val visited = BooleanArray(n)
-        var count = 0
+        return countPeopleWithHamburgers(seats, k).toString()
+    }
 
-        for (i in 0 until n) {
-            if (seats[i] == 'P') {
-                for (j in -k..k) {
-                    if (i + j >= n) break
-                    if (i + j < 0) continue
+    private fun countPeopleWithHamburgers(
+        seats: String,
+        range: Int
+    ): Int {
+        val eaten = BooleanArray(seats.length)
 
-                    if (seats[i + j] == 'H' && !visited[i + j]) {
-                        visited[i + j] = true
-                        count += 1
-                        break
-                    }
-                }
+        return seats.indices.count { index ->
+            seats[index] == 'P' && eatNearestHamburger(seats, eaten, index, range)
+        }
+    }
+
+    private fun eatNearestHamburger(
+        seats: String,
+        eaten: BooleanArray,
+        personIndex: Int,
+        range: Int
+    ): Boolean {
+        val start = maxOf(0, personIndex - range)
+        val end = minOf(seats.lastIndex, personIndex + range)
+
+        for (hamburgerIndex in start..end) {
+            if (seats[hamburgerIndex] == 'H' && !eaten[hamburgerIndex]) {
+                eaten[hamburgerIndex] = true
+                return true
             }
         }
-
-        return count.toString()
+        return false
     }
 }
