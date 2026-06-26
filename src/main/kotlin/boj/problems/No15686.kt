@@ -3,49 +3,106 @@ package boj.problems
 import java.io.BufferedReader
 
 class No15686 {
+    private data class Point(val row: Int, val col: Int) {
+        fun distanceTo(other: Point): Int {
+            return kotlin.math.abs(row - other.row) + kotlin.math.abs(col - other.col)
+        }
+    }
+
+    private data class City(
+        val houses: List<Point>,
+        val chickens: List<Point>
+    )
+
     fun solve(input: BufferedReader): String {
-        val (n, m) = input.readLine().split(" ").map { it.toInt() }
-        val houses = mutableListOf<Pair<Int, Int>>()
-        val chickens = mutableListOf<Pair<Int, Int>>()
+        val (size, selectedChickenCount) = input.readLine().split(" ").map { it.toInt() }
+        val city = readCity(input, size)
+        return findMinimumChickenDistance(city, selectedChickenCount).toString()
+    }
 
-        repeat(n) { r ->
-            input.readLine().split(" ").map { it.toInt() }.forEachIndexed { c, v ->
-                when (v) {
-                    1 -> houses.add(r to c)
-                    2 -> chickens.add(r to c)
-                }
+    private fun readCity(
+        input: BufferedReader,
+        size: Int
+    ): City {
+        val houses = mutableListOf<Point>()
+        val chickens = mutableListOf<Point>()
+
+        repeat(size) { row ->
+            input.readLine().split(" ").map { it.toInt() }.forEachIndexed { col, value ->
+                addLocation(value, Point(row, col), houses, chickens)
             }
         }
 
-        var answer = Int.MAX_VALUE
-        val selected = mutableListOf<Pair<Int, Int>>()
+        return City(houses, chickens)
+    }
 
-        fun dfs(idx: Int) {
-            if (selected.size == m) {
-                var sum = 0
-                for ((hr, hc) in houses) {
-                    var dist = Int.MAX_VALUE
-                    for ((cr, cc) in selected) {
-                        val d = kotlin.math.abs(hr - cr) + kotlin.math.abs(hc - cc)
-                        if (d < dist) dist = d
-                    }
-                    sum += dist
-                }
-                answer = minOf(answer, sum)
-                return
-            }
-            if (idx == chickens.size) return
-
-            // 선택
-            selected.add(chickens[idx])
-            dfs(idx + 1)
-            selected.removeAt(selected.lastIndex)
-
-            // 미선택
-            dfs(idx + 1)
+    private fun addLocation(
+        value: Int,
+        point: Point,
+        houses: MutableList<Point>,
+        chickens: MutableList<Point>
+    ) {
+        when (value) {
+            HOUSE -> houses.add(point)
+            CHICKEN -> chickens.add(point)
         }
+    }
 
-        dfs(0)
-        return answer.toString()
+    private fun findMinimumChickenDistance(
+        city: City,
+        selectedChickenCount: Int
+    ): Int {
+        return searchMinimumDistance(
+            city = city,
+            selectedChickenCount = selectedChickenCount,
+            chickenIndex = 0,
+            selectedChickens = mutableListOf(),
+            currentBest = Int.MAX_VALUE
+        )
+    }
+
+    private fun searchMinimumDistance(
+        city: City,
+        selectedChickenCount: Int,
+        chickenIndex: Int,
+        selectedChickens: MutableList<Point>,
+        currentBest: Int
+    ): Int {
+        if (selectedChickens.size == selectedChickenCount) {
+            return minOf(currentBest, calculateCityChickenDistance(city.houses, selectedChickens))
+        }
+        if (chickenIndex == city.chickens.size) return currentBest
+
+        selectedChickens.add(city.chickens[chickenIndex])
+        val bestWithCurrent = searchMinimumDistance(
+            city,
+            selectedChickenCount,
+            chickenIndex + 1,
+            selectedChickens,
+            currentBest
+        )
+        selectedChickens.removeAt(selectedChickens.lastIndex)
+
+        return searchMinimumDistance(
+            city,
+            selectedChickenCount,
+            chickenIndex + 1,
+            selectedChickens,
+            bestWithCurrent
+        )
+    }
+
+    private fun calculateCityChickenDistance(
+        houses: List<Point>,
+        selectedChickens: List<Point>
+    ): Int {
+        return houses.sumOf { house ->
+            selectedChickens.minOf { chicken -> house.distanceTo(chicken) }
+        }
+    }
+
+    private companion object {
+        const val HOUSE = 1
+        const val CHICKEN = 2
     }
 }

@@ -3,40 +3,66 @@ package boj.problems
 import java.io.BufferedReader
 
 class No2503 {
+    private data class Question(
+        val digits: List<Int>,
+        val strike: Int,
+        val ball: Int
+    )
+
+    private data class Score(
+        val strike: Int,
+        val ball: Int
+    )
+
     fun solve(input: BufferedReader): String {
-        val n = input.readLine().toInt()
-        val numbers = mutableListOf<Int>()
-        val strikes = mutableListOf<Int>()
-        val balls = mutableListOf<Int>()
-        repeat(n) {
+        val questions = readQuestions(input)
+        return countPossibleNumbers(questions).toString()
+    }
+
+    private fun readQuestions(input: BufferedReader): List<Question> {
+        return List(input.readLine().toInt()) {
             val (number, strike, ball) = input.readLine().split(" ").map { it.toInt() }
-            numbers.add(number)
-            strikes.add(strike)
-            balls.add(ball)
+            Question(number.toDigits(), strike, ball)
         }
+    }
 
-        var answer = 0
-        for (i in 123..987) {
-            val (a, b, c) = i.toString().map { it - '0' }
-            if (a == b || b == c || c == a) continue
-            if (a == 0 || b == 0 || c == 0) continue
-
-            var count = 0
-            for (j in 0 until n) {
-                val (number, strike, ball) = Triple(numbers[j], strikes[j], balls[j])
-                val (x, y, z) = number.toString().map { it - '0' }
-                var strikeCount = 0
-                var ballCount = 0
-                if (a == x) strikeCount++
-                if (b == y) strikeCount++
-                if (c == z) strikeCount++
-                if (a == y || a == z) ballCount++
-                if (b == x || b == z) ballCount++
-                if (c == x || c == y) ballCount++
-                if (strikeCount == strike && ballCount == ball) count++
-            }
-            if (count == n) answer++
+    private fun countPossibleNumbers(questions: List<Question>): Int {
+        return (MIN_NUMBER..MAX_NUMBER).count { number ->
+            val candidate = number.toDigits()
+            isValidCandidate(candidate) &&
+                questions.all { question -> matchesQuestion(candidate, question) }
         }
-        return answer.toString()
+    }
+
+    private fun isValidCandidate(candidate: List<Int>): Boolean {
+        return candidate.none { it == 0 } && candidate.toSet().size == candidate.size
+    }
+
+    private fun matchesQuestion(
+        candidate: List<Int>,
+        question: Question
+    ): Boolean {
+        val score = calculateScore(candidate, question.digits)
+        return score.strike == question.strike && score.ball == question.ball
+    }
+
+    private fun calculateScore(
+        candidate: List<Int>,
+        target: List<Int>
+    ): Score {
+        val strike = candidate.indices.count { index -> candidate[index] == target[index] }
+        val ball = candidate.indices.count { index ->
+            candidate[index] != target[index] && candidate[index] in target
+        }
+        return Score(strike, ball)
+    }
+
+    private fun Int.toDigits(): List<Int> {
+        return toString().map { it - '0' }
+    }
+
+    private companion object {
+        const val MIN_NUMBER = 123
+        const val MAX_NUMBER = 987
     }
 }
